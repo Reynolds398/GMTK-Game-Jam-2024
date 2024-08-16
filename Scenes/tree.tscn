@@ -92,8 +92,8 @@ shape = SubResource("RectangleShape2D_0o5x0")
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 6"]
-position = Vector2(0.999988, -167.125)
-scale = Vector2(1.20312, 2.5918)
+position = Vector2(0.499999, -167.125)
+scale = Vector2(0.992187, 2.5918)
 texture = ExtResource("2_f1udo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 6"]
@@ -113,5 +113,10 @@ position = Vector2(0, -176)
 shape = SubResource("RectangleShape2D_h66y1")
 
 [node name="TreeCamera" type="Camera2D" parent="."]
-position = Vector2(0, -176)
-limit_bottom = 650
+zoom = Vector2(8, 8)
+limit_bottom = 600
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(73, -13)
+scale = Vector2(0.046875, 0.203125)
+texture = ExtResource("2_f1udo")

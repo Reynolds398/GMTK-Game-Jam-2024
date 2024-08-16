@@ -16,8 +16,10 @@ extends Node2D
 var current_stage = null  # Variable to keep track of the current stage object
 
 # Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
+func _ready():
+	camera.position = Vector2(0, 800)
+	camera.zoom = Vector2(8,8)
+	camera.limit_bottom = 625
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,8 +32,10 @@ func _process(delta):
 
 # Function to set variables for stage 1
 func set_stage_1():
+	print("stage 1")
 	# Camera update here
-	camera.limit_bottom = 650
+	camera.zoom = Vector2(8,8)
+	camera.limit_bottom = 620
 	
 	# If stage has not been set
 	if current_stage == null:
@@ -43,7 +47,10 @@ func set_stage_1():
 
 # Function to set variables for stage 2
 func set_stage_2():
+	print("stage 2")
 	# Camera update here
+	camera.zoom = Vector2(4.5,4.5)
+	camera.limit_bottom = 625
 	
 	# If stage has not been set
 	if current_stage == null:
@@ -55,7 +62,10 @@ func set_stage_2():
 
 # Function to set variables for stage 3
 func set_stage_3():
+	print("stage 3")
 	# Camera update here
+	camera.zoom = Vector2(3,3)
+	camera.limit_bottom = 630
 	
 	# If stage has not been set
 	if current_stage == null:
@@ -67,7 +77,10 @@ func set_stage_3():
 
 # Function to set variables for stage 4
 func set_stage_4():
+	print("stage 4")
 	# Camera update here
+	camera.zoom = Vector2(2.5,2.5)
+	camera.limit_bottom = 630
 	
 	# If stage has not been set
 	if current_stage == null:
@@ -79,7 +92,10 @@ func set_stage_4():
 
 # Function to set variables for stage 5
 func set_stage_5():
+	print("stage 5")
 	# Camera update here
+	camera.zoom = Vector2(2,2)
+	camera.limit_bottom = 635
 	
 	# If stage has not been set
 	if current_stage == null:
@@ -91,7 +107,10 @@ func set_stage_5():
 
 # Function to set variables for stage 6
 func set_stage_6():
+	print("stage 6")
 	# Camera update here
+	camera.zoom = Vector2(1.5,1.5)
+	camera.limit_bottom = 640
 	
 	# If stage has not been set
 	if current_stage == null:
@@ -103,8 +122,11 @@ func set_stage_6():
 
 # Function to set variables for stage 7
 func set_stage_7():
+	print("stage 7")
+	
 	# Camera update here
-	camera.limit_bottom = 670
+	camera.zoom = Vector2(1.2,1.2)
+	camera.limit_bottom = 640
 	
 	# If stage has not been set
 	if current_stage == null:
