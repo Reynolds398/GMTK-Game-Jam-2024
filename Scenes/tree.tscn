@@ -1,3 +1,117 @@
-[gd_scene format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=10 format=3 uid="uid://bedd71ipunv7m"]
+
+[ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_f1udo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdktt"]
+size = Vector2(6, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rif6"]
+size = Vector2(12, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msvlm"]
+size = Vector2(19, 91.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yem3x"]
+size = Vector2(37.5, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o5x0"]
+size = Vector2(52, 205.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0tff"]
+size = Vector2(87, 262.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h66y1"]
+size = Vector2(108, 350)
 
 [node name="Tree" type="Node2D"]
+script = ExtResource("1_3vueh")
+
+[node name="Stage 1" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 1"]
+position = Vector2(0, -13)
+scale = Vector2(0.046875, 0.203125)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 1"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tdktt")
+debug_color = Color(0, 0.592157, 0.737255, 0.419608)
+
+[node name="Stage 2" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 2"]
+position = Vector2(-4.76837e-07, -30)
+scale = Vector2(0.09375, 0.46875)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 2"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_4rif6")
+
+[node name="Stage 3" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 3"]
+position = Vector2(-4.76837e-07, -51.5)
+scale = Vector2(0.25, 0.804687)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 3"]
+position = Vector2(0, -46.25)
+shape = SubResource("RectangleShape2D_msvlm")
+
+[node name="Stage 4" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 4"]
+position = Vector2(0, -87)
+scale = Vector2(0.523438, 1.35547)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 4"]
+position = Vector2(0, -72)
+shape = SubResource("RectangleShape2D_yem3x")
+
+[node name="Stage 5" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 5"]
+position = Vector2(0, -127.875)
+scale = Vector2(0.796875, 1.98633)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 5"]
+position = Vector2(0, -103.25)
+shape = SubResource("RectangleShape2D_0o5x0")
+
+[node name="Stage 6" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 6"]
+position = Vector2(0.999988, -167.125)
+scale = Vector2(1.20312, 2.5918)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 6"]
+position = Vector2(0, -132)
+shape = SubResource("RectangleShape2D_w0tff")
+
+[node name="Stage 7" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage 7"]
+position = Vector2(-0.500002, -219.5)
+scale = Vector2(1.36719, 3.42969)
+texture = ExtResource("2_f1udo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 7"]
+position = Vector2(0, -176)
+shape = SubResource("RectangleShape2D_h66y1")
+
+[node name="TreeCamera" type="Camera2D" parent="."]
+position = Vector2(0, -176)
+limit_bottom = 650
