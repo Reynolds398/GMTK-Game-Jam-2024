@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnkq1okywclyv"]
+
+[ext_resource type="Script" path="res://Scripts/Obstacle.gd" id="1_odipt"]
+
+[node name="World" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+script = ExtResource("1_odipt")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground"]
+position = Vector2(0, -1460.38)
+scale = Vector2(1.00261, 3.38235)
+polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
