@@ -4,10 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bnkq1okywclyv" path="res://Scenes/world.tscn" id="1_sc842"]
 [ext_resource type="PackedScene" uid="uid://bedd71ipunv7m" path="res://Scenes/tree.tscn" id="2_r5o6g"]
 [ext_resource type="PackedScene" uid="uid://bk8wxv0mg28mu" path="res://Scenes/game_ui.tscn" id="3_r5ndb"]
-<<<<<<< HEAD
-=======
+
 [ext_resource type="PackedScene" uid="uid://dgkdfqx21rp7g" path="res://Scenes/boulder_spawner.tscn" id="4_oni7c"]
->>>>>>> 5aa065ef507e903d856e7cde2d7ac7481da50ecb
+5aa065ef507e903d856e7cde2d7ac7481da50ecb
 
 [node name="MainScene" type="Node"]
 
@@ -17,9 +16,8 @@
 position = Vector2(572, 613)
 
 [node name="GameUI" parent="." instance=ExtResource("3_r5ndb")]
-<<<<<<< HEAD
-=======
+
 
 [node name="BoulderSpawner" parent="." instance=ExtResource("4_oni7c")]
 position = Vector2(530, 603)
->>>>>>> 5aa065ef507e903d856e7cde2d7ac7481da50ecb
+5aa065ef507e903d856e7cde2d7ac7481da50ecb
