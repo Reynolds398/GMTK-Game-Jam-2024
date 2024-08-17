@@ -29,6 +29,8 @@ script = ExtResource("1_3vueh")
 
 [node name="Stage 1" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 1"]
 position = Vector2(0, -13)
@@ -38,10 +40,13 @@ texture = ExtResource("2_f1udo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 1"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_tdktt")
+disabled = true
 debug_color = Color(0, 0.592157, 0.737255, 0.419608)
 
 [node name="Stage 2" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 2"]
 position = Vector2(-4.76837e-07, -30)
@@ -54,6 +59,8 @@ shape = SubResource("RectangleShape2D_4rif6")
 
 [node name="Stage 3" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 3"]
 position = Vector2(-4.76837e-07, -51.5)
@@ -66,6 +73,8 @@ shape = SubResource("RectangleShape2D_msvlm")
 
 [node name="Stage 4" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 4"]
 position = Vector2(0, -87)
@@ -78,6 +87,8 @@ shape = SubResource("RectangleShape2D_yem3x")
 
 [node name="Stage 5" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 5"]
 position = Vector2(0, -127.875)
@@ -90,6 +101,8 @@ shape = SubResource("RectangleShape2D_0o5x0")
 
 [node name="Stage 6" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 6"]
 position = Vector2(0.499999, -167.125)
@@ -102,6 +115,8 @@ shape = SubResource("RectangleShape2D_w0tff")
 
 [node name="Stage 7" type="StaticBody2D" parent="."]
 visible = false
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 7"]
 position = Vector2(-0.500002, -219.5)

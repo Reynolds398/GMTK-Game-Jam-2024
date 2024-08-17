@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk8wxv0mg28mu"]
 
-[ext_resource type="Script" path="res://Scenes/game_ui.gd" id="1_26eiv"]
 [ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="1_fukku"]
+[ext_resource type="Script" path="res://Scripts/game_ui.gd" id="1_r2nyr"]
 
 [node name="GameUI" type="CanvasLayer"]
-script = ExtResource("1_26eiv")
+script = ExtResource("1_r2nyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(967.938, 36.75)

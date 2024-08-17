@@ -18,7 +18,7 @@ var current_stage = null  # Variable to keep track of the current stage object
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera.position = Vector2(0, 800)
-	camera.zoom = Vector2(8,8)
+	camera.zoom = Vector2(0.5,0.5)
 	camera.limit_bottom = 625
 
 
@@ -30,6 +30,18 @@ func _process(delta):
 			CUR_TREE_STAGE += 1
 			next_stage(CUR_TREE_STAGE)
 
+# Given the stage, transition to the next stage
+func set_stage(stage):
+	# Turn off the previous stage (if it exists)
+	if current_stage != null:
+		current_stage.visible = false
+		current_stage.get_node("CollisionShape2D").disabled = true
+	
+	# Turn on the next stage
+	stage.visible = true
+	current_stage = stage
+	current_stage.get_node("CollisionShape2D").disabled = false
+
 # Function to set variables for stage 1
 func set_stage_1():
 	print("stage 1")
@@ -37,13 +49,7 @@ func set_stage_1():
 	camera.zoom = Vector2(8,8)
 	camera.limit_bottom = 620
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_1.visible = true
-	else: # If stage has been set
-		stage_1.visible = true
-		current_stage.visible = false
-		current_stage = stage_1
+	set_stage(stage_1)
 
 # Function to set variables for stage 2
 func set_stage_2():
@@ -52,13 +58,7 @@ func set_stage_2():
 	camera.zoom = Vector2(4.5,4.5)
 	camera.limit_bottom = 625
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_2.visible = true
-	else: # If stage has been set
-		stage_2.visible = true
-		current_stage.visible = false
-		current_stage = stage_2
+	set_stage(stage_2)
 
 # Function to set variables for stage 3
 func set_stage_3():
@@ -67,14 +67,8 @@ func set_stage_3():
 	camera.zoom = Vector2(3,3)
 	camera.limit_bottom = 630
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_3.visible = true
-	else: # If stage has been set
-		stage_3.visible = true
-		current_stage.visible = false
-		current_stage = stage_3
-
+	set_stage(stage_3)
+	
 # Function to set variables for stage 4
 func set_stage_4():
 	print("stage 4")
@@ -82,13 +76,7 @@ func set_stage_4():
 	camera.zoom = Vector2(2.5,2.5)
 	camera.limit_bottom = 630
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_4.visible = true
-	else: # If stage has been set
-		stage_4.visible = true
-		current_stage.visible = false
-		current_stage = stage_4
+	set_stage(stage_4)
 
 # Function to set variables for stage 5
 func set_stage_5():
@@ -97,13 +85,7 @@ func set_stage_5():
 	camera.zoom = Vector2(2,2)
 	camera.limit_bottom = 635
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_5.visible = true
-	else: # If stage has been set
-		stage_5.visible = true
-		current_stage.visible = false
-		current_stage = stage_5
+	set_stage(stage_5)
 
 # Function to set variables for stage 6
 func set_stage_6():
@@ -112,13 +94,7 @@ func set_stage_6():
 	camera.zoom = Vector2(1.5,1.5)
 	camera.limit_bottom = 640
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_6.visible = true
-	else: # If stage has been set
-		stage_6.visible = true
-		current_stage.visible = false
-		current_stage = stage_6
+	set_stage(stage_6)
 
 # Function to set variables for stage 7
 func set_stage_7():
@@ -128,13 +104,7 @@ func set_stage_7():
 	camera.zoom = Vector2(1.2,1.2)
 	camera.limit_bottom = 640
 	
-	# If stage has not been set
-	if current_stage == null:
-		stage_7.visible = true
-	else: # If stage has been set
-		stage_7.visible = true
-		current_stage.visible = false
-		current_stage = stage_7
+	set_stage(stage_7)
 
 # Function to deal with stage transitions
 func next_stage(current_stage_num):

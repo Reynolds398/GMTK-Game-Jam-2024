@@ -4,7 +4,7 @@
 
 [node name="World" type="Node2D"]
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="." groups=["Floor"]]
 script = ExtResource("1_odipt")
 
 [node name="Polygon2D" type="Polygon2D" parent="Ground"]
@@ -13,3 +13,29 @@ scale = Vector2(1.23238, 3.38235)
 polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+
+[node name="RightBound" type="StaticBody2D" parent="." groups=["Wall"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_odipt")
+
+[node name="Polygon2D" type="Polygon2D" parent="RightBound"]
+position = Vector2(1259, -13327)
+scale = Vector2(0.0887729, 21.7465)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBound"]
+
+[node name="LeftBound" type="StaticBody2D" parent="." groups=["Wall"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_odipt")
+
+[node name="Polygon2D" type="Polygon2D" parent="LeftBound"]
+position = Vector2(-251, -13328)
+scale = Vector2(0.0887729, 21.7465)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBound"]
