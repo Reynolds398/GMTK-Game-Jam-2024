@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bemvhgtuxm3gc"]
+[gd_scene load_steps=5 format=3 uid="uid://bemvhgtuxm3gc"]
 
-[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="1_22qe5"]
+[ext_resource type="Script" path="res://Scripts/wood_pecker.gd" id="1_6etrf"]
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_j1mr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1omy0"]
 
@@ -8,10 +9,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_22qe5")
+"texture": ExtResource("2_j1mr2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_22qe5")
+"texture": ExtResource("2_j1mr2")
 }],
 "loop": true,
 "name": &"attack",
@@ -19,18 +20,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_22qe5")
+"texture": ExtResource("2_j1mr2")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
 
-[node name="wood_pecker" type="CharacterBody2D"]
+[node name="wood_pecker_m" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_6etrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1omy0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_auho3")
-animation = &"attack"
+animation = &"walk"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx6fscp11ajxl"]
+
+[ext_resource type="Script" path="res://Scripts/path_wp_m.gd" id="1_d0dcs"]
+[ext_resource type="PackedScene" uid="uid://bemvhgtuxm3gc" path="res://Scenes/wood_pecker_m.tscn" id="2_us683"]
+
+[sub_resource type="Curve2D" id="Curve2D_nv0p3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 481, 580, 0, 0, 0, 0, 514, 588, 0, 0, 0, 0, 540, 592, 0, 0, 0, 0, 569, 597)
+}
+point_count = 4
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_nv0p3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(481, 580)
+rotation = 0.0384426
+rotates = false
+loop = false
+script = ExtResource("1_d0dcs")
+
+[node name="wood_pecker_m" parent="PathFollow2D" instance=ExtResource("2_us683")]
