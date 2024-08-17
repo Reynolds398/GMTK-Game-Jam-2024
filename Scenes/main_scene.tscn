@@ -1,16 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4vuaeoxt7asd"]
+[gd_scene load_steps=5 format=3 uid="uid://b4vuaeoxt7asd"]
 
 [ext_resource type="PackedScene" uid="uid://bnkq1okywclyv" path="res://Scenes/world.tscn" id="1_sc842"]
 [ext_resource type="PackedScene" uid="uid://bedd71ipunv7m" path="res://Scenes/tree.tscn" id="2_r5o6g"]
 [ext_resource type="PackedScene" uid="uid://bk8wxv0mg28mu" path="res://Scenes/game_ui.tscn" id="3_r5ndb"]
-[ext_resource type="PackedScene" path="res://Scenes/acorn_gun.tscn" id="4_0t4dr"]
-[ext_resource type="PackedScene" uid="uid://cvep7ttaw6kha" path="res://Scenes/wood_pecker_r.tscn" id="5_r3dlb"]
-
-[sub_resource type="Curve2D" id="Curve2D_l1sjw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 479, 593, 0, 0, 0, 0, 501, 591, 0, 0, 0, 0, 518, 584, 0, 0, 0, 0, 531, 580)
-}
-point_count = 4
+[ext_resource type="PackedScene" uid="uid://c22t8qmbav1jq" path="res://Scenes/catapult.tscn" id="4_c7uqp"]
 
 [node name="MainScene" type="Node"]
 
@@ -21,16 +14,5 @@ position = Vector2(572, 613)
 
 [node name="GameUI" parent="." instance=ExtResource("3_r5ndb")]
 
-[node name="AcornGun" parent="." instance=ExtResource("4_0t4dr")]
-position = Vector2(553, 600)
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_l1sjw")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(479, 593)
-rotation = -0.0906599
-rotates = false
-loop = false
-
-[node name="wood_pecker_r" parent="Path2D/PathFollow2D" instance=ExtResource("5_r3dlb")]
+[node name="Catapult" parent="." instance=ExtResource("4_c7uqp")]
+position = Vector2(570, 602)

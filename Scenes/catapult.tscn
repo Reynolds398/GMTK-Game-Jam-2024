@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c22t8qmbav1jq"]
+
+[ext_resource type="Script" path="res://Scripts/catapult.gd" id="1_rko5m"]
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_ia3mq"]
+
+[node name="Catapult" type="Node2D"]
+script = ExtResource("1_rko5m")
+SHOOT_FORCE = 800.0
+SHOOT_TIMER = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("2_ia3mq")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

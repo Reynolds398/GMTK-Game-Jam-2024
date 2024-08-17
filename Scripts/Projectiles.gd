@@ -14,21 +14,10 @@ extends RigidBody2D
 # Dealing with collision (don't delete and just reuse the spawned projectile)
 # Freeze, disable collsion, and make it invisible
 func _on_body_entered(body):
-	if body.is_in_group("Wall"):
+	if body.is_in_group("Wall") or body.is_in_group("Floor"):
 		print("I'm free!")
 		queue_free()
 
 # Function to shoot the projectile in the direction with the force applied
 func shoot_projectile(direction, force):
 	apply_impulse(direction.normalized() * force)
-
-## Function to shoot the projectile in a straight line (not affected by gravity)
-#func shoot_linear(direction, force):
-#	gravity_scale = 0
-#	apply_force(force * direction.normalized())
-
-## To reset projectile after being deactivated
-#func activate_projectile():
-#	freeze = false
-#	collision.disabled = false
-#	visible = true

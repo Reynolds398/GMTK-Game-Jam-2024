@@ -7,7 +7,7 @@ var start_pos = null  # Variable to keep track of starting pos
 func _ready():
 	parent = get_parent()
 	start_pos = parent.position
-	gravity_scale = 0
+	gravity_scale = 1
 	
 	#shoot()
 	
@@ -15,9 +15,10 @@ func _ready():
 #func _integrate_forces(state):
 
 # Function to trigger shooting flag
-func shoot():
+func shoot(shoot_angle):
+	var angle = PI * (shoot_angle/180.0)  # 45 degrees
 	# Shoot right if facing right
 	if get_parent().RIGHT:
-		shoot_projectile(Vector2.RIGHT, parent.SHOOT_FORCE)
+		shoot_projectile(Vector2(cos(angle), sin(angle)), parent.SHOOT_FORCE)
 	else: # Shoot left if facing left
-		shoot_projectile(Vector2.LEFT, parent.SHOOT_FORCE)
+		shoot_projectile(Vector2(-cos(angle), sin(angle)), parent.SHOOT_FORCE)
