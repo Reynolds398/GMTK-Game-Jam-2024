@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var currency_text = $CurrencyText
+@onready var health_bar = $HealthBar
 
 @export var MAX_GOLD = 999999
 
@@ -16,7 +17,9 @@ func _process(delta):
 	# For debugging purposes
 	if Input.is_key_pressed(KEY_EQUAL):
 		add_currency(1000)
+		add_health(5)
 	if Input.is_key_pressed(KEY_MINUS):
+		decrease_health(5)
 		spend_currency(1000)
 	
 	currency_text.text = str(currency)
@@ -29,3 +32,24 @@ func add_currency(amount):
 func spend_currency(amount):
 	if (currency - amount) >= 0:
 		currency -= amount
+
+# Function to add health to the health bar
+func add_health(amount):
+	health_bar.value += amount
+
+# Function to decrease health to the health bar
+func decrease_health(amount):
+	health_bar.value -= amount
+	
+	# Game over if health bar is 0%
+	if health_bar.value == 0:
+		game_over()
+
+# Function to set max health
+func set_max_health(amount):
+	health_bar.max_value = amount
+	health_bar.value = amount
+
+# Function to handle game over
+func game_over():
+	pass

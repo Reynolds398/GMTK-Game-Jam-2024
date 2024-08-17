@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgkdfqx21rp7g"]
+
+[ext_resource type="Script" path="res://Scripts/boulder_spawner.gd" id="1_241ah"]
+
+[node name="BoulderSpawner" type="Node2D"]
+script = ExtResource("1_241ah")
+RIGHT = false
+SHOOT_FORCE = 200.0
+SHOOT_TIMER = 4.0
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
