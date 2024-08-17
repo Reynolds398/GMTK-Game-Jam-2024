@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bk8wxv0mg28mu"]
+[gd_scene load_steps=3 format=3 uid="uid://bk8wxv0mg28mu"]
+
+[ext_resource type="Script" path="res://Scenes/game_ui.gd" id="1_26eiv"]
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="1_fukku"]
 
 [node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_26eiv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(967.938, 36.75)
+scale = Vector2(0.311523, 0.332031)
+texture = ExtResource("1_fukku")
+
+[node name="CurrencyText" type="Label" parent="."]
+offset_left = 1000.0
+offset_top = 23.0
+offset_right = 1083.0
+offset_bottom = 66.0
+text = "10000 Gold"

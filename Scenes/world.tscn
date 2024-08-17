@@ -8,8 +8,8 @@
 script = ExtResource("1_odipt")
 
 [node name="Polygon2D" type="Polygon2D" parent="Ground"]
-position = Vector2(0, -1460.38)
-scale = Vector2(1.00261, 3.38235)
+position = Vector2(-147, -1460.38)
+scale = Vector2(1.23238, 3.38235)
 polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]

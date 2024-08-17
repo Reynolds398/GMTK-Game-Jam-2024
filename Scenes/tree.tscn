@@ -117,6 +117,6 @@ zoom = Vector2(8, 8)
 limit_bottom = 600
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(73, -13)
-scale = Vector2(0.046875, 0.203125)
+position = Vector2(307.5, -13)
+scale = Vector2(3.71094, 0.203125)
 texture = ExtResource("2_f1udo")
