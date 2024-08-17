@@ -6,7 +6,7 @@
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_r2nyr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CurrencySprite" type="Sprite2D" parent="."]
 position = Vector2(967.938, 36.75)
 scale = Vector2(0.311523, 0.332031)
 texture = ExtResource("1_fukku")
@@ -17,3 +17,15 @@ offset_top = 23.0
 offset_right = 1083.0
 offset_bottom = 66.0
 text = "10000 Gold"
+
+[node name="HealthSprite" type="Sprite2D" parent="."]
+position = Vector2(46, 37)
+scale = Vector2(0.311523, 0.332031)
+texture = ExtResource("1_fukku")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 79.0
+offset_top = 23.0
+offset_right = 275.0
+offset_bottom = 54.0
+step = 1.0
