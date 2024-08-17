@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://rabn0p4mb2tf"]
+
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="1_dbpda"]
+[ext_resource type="Script" path="res://Scripts/grounded.gd" id="1_vmyuk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03to1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dbpda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dbpda")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dbpda")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw25c"]
+
+[node name="grounded" type="CharacterBody2D"]
+script = ExtResource("1_vmyuk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_03to1")
+animation = &"attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gw25c")
