@@ -22,3 +22,9 @@ func shoot(shoot_angle):
 		shoot_projectile(Vector2(cos(angle), sin(angle)), parent.SHOOT_FORCE)
 	else: # Shoot left if facing left
 		shoot_projectile(Vector2(-cos(angle), sin(angle)), parent.SHOOT_FORCE)
+
+# Dealing with collision (don't delete and just reuse the spawned projectile)
+func _on_body_entered(body):
+	if body.is_in_group("Wall") or body.is_in_group("Floor"):
+		print("I'm free!")
+		queue_free()
