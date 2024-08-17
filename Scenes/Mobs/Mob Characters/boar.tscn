@@ -1,28 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhlmfb4brfyis"]
+[gd_scene load_steps=11 format=3 uid="uid://dhlmfb4brfyis"]
 
 [ext_resource type="Script" path="res://Scripts/boar.gd" id="1_pbeov"]
 [ext_resource type="Texture2D" uid="uid://dalmmc501u45b" path="res://assets/boar_RUSH.png" id="2_8l7am"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88wdl"]
-size = Vector2(1061, 690)
+size = Vector2(1016, 690)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4cqo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fahk1"]
 atlas = ExtResource("2_8l7am")
-region = Rect2(2450, 0, 1225, 1177)
+region = Rect2(2440, 0, 1220, 1177)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fr30c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxs7r"]
 atlas = ExtResource("2_8l7am")
-region = Rect2(0, 0, 1225, 1177)
+region = Rect2(0, 0, 1220, 1177)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ut0vt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sbvv"]
 atlas = ExtResource("2_8l7am")
-region = Rect2(1225, 0, 1225, 1177)
+region = Rect2(2440, 0, 1220, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pebds"]
+atlas = ExtResource("2_8l7am")
+region = Rect2(0, 0, 1220, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiok6"]
+atlas = ExtResource("2_8l7am")
+region = Rect2(0, 0, 1220, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1unqh"]
+atlas = ExtResource("2_8l7am")
+region = Rect2(1220, 0, 1220, 1177)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mvae5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l4cqo")
+"texture": SubResource("AtlasTexture_fahk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxs7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sbvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pebds")
 }],
 "loop": true,
 "name": &"attack",
@@ -30,10 +51,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fr30c")
+"texture": SubResource("AtlasTexture_jiok6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ut0vt")
+"texture": SubResource("AtlasTexture_1unqh")
 }],
 "loop": true,
 "name": &"walk",
@@ -41,12 +62,14 @@ animations = [{
 }]
 
 [node name="boar" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_pbeov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(92.5, -23)
+position = Vector2(-116, -17)
 shape = SubResource("RectangleShape2D_88wdl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mvae5")
 animation = &"walk"
+flip_h = true

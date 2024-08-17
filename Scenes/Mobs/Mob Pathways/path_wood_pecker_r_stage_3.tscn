@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2fsxhn02qvt"]
+
+[ext_resource type="PackedScene" uid="uid://cvep7ttaw6kha" path="res://Scenes/Mobs/Mob Characters/wood_pecker_r.tscn" id="1_2xnfh"]
+
+[sub_resource type="Curve2D" id="Curve2D_k7fe8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 203, 543, 0, 0, 0, 0, 299, 529, 0, 0, 0, 0, 358, 527, 0, 0, 0, 0, 398, 526, 0, 0, 0, 0, 421, 531, 0, 0, 0, 0, 450, 533)
+}
+point_count = 6
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_k7fe8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(203, 543)
+rotation = -0.23911
+rotates = false
+loop = false
+
+[node name="wood_pecker_r" parent="PathFollow2D" instance=ExtResource("1_2xnfh")]
+rotation = 0.23911

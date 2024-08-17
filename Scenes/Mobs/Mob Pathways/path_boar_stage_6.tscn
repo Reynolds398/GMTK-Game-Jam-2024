@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://do3dqh5jbwosf"]
+
+[ext_resource type="PackedScene" uid="uid://dhlmfb4brfyis" path="res://Scenes/Mobs/Mob Characters/boar.tscn" id="1_w4gdq"]
+
+[sub_resource type="Curve2D" id="Curve2D_hu0he"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -53, 529, 0, 0, 0, 0, 97, 530, 0, 0, 0, 0, 237, 534, 0, 0, 0, 0, 291, 531, 0, 0, 0, 0, 354, 530, 0, 0, 0, 0, 415, 533)
+}
+point_count = 6
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(40, 30)
+curve = SubResource("Curve2D_hu0he")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-53, 529)
+rotation = 0.0117642
+rotates = false
+loop = false
+
+[node name="boar" parent="PathFollow2D" instance=ExtResource("1_w4gdq")]

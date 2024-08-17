@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhdgbp0ek85fo"]
+
+[ext_resource type="PackedScene" uid="uid://cou3qkmly3xk8" path="res://Scenes/Mobs/Mob Characters/wolf.tscn" id="1_cf3t5"]
+
+[sub_resource type="Curve2D" id="Curve2D_p3rom"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 95, 528, 0, 0, 0, 0, 240, 530, 0, 0, 0, 0, 393, 527, 0, 0, 0, 0, 468, 531, 0, 0, 0, 0, 521, 528)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_p3rom")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(95, 528)
+rotation = 0.0137922
+rotates = false
+loop = false
+
+[node name="wolf" parent="PathFollow2D" instance=ExtResource("1_cf3t5")]

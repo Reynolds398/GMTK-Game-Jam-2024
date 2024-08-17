@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [node name="wood_pecker_m" type="CharacterBody2D"]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.035, 0.035)
 script = ExtResource("1_utwvb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
