@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://rabn0p4mb2tf"]
+
+[ext_resource type="Script" path="res://Scripts/beetle.gd" id="1_v7xvc"]
+[ext_resource type="Texture2D" uid="uid://cwbnrh2sn1ghw" path="res://assets/beetle_HEADBUTT.png" id="2_ftiv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrym8"]
+atlas = ExtResource("2_ftiv2")
+region = Rect2(544, 0, 272, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1grl"]
+atlas = ExtResource("2_ftiv2")
+region = Rect2(0, 0, 272, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ang1c"]
+atlas = ExtResource("2_ftiv2")
+region = Rect2(0, 0, 272, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50wgq"]
+atlas = ExtResource("2_ftiv2")
+region = Rect2(272, 0, 272, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03to1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrym8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1grl")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ang1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50wgq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhkyo"]
+size = Vector2(64, 36)
+
+[node name="beetle_m" type="CharacterBody2D"]
+scale = Vector2(-0.5, 0.5)
+script = ExtResource("1_v7xvc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_03to1")
+animation = &"attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_fhkyo")

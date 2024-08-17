@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvep7ttaw6kha"]
+
+[ext_resource type="Script" path="res://Scripts/wood_pecker_r.gd" id="1_jt64m"]
+[ext_resource type="Texture2D" uid="uid://bh0684npxswex" path="res://assets/woodpecker_SPIT.png" id="2_g08kw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg6wl"]
+size = Vector2(1100, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4dwe"]
+atlas = ExtResource("2_g08kw")
+region = Rect2(2450, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx87k"]
+atlas = ExtResource("2_g08kw")
+region = Rect2(0, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng8yu"]
+atlas = ExtResource("2_g08kw")
+region = Rect2(1225, 0, 1225, 1177)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67h6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4dwe")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx87k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng8yu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="wood_pecker_r" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_jt64m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -65)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_kg6wl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_67h6s")
+animation = &"walk"
+flip_h = true

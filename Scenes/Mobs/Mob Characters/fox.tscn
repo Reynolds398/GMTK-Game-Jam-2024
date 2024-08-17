@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5rihabpj7uos"]
+
+[ext_resource type="Script" path="res://Scripts/fox.gd" id="1_d5yu8"]
+[ext_resource type="Texture2D" uid="uid://dlqei8ks644hq" path="res://assets/wolf_SCRATCH.png" id="2_jjakf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r003b"]
+atlas = ExtResource("2_jjakf")
+region = Rect2(2196, 0, 1098, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi6me"]
+atlas = ExtResource("2_jjakf")
+region = Rect2(1098, 0, 1098, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ywmv"]
+atlas = ExtResource("2_jjakf")
+region = Rect2(0, 0, 1096, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi1fq"]
+atlas = ExtResource("2_jjakf")
+region = Rect2(1096, 0, 1096, 1177)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7evrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r003b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi6me")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ywmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi1fq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg8gd"]
+size = Vector2(346.667, 346.667)
+
+[node name="fox" type="CharacterBody2D"]
+position = Vector2(0, -15)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_d5yu8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-26.6667, 0)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_7evrp")
+animation = &"attack"
+frame_progress = 0.837397
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.35783e-06, 13.3333)
+shape = SubResource("RectangleShape2D_qg8gd")

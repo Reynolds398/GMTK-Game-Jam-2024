@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cou3qkmly3xk8"]
+
+[ext_resource type="Script" path="res://Scripts/wolf.gd" id="1_psupw"]
+[ext_resource type="Texture2D" uid="uid://01g2h5jlfiun" path="res://assets/wolf_BITE.png" id="2_bnwyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78yx0"]
+size = Vector2(620, 606)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uavub"]
+atlas = ExtResource("2_bnwyf")
+region = Rect2(1280, 0, 640, 692)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4i8h"]
+atlas = ExtResource("2_bnwyf")
+region = Rect2(0, 0, 640, 692)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8jhj"]
+atlas = ExtResource("2_bnwyf")
+region = Rect2(1280, 0, 640, 692)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o646n"]
+atlas = ExtResource("2_bnwyf")
+region = Rect2(640, 0, 640, 692)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87fs0"]
+atlas = ExtResource("2_bnwyf")
+region = Rect2(0, 0, 640, 692)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r8vg"]
+atlas = ExtResource("2_bnwyf")
+region = Rect2(640, 0, 640, 692)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54nne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uavub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4i8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8jhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o646n")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87fs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r8vg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="wolf" type="CharacterBody2D"]
+script = ExtResource("1_psupw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 23)
+shape = SubResource("RectangleShape2D_78yx0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_54nne")
+animation = &"walk"

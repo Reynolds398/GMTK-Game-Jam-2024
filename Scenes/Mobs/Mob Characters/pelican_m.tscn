@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://w76nef8r722t"]
+
+[ext_resource type="Script" path="res://Scripts/pelican_m.gd" id="1_v3tnq"]
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_oj2su"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw1v2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6anl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oj2su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oj2su")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oj2su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oj2su")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="pelican_m" type="CharacterBody2D"]
+script = ExtResource("1_v3tnq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bw1v2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f6anl")
+animation = &"walk"

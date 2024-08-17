@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn4r7ee6p2sc2"]
+
+[ext_resource type="PackedScene" uid="uid://c5rihabpj7uos" path="res://Scenes/Mobs/Mob Characters/fox.tscn" id="1_fc1gu"]
+
+[sub_resource type="Curve2D" id="Curve2D_deekd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 345, 603, 0, 0, 0, 0, 406, 603, 0, 0, 0, 0, 493, 603, 0, 0, 0, 0, 542, 603)
+}
+point_count = 4
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_deekd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(345, 603)
+rotates = false
+loop = false
+
+[node name="fox" parent="PathFollow2D" instance=ExtResource("1_fc1gu")]

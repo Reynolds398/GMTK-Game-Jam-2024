@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bemvhgtuxm3gc"]
+
+[ext_resource type="Script" path="res://Scripts/wood_pecker.gd" id="1_utwvb"]
+[ext_resource type="Texture2D" uid="uid://dxtguvrd3s836" path="res://assets/woodpecker_DRILL.png" id="2_y2fd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1omy0"]
+size = Vector2(1076, 618)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvwo4"]
+atlas = ExtResource("2_y2fd0")
+region = Rect2(2450, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj0vy"]
+atlas = ExtResource("2_y2fd0")
+region = Rect2(0, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u71f8"]
+atlas = ExtResource("2_y2fd0")
+region = Rect2(0, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf2c0"]
+atlas = ExtResource("2_y2fd0")
+region = Rect2(1225, 0, 1225, 1177)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_auho3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvwo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj0vy")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u71f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf2c0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="wood_pecker_m" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_utwvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-22, -65)
+shape = SubResource("RectangleShape2D_1omy0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_auho3")
+animation = &"walk"
+flip_h = true

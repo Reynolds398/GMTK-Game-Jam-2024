@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3vmpft4hqj7b"]
+
+[ext_resource type="PackedScene" uid="uid://rabn0p4mb2tf" path="res://Scenes/Mobs/Mob Characters/beetle_m.tscn" id="1_xojs4"]
+
+[sub_resource type="Curve2D" id="Curve2D_mfemu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 474, 613, -1.36646, -0.105112, 1.36646, 0.105112, 518, 613, -6.72717, -0.210224, 6.72717, 0.210224, 521.668, 613.429, 0, 0, 0, 0, 553, 613, 0, 0, 0, 0, 577, 613)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(-12, -3)
+curve = SubResource("Curve2D_mfemu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(474, 613)
+rotates = false
+loop = false
+
+[node name="beetle_m" parent="PathFollow2D" instance=ExtResource("1_xojs4")]

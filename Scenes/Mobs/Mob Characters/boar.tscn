@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhlmfb4brfyis"]
+
+[ext_resource type="Script" path="res://Scripts/boar.gd" id="1_pbeov"]
+[ext_resource type="Texture2D" uid="uid://dalmmc501u45b" path="res://assets/boar_RUSH.png" id="2_8l7am"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88wdl"]
+size = Vector2(1061, 690)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4cqo"]
+atlas = ExtResource("2_8l7am")
+region = Rect2(2450, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr30c"]
+atlas = ExtResource("2_8l7am")
+region = Rect2(0, 0, 1225, 1177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut0vt"]
+atlas = ExtResource("2_8l7am")
+region = Rect2(1225, 0, 1225, 1177)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mvae5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4cqo")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr30c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut0vt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="boar" type="CharacterBody2D"]
+script = ExtResource("1_pbeov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(92.5, -23)
+shape = SubResource("RectangleShape2D_88wdl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mvae5")
+animation = &"walk"
