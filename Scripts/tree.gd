@@ -21,14 +21,13 @@ func _ready():
 	camera.zoom = Vector2(0.5,0.5)
 	camera.limit_bottom = 625
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	# For debugging purposes (press space to go to next stage)
-	if Input.is_action_just_pressed("ui_accept"):
-		if CUR_TREE_STAGE < MAX_TREE_STAGE:
-			CUR_TREE_STAGE += 1
-			next_stage(CUR_TREE_STAGE)
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	# For debugging purposes (press space to go to next stage)
+#	if Input.is_action_just_pressed("ui_accept"):
+#		if CUR_TREE_STAGE < MAX_TREE_STAGE:
+#			CUR_TREE_STAGE += 1
+#			next_stage(CUR_TREE_STAGE)
 
 # Given the stage, transition to the next stage
 func set_stage(stage):
