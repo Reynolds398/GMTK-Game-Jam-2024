@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dynf7qi7jv6mb"]
+
+[node name="WaveSpawner" type="Node2D"]
