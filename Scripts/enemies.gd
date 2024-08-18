@@ -17,10 +17,14 @@ var reach_end_y = false  # To know if enemy reached the end point at the y-axis
 func _ready():
 	parent = get_parent()
 	animated_sprite.play("walk")
+	
+	# Flip it by x-axis if facing left
+	if not RIGHT:
+		scale.x = -scale.x
 
 func _process(delta):
 #	print(reach_end_x)
-#	print(reach_end_y)
+#	print(reach_end_y)∂
 	
 	# Move towards end position in the x-axis if not reached
 	if RIGHT:
@@ -32,7 +36,7 @@ func _process(delta):
 	else:
 		# (Assuming spawn is to the right of end position)
 		if position.x > end_pos.x:
-			move_local_x(delta * SPEED)
+			move_local_x(delta * -SPEED)
 		else:
 			reach_end_x = true
 	

@@ -27,11 +27,10 @@ var end_fly_r_left = Vector2.ZERO  # Variable to hold the end point of range fly
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-#	var test = beetle_m.instantiate()
-#	test.init_start_end_pos(Vector2(27, 610), Vector2(502, 610))
-#	test.RIGHT = true
-#	add_child(test)
+	var test = beetle_m.instantiate()
+	test.init_start_end_pos(Vector2(27, 610), Vector2(522, 610))
+	test.RIGHT = true
+	add_child(test)
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.

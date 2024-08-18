@@ -55,7 +55,7 @@ script = ExtResource("1_v7xvc")
 position = Vector2(0, -10)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_03to1")
-animation = &"walk"
+animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="."]
 
