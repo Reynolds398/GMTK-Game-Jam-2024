@@ -30,3 +30,10 @@ offset_right = 275.0
 offset_bottom = 54.0
 step = 1.0
 value = 100.0
+
+[node name="WaveText" type="Label" parent="."]
+offset_left = 547.0
+offset_top = 27.0
+offset_right = 633.0
+offset_bottom = 70.0
+text = "Wave 1"
