@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0cparab6xjmn"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_dv8w0"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_dv8w0")
+
+[node name="PauseText" type="Label" parent="."]
+offset_left = 492.0
+offset_top = 70.0
+offset_right = 646.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+
+[node name="ResumeButton" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 174.0
+offset_right = 658.0
+offset_bottom = 208.0
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 217.0
+offset_right = 658.0
+offset_bottom = 251.0
+text = "Restart"
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 261.0
+offset_right = 658.0
+offset_bottom = 295.0
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 304.0
+offset_right = 658.0
+offset_bottom = 338.0
+text = "Quit"

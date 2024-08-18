@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc8ot75i7hebr"
-path="res://.godot/imported/beetle_BOW.png-25253d90b672de2543c9cb9e6a17a9d5.ctex"
+path="res://.godot/imported/beetle_BOW.png-c2e80060ac933f803d38ca739351657e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/beetle_BOW.png"
-dest_files=["res://.godot/imported/beetle_BOW.png-25253d90b672de2543c9cb9e6a17a9d5.ctex"]
+source_file="res://Assets/beetle_BOW.png"
+dest_files=["res://.godot/imported/beetle_BOW.png-c2e80060ac933f803d38ca739351657e.ctex"]
 
 [params]
 

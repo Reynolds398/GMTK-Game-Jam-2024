@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://01g2h5jlfiun"
-path="res://.godot/imported/wolf_BITE.png-00b9e723d16afd120ef59dde6f59239d.ctex"
+path="res://.godot/imported/wolf_BITE.png-5726356a68fb3de6786e9235bafa6334.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wolf_BITE.png"
-dest_files=["res://.godot/imported/wolf_BITE.png-00b9e723d16afd120ef59dde6f59239d.ctex"]
+source_file="res://Assets/wolf_BITE.png"
+dest_files=["res://.godot/imported/wolf_BITE.png-5726356a68fb3de6786e9235bafa6334.ctex"]
 
 [params]
 

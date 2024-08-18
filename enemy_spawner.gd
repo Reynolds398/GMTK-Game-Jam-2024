@@ -180,8 +180,8 @@ func _on_spawn_timer_timeout():
 	
 	# Get random direction (0 is left, 1 is right) if both side enabled
 	if enable_both_side:
-		print(max_left)
-		print(max_right)
+		#print(max_left)
+		#print(max_right)
 		
 		# If left and right still can spawn
 		if max_left > 0 and max_right > 0:
@@ -219,7 +219,7 @@ func _on_spawn_timer_timeout():
 			if direction == 0: # Spawn on the left side
 				enemy.init_start_end_pos(spawn_left, end_fly_m_left)
 			else: # Spawn on the right side
-				enemy.init_start_end_pos(spawn_right, end_fly_m_left)
+				enemy.init_start_end_pos(spawn_right, end_fly_m_right)
 		3: # 3 stands for flying range
 			if direction == 0: # Spawn on the left side
 				enemy.init_start_end_pos(spawn_left, end_fly_r_left)
