@@ -68,7 +68,7 @@ func start_wave_2():
 	# Initializing right side
 	spawn = Vector2(877,610)
 	end_m = Vector2(572,610)
-	end_r = Vector2(520,610)
+	end_r = Vector2(635,610)
 	fly_m = Vector2(520,610)
 	fly_r = Vector2(520,610)
 	
@@ -77,15 +77,15 @@ func start_wave_2():
 	# Initializing left side
 	spawn = Vector2(350,610)
 	end_m = Vector2(557,610)
-	end_r = Vector2(609,610)
+	end_r = Vector2(494,610)
 	fly_m = Vector2(460,610)
 	fly_r = Vector2(460,610)
 	
 	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
 	
 	# Set how many enemies spawn in this wave
-	beetle_m = 100
-	beetle_r = 100
+	beetle_m = 0
+	beetle_r = 10
 	boar = 0
 	fox = 0
 	pelican_m = 0
@@ -97,7 +97,7 @@ func start_wave_2():
 	# Spawn the enemies
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
-	enemy_spawner.left_and_right()
+	enemy_spawner.left_and_right(5,5)
 	spawn_enemies()
 
 func start_wave_3():
