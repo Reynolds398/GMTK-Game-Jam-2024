@@ -34,7 +34,7 @@ size = Vector2(108, 350)
 [node name="Tree" type="Node2D"]
 script = ExtResource("1_3vueh")
 
-[node name="Stage 1" type="StaticBody2D" parent="."]
+[node name="Stage 1" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -50,7 +50,7 @@ shape = SubResource("RectangleShape2D_tdktt")
 disabled = true
 debug_color = Color(0, 0.592157, 0.737255, 0.419608)
 
-[node name="Stage 2" type="StaticBody2D" parent="."]
+[node name="Stage 2" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -64,7 +64,7 @@ texture = ExtResource("3_ylbn5")
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_4rif6")
 
-[node name="Stage 3" type="StaticBody2D" parent="."]
+[node name="Stage 3" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -78,7 +78,7 @@ texture = ExtResource("4_ioird")
 position = Vector2(0, -46.25)
 shape = SubResource("RectangleShape2D_msvlm")
 
-[node name="Stage 4" type="StaticBody2D" parent="."]
+[node name="Stage 4" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -92,7 +92,7 @@ texture = ExtResource("5_qdf3v")
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_yem3x")
 
-[node name="Stage 5" type="StaticBody2D" parent="."]
+[node name="Stage 5" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
 collision_mask = 2
@@ -106,7 +106,7 @@ texture = ExtResource("6_r66jg")
 position = Vector2(0, -103.25)
 shape = SubResource("RectangleShape2D_0o5x0")
 
-[node name="Stage 6" type="StaticBody2D" parent="."]
+[node name="Stage 6" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 position = Vector2(-1, 0)
 collision_layer = 2
@@ -121,7 +121,7 @@ texture = ExtResource("7_l2d0b")
 position = Vector2(0, -132)
 shape = SubResource("RectangleShape2D_w0tff")
 
-[node name="Stage 7" type="StaticBody2D" parent="."]
+[node name="Stage 7" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
 collision_mask = 2

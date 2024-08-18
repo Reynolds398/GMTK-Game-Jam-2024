@@ -19,6 +19,6 @@ func shoot():
 		shoot_projectile(Vector2.LEFT, parent.SHOOT_FORCE)
 
 func _on_body_entered(body):
-	if body.is_in_group("Wall"):
+	if body.is_in_group("Wall") or body.is_in_group("Tree"):
 		print("I'm free!")
 		queue_free()
