@@ -37,3 +37,13 @@ offset_top = 27.0
 offset_right = 633.0
 offset_bottom = 70.0
 text = "Wave 1"
+
+[node name="CheatButton" type="Button" parent="."]
+offset_left = 360.0
+offset_top = 23.0
+offset_right = 438.0
+offset_bottom = 54.0
+focus_mode = 0
+text = "Cheats"
+
+[connection signal="pressed" from="CheatButton" to="." method="_on_cheat_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dv00j5spsrotj"]
 
 [ext_resource type="Script" path="res://Scripts/beetle_r.gd" id="1_qp758"]
-[ext_resource type="Texture2D" uid="uid://dc8ot75i7hebr" path="res://assets/beetle_BOW.png" id="2_b6ent"]
+[ext_resource type="Texture2D" uid="uid://dc8ot75i7hebr" path="res://Assets/beetle_BOW.png" id="2_b6ent"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8j7c"]
 atlas = ExtResource("2_b6ent")
@@ -47,19 +47,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5eeut"]
 size = Vector2(289, 187)
 
-[node name="beetle_r" type="CharacterBody2D"]
-position = Vector2(0, -8)
-scale = Vector2(-0.1, 0.1)
+[node name="beetle_r" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(-0.25, 0.25)
 script = ExtResource("1_qp758")
-SPEED = 17
+ANGLE = -45.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6, -80)
+position = Vector2(-24, -84)
 sprite_frames = SubResource("SpriteFrames_p3nn0")
 animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-10, -80)
+position = Vector2(-24, -88)
 shape = SubResource("RectangleShape2D_5eeut")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

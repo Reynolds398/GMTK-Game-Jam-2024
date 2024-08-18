@@ -31,6 +31,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nx6ns"]
 
 [node name="pelican_r" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(-1, 1)
 script = ExtResource("1_2epmp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

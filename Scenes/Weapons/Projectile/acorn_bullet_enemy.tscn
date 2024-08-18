@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw4yl1sxmmdpn"]
+
+[ext_resource type="Script" path="res://Scripts/AcornBullet.gd" id="1_8qwcm"]
+[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_slwtj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rnw4"]
+radius = 4.0
+
+[node name="AcornBulletEnemy" type="RigidBody2D" groups=["Projectile"]]
+collision_layer = 2
+collision_mask = 2
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_8qwcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.03125, -0.0624995)
+shape = SubResource("CircleShape2D_5rnw4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.03125, -0.0624995)
+scale = Vector2(0.0620117, 0.0615234)
+texture = ExtResource("2_slwtj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

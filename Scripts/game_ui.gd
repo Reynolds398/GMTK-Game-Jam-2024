@@ -53,3 +53,8 @@ func set_max_health(amount):
 # Function to handle game over
 func game_over():
 	pass
+
+# Toggle cheat tools on and off
+func _on_cheat_button_pressed():
+	var cheat_tool = get_parent().get_node("CheatTools")
+	cheat_tool.visible = not cheat_tool.visible

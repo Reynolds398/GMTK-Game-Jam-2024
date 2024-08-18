@@ -1,7 +1,9 @@
 extends "res://Scripts/enemies.gd"
 
 # Change this to the actual bullet
-var bullet = preload("res://Scenes/Weapons/Projectile/catapult_bullet.tscn")
+var bullet = preload("res://Scenes/Weapons/Projectile/acorn_bullet_enemy.tscn")
+var projectile = null  # Projectile object
+
 #@export var health = 30
 #@export var speed = 30
 #@export var damage = 10
@@ -17,4 +19,6 @@ var bullet = preload("res://Scenes/Weapons/Projectile/catapult_bullet.tscn")
 
 # When timer runs out, shoot projectile
 func _on_attack_timer_timeout():
-	shoot_projectile(bullet)
+	projectile = bullet.instantiate()
+	add_child(projectile)
+	projectile.shoot()
