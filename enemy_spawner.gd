@@ -2,7 +2,7 @@ extends Node2D
 
 # Preload all mobs characters
 var beetle_m = preload("res://Scenes/Mobs/Mob Characters/beetle_m.tscn")
-var bettle_r = preload("res://Scenes/Mobs/Mob Characters/beetle_r.tscn")
+var beetle_r = preload("res://Scenes/Mobs/Mob Characters/beetle_r.tscn")
 var boar = preload("res://Scenes/Mobs/Mob Characters/boar.tscn")
 var fox = preload("res://Scenes/Mobs/Mob Characters/fox.tscn")
 var pelican_m = preload("res://Scenes/Mobs/Mob Characters/pelican_m.tscn")
@@ -54,37 +54,37 @@ func init_variables_left(spawn, end_m, end_r, fly_m, fly_r):
 	end_fly_r_left = fly_r
 
 # Function to spawn beetle melee
-func spawn_beetle_m():
+func spawn_beetle_m(amount):
 	pass
 
 # Function to spawn beetle range
-func spawn_beetle_r():
+func spawn_beetle_r(amount):
 	pass
 
 # Function to spawn boar
-func spawn_boar():
+func spawn_boar(amount):
 	pass
 
 # Function to spawn fox
-func spawn_fox():
+func spawn_fox(amount):
 	pass
 
 # Function to spawn pelican melee
-func spawn_pelican_m():
+func spawn_pelican_m(amount):
 	pass
 
 # Function to spawn pelican range
-func spawn_pelican_r():
+func spawn_pelican_r(amount):
 	pass
 
 # Function to spawn wolf
-func spawn_wolf():
+func spawn_wolf(amount):
 	pass
 
 # Function to spawn wood pecker melee
-func spawn_wood_pecker_m():
+func spawn_wood_pecker_m(amount):
 	pass
 
 # Function to spawn wood pecker range
-func spawn_wood_pecker_r():
+func spawn_wood_pecker_r(amount):
 	pass

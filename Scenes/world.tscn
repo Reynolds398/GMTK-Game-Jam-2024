@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnkq1okywclyv"]
+[gd_scene load_steps=3 format=3 uid="uid://bnkq1okywclyv"]
 
 [ext_resource type="Script" path="res://Scripts/Obstacle.gd" id="1_odipt"]
+[ext_resource type="Texture2D" uid="uid://lbhwrshdb2nm" path="res://Assets/ground DIRT.png" id="2_hct4s"]
 
 [node name="World" type="Node2D"]
 
@@ -13,6 +14,31 @@ scale = Vector2(1.23238, 3.38235)
 polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(548, 642)
+scale = Vector2(0.0171478, 0.0211399)
+texture = ExtResource("2_hct4s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+position = Vector2(816.168, 642.402)
+scale = Vector2(0.0171264, 0.0209089)
+texture = ExtResource("2_hct4s")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Ground"]
+position = Vector2(280, 642)
+scale = Vector2(0.0171478, 0.0211399)
+texture = ExtResource("2_hct4s")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Ground"]
+position = Vector2(12, 642)
+scale = Vector2(0.0171478, 0.0211399)
+texture = ExtResource("2_hct4s")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Ground"]
+position = Vector2(1084.17, 642.902)
+scale = Vector2(0.0171264, 0.0206216)
+texture = ExtResource("2_hct4s")
 
 [node name="RightBound" type="StaticBody2D" parent="." groups=["Wall"]]
 collision_layer = 3
