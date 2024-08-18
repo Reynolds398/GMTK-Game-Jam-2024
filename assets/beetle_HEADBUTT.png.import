@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwbnrh2sn1ghw"
-path="res://.godot/imported/beetle_HEADBUTT.png-78d8b6166d90282ff2565571ea337040.ctex"
+path="res://.godot/imported/beetle_HEADBUTT.png-40157d69a448555c20981d6d622d9ded.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/beetle_HEADBUTT.png"
-dest_files=["res://.godot/imported/beetle_HEADBUTT.png-78d8b6166d90282ff2565571ea337040.ctex"]
+source_file="res://assets/beetle_HEADBUTT.png"
+dest_files=["res://.godot/imported/beetle_HEADBUTT.png-40157d69a448555c20981d6d622d9ded.ctex"]
 
 [params]
 
