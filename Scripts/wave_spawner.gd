@@ -49,7 +49,6 @@ func start_wave_1():
 	
 	# Set how many enemies spawn in this wave
 	beetle_m = 2
-	beetle_m = 0
 	beetle_r = 0
 	boar = 0
 	fox = 0

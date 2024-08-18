@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxtguvrd3s836"
-path="res://.godot/imported/woodpecker_DRILL.png-1ce9c118586ae1155a46bcc38f64c7f9.ctex"
+path="res://.godot/imported/woodpecker_DRILL.png-92de90c15ea1c6945682d183d237e132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/woodpecker_DRILL.png"
-dest_files=["res://.godot/imported/woodpecker_DRILL.png-1ce9c118586ae1155a46bcc38f64c7f9.ctex"]
+source_file="res://Assets/woodpecker_DRILL.png"
+dest_files=["res://.godot/imported/woodpecker_DRILL.png-92de90c15ea1c6945682d183d237e132.ctex"]
 
 [params]
 

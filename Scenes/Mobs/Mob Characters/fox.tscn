@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5rihabpj7uos"]
 
 [ext_resource type="Script" path="res://Scripts/fox.gd" id="1_d5yu8"]
-[ext_resource type="Texture2D" uid="uid://dlqei8ks644hq" path="res://assets/wolf_SCRATCH.png" id="2_jjakf"]
+[ext_resource type="Texture2D" uid="uid://dlqei8ks644hq" path="res://Assets/wolf_SCRATCH.png" id="2_jjakf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r003b"]
 atlas = ExtResource("2_jjakf")
@@ -45,22 +45,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg8gd"]
-size = Vector2(346.667, 326.667)
+size = Vector2(346.667, 346.667)
 
 [node name="fox" type="CharacterBody2D"]
 position = Vector2(0, -15)
-scale = Vector2(-0.125, 0.125)
+scale = Vector2(0.15, 0.15)
 script = ExtResource("1_d5yu8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-26.667, -170)
+position = Vector2(-26.6667, 0)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_7evrp")
 animation = &"attack"
 frame_progress = 0.837397
+flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-46.6667, -153.333)
+position = Vector2(6.35783e-06, 13.3333)
 shape = SubResource("RectangleShape2D_qg8gd")
