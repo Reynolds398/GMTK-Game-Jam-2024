@@ -81,7 +81,7 @@ func set_stage_4():
 func set_stage_5():
 	print("stage 5")
 	# Camera update here
-	camera.zoom = Vector2(2,2)
+	camera.zoom = Vector2(1.8,1.8)
 	camera.limit_bottom = 635
 	
 	set_stage(stage_5)
@@ -90,7 +90,7 @@ func set_stage_5():
 func set_stage_6():
 	print("stage 6")
 	# Camera update here
-	camera.zoom = Vector2(1.5,1.5)
+	camera.zoom = Vector2(1.3,1.3)
 	camera.limit_bottom = 640
 	
 	set_stage(stage_6)
@@ -100,7 +100,7 @@ func set_stage_7():
 	print("stage 7")
 	
 	# Camera update here
-	camera.zoom = Vector2(1.2,1.2)
+	camera.zoom = Vector2(1,1)
 	camera.limit_bottom = 640
 	
 	set_stage(stage_7)

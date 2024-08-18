@@ -1,7 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=17 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
 [ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_f1udo"]
+[ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
+[ext_resource type="Texture2D" uid="uid://bqqdsdr0oh0re" path="res://Assets/TREE_S2.png" id="3_ylbn5"]
+[ext_resource type="Texture2D" uid="uid://cgwise2f2fp5o" path="res://Assets/TREE_S3.png" id="4_ioird"]
+[ext_resource type="Texture2D" uid="uid://c23e1diu58r1b" path="res://Assets/TREE_S4.png" id="5_qdf3v"]
+[ext_resource type="Texture2D" uid="uid://dm7b4un8f3j7m" path="res://Assets/TREE_S5.png" id="6_r66jg"]
+[ext_resource type="Texture2D" uid="uid://chfgg3mrry34a" path="res://Assets/TREE_S6.png" id="7_l2d0b"]
+[ext_resource type="Texture2D" uid="uid://bflx00kbw4jgp" path="res://Assets/TREE_S7_S.png" id="8_k640t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdktt"]
 size = Vector2(6, 26)
@@ -33,9 +40,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 1"]
-position = Vector2(0, -13)
-scale = Vector2(0.046875, 0.203125)
-texture = ExtResource("2_f1udo")
+position = Vector2(2, -11)
+scale = Vector2(0.0878906, 0.0957031)
+texture = ExtResource("2_fgodj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 1"]
 position = Vector2(0, -13)
@@ -49,9 +56,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 2"]
-position = Vector2(-4.76837e-07, -30)
-scale = Vector2(0.09375, 0.46875)
-texture = ExtResource("2_f1udo")
+position = Vector2(2, -43)
+scale = Vector2(0.108398, 0.116699)
+texture = ExtResource("3_ylbn5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 2"]
 position = Vector2(0, -30)
@@ -63,9 +70,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 3"]
-position = Vector2(-4.76837e-07, -51.5)
-scale = Vector2(0.25, 0.804687)
-texture = ExtResource("2_f1udo")
+position = Vector2(-4.76837e-07, -88)
+scale = Vector2(0.11849, 0.138611)
+texture = ExtResource("4_ioird")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 3"]
 position = Vector2(0, -46.25)
@@ -77,9 +84,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 4"]
-position = Vector2(0, -87)
-scale = Vector2(0.523438, 1.35547)
-texture = ExtResource("2_f1udo")
+position = Vector2(3, -150)
+scale = Vector2(0.138515, 0.165848)
+texture = ExtResource("5_qdf3v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 4"]
 position = Vector2(0, -72)
@@ -91,9 +98,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 5"]
-position = Vector2(0, -127.875)
-scale = Vector2(0.796875, 1.98633)
-texture = ExtResource("2_f1udo")
+position = Vector2(2.29188, -255.139)
+scale = Vector2(0.198168, 0.214739)
+texture = ExtResource("6_r66jg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 5"]
 position = Vector2(0, -103.25)
@@ -101,13 +108,14 @@ shape = SubResource("RectangleShape2D_0o5x0")
 
 [node name="Stage 6" type="StaticBody2D" parent="."]
 visible = false
+position = Vector2(-1, 0)
 collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 6"]
-position = Vector2(0.499999, -167.125)
-scale = Vector2(0.992187, 2.5918)
-texture = ExtResource("2_f1udo")
+position = Vector2(-5.41406, -287.18)
+scale = Vector2(0.252956, 0.254923)
+texture = ExtResource("7_l2d0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 6"]
 position = Vector2(0, -132)
@@ -119,9 +127,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 7"]
-position = Vector2(-0.500002, -219.5)
-scale = Vector2(1.36719, 3.42969)
-texture = ExtResource("2_f1udo")
+position = Vector2(-7, -375)
+scale = Vector2(0.349697, 0.334714)
+texture = ExtResource("8_k640t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 7"]
 position = Vector2(0, -176)
@@ -133,6 +141,7 @@ zoom = Vector2(8, 8)
 limit_bottom = 600
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(307.5, -13)
 scale = Vector2(3.71094, 0.203125)
 texture = ExtResource("2_f1udo")
