@@ -21,7 +21,7 @@ func shoot(velocity):
 	else: # Shoot left if facing left
 		vel = velocity * Vector2(-1, 1)
 
-func _on_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.is_in_group("Wall"):
 		print("I'm free!")
 		queue_free()

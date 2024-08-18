@@ -63,6 +63,7 @@ texture = ExtResource("3_ylbn5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 2"]
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_4rif6")
+disabled = true
 
 [node name="Stage 3" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -77,6 +78,7 @@ texture = ExtResource("4_ioird")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 3"]
 position = Vector2(0, -46.25)
 shape = SubResource("RectangleShape2D_msvlm")
+disabled = true
 
 [node name="Stage 4" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -91,6 +93,7 @@ texture = ExtResource("5_qdf3v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 4"]
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_yem3x")
+disabled = true
 
 [node name="Stage 5" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -105,6 +108,7 @@ texture = ExtResource("6_r66jg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 5"]
 position = Vector2(0, -103.25)
 shape = SubResource("RectangleShape2D_0o5x0")
+disabled = true
 
 [node name="Stage 6" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -120,6 +124,7 @@ texture = ExtResource("7_l2d0b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 6"]
 position = Vector2(0, -132)
 shape = SubResource("RectangleShape2D_w0tff")
+disabled = true
 
 [node name="Stage 7" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -134,6 +139,7 @@ texture = ExtResource("8_k640t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 7"]
 position = Vector2(0, -176)
 shape = SubResource("RectangleShape2D_h66y1")
+disabled = true
 
 [node name="TreeCamera" type="Camera2D" parent="."]
 visible = false
