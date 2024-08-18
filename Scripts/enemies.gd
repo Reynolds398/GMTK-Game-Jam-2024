@@ -17,11 +17,8 @@ var reach_end_y = false  # To know if enemy reached the end point at the y-axis
 func _ready():
 	parent = get_parent()
 	animated_sprite.play("walk")
-	#start_pos = Vector2(27, 610)
-	#end_pos = Vector2(502, 610)
 
 func _process(delta):
-	print()
 #	print(reach_end_x)
 #	print(reach_end_y)
 	

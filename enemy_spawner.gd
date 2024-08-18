@@ -11,12 +11,19 @@ var wolf = preload("res://Scenes/Mobs/Mob Characters/wolf.tscn")
 var wood_pecker_m = preload("res://Scenes/Mobs/Mob Characters/wood_pecker_m.tscn")
 var wood_pecker_r = preload("res://Scenes/Mobs/Mob Characters/wood_pecker_r.tscn")
 
-var spawn_point = Vector2.ZERO  # Variable to hold the spawn point of enemies
-var end_point_m = Vector2.ZERO  # Variable to hold the end point of melee enemies
-var end_point_r = Vector2.ZERO  # Variable to hold the end point of range enemies
-var end_point_fly_m = Vector2.ZERO  # Variable to hold the end point of melee flying enemies
-var end_point_fly_r = Vector2.ZERO  # Variable to hold the end point of range flying enemies
+# Right side
+var spawn_right = Vector2.ZERO  # Variable to hold the spawn point of enemies
+var end_m_right = Vector2.ZERO  # Variable to hold the end point of melee enemies
+var end_r_right = Vector2.ZERO  # Variable to hold the end point of range enemies
+var end_fly_m_right = Vector2.ZERO  # Variable to hold the end point of melee flying enemies
+var end_fly_r_right = Vector2.ZERO  # Variable to hold the end point of range flying enemies
 
+# Left side
+var spawn_left = Vector2.ZERO  # Variable to hold the spawn point of enemies
+var end_m_left = Vector2.ZERO  # Variable to hold the end point of melee enemies
+var end_r_left = Vector2.ZERO  # Variable to hold the end point of range enemies
+var end_fly_m_left = Vector2.ZERO  # Variable to hold the end point of melee flying enemies
+var end_fly_r_left = Vector2.ZERO  # Variable to hold the end point of range flying enemies
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +37,22 @@ func _ready():
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+# Function to initialize spawn points and end points for the right side
+func init_variables_right(spawn, end_m, end_r, fly_m, fly_r):
+	spawn_right = spawn
+	end_m_right = end_m
+	end_r_right = end_r
+	end_fly_m_right = fly_m
+	end_fly_r_right = fly_r
+
+# Function to initialize spawn points and end points for the left side
+func init_variables_left(spawn, end_m, end_r, fly_m, fly_r):
+	spawn_left = spawn
+	end_m_left = end_m
+	end_r_left = end_r
+	end_fly_m_left = fly_m
+	end_fly_r_left = fly_r
 
 # Function to spawn beetle melee
 func spawn_beetle_m():
