@@ -102,7 +102,6 @@ func spawn_beetle_m(amount):
 	# Append to the queue the given amount of times
 	for i in amount:
 		enemy_queue.append(1)
-		print(enemy_queue.size())
 
 # Function to spawn beetle range (beetle range = 2)
 func spawn_beetle_r(amount):
@@ -181,6 +180,9 @@ func _on_spawn_timer_timeout():
 	
 	# Get random direction (0 is left, 1 is right) if both side enabled
 	if enable_both_side:
+		print(max_left)
+		print(max_right)
+		
 		# If left and right still can spawn
 		if max_left > 0 and max_right > 0:
 			direction = rng.randi_range(0, 1)
@@ -193,10 +195,12 @@ func _on_spawn_timer_timeout():
 		
 		# If only left can spawn
 		if max_left > 0 and max_right == 0:
+			max_left -= 1
 			direction = 0
 		
 		# If only right can spawn
 		if max_left == 0 and max_right > 0:
+			max_right -= 1
 			direction = 1
 	
 	# Spawn accordingly based on the enemy types
