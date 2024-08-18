@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var RIGHT = true  # Boolean to know if the enemy is facing right or not
 @export var BELOW = true  # Boolean to know if the enemy is below the end point or not
 @export var GOLD_VALUE = 0  # How much gold it should give on death
+@export var ANGLE = 45.0  # Angle to shoot the projectile at
 
 @onready var animated_sprite = $AnimatedSprite2D  # Animated sprite object
 @onready var attack_timer = $AttackTimer  # Timer object
@@ -101,8 +102,8 @@ func delete():
 	queue_free()
 
 # Function to shoot projectile
-func shoot_projectile():
-	pass
+func shoot_projectile(bullet):
+	bullet.instantiate()
 
 # Function to deal with getting hit by projectile
 func _on_area_2d_body_entered(body):
