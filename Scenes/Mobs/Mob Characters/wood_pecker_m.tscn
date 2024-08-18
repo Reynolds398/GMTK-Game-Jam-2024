@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bemvhgtuxm3gc"]
 
 [ext_resource type="Script" path="res://Scripts/wood_pecker.gd" id="1_utwvb"]
-[ext_resource type="Texture2D" uid="uid://dxtguvrd3s836" path="res://Assets/woodpecker_DRILL.png" id="2_y2fd0"]
+[ext_resource type="Texture2D" uid="uid://dxtguvrd3s836" path="res://assets/woodpecker_DRILL.png" id="2_y2fd0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvwo4"]
 atlas = ExtResource("2_y2fd0")
@@ -58,7 +58,7 @@ animation = &"walk"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-22, -65)
+position = Vector2(28.5714, -57.1428)
 shape = SubResource("RectangleShape2D_1omy0")
 
 [node name="AttackTimer" type="Timer" parent="."]

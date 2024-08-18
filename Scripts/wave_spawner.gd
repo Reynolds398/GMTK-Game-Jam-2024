@@ -25,7 +25,7 @@ var wood_pecker_r = 0
 func _ready():
 	parent = get_parent()
 	enemy_spawner = parent.get_node("EnemySpawner")
-	start_wave_2()
+	start_wave_3()
 
 # Function to start wave 1
 func start_wave_1():
@@ -102,20 +102,20 @@ func start_wave_2():
 
 func start_wave_3():
 	# Initializing right side
-	spawn = Vector2(600,610)
-	end_m = Vector2(520,610)
-	end_r = Vector2(520,610)
-	fly_m = Vector2(520,610)
-	fly_r = Vector2(520,610)
+	spawn = Vector2(897,610)
+	end_m = Vector2(602,610)
+	end_r = Vector2(665,610)
+	fly_m = Vector2(702,510)
+	fly_r = Vector2(665,510)
 	
 	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
 	
 	# Initializing left side
-	spawn = Vector2(350,610)
-	end_m = Vector2(557,610)
-	end_r = Vector2(520,610)
-	fly_m = Vector2(460,610)
-	fly_r = Vector2(460,610)
+	spawn = Vector2(330,610)
+	end_m = Vector2(542,610)
+	end_r = Vector2(464,610)
+	fly_m = Vector2(527,510)
+	fly_r = Vector2(464,510)
 	
 	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
 	
@@ -123,17 +123,17 @@ func start_wave_3():
 	beetle_m = 0
 	beetle_r = 0
 	boar = 0
-	fox = 0
+	fox = 10
 	pelican_m = 0
 	pelican_r = 0
 	wolf = 0
-	wood_pecker_m = 0
-	wood_pecker_r = 0
+	wood_pecker_m = 10
+	wood_pecker_r = 10
 	
 	# Spawn the enemies
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only()
-	#enemy_spawner.left_and_right()
+	#enemy_spawner.left_only()
+	enemy_spawner.left_and_right(15,15)
 	spawn_enemies()
 	
 func start_wave_4():
