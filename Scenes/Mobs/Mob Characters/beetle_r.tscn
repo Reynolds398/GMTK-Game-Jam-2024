@@ -51,6 +51,7 @@ size = Vector2(289, 187)
 scale = Vector2(-0.25, 0.25)
 script = ExtResource("1_qp758")
 ANGLE = -45.0
+RANGE = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-24, -84)

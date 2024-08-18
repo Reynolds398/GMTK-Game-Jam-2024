@@ -8,7 +8,8 @@ extends CharacterBody2D
 @export var GOLD_VALUE = 0  # How much gold it should give on death
 @export var ANGLE = 45.0  # Angle to shoot the projectile at
 @export var GUN_DAMAGE = DAMAGE  # Projectile damage
-@export var SHOOT_FORCE = 800.0 # Projectile force
+@export var SHOOT_FORCE = 800.0  # Projectile force
+@export var RANGE = false  # Boolean to know whether unit is range or not
 
 @onready var animated_sprite = $AnimatedSprite2D  # Animated sprite object
 @onready var attack_timer = $AttackTimer  # Timer object
@@ -67,7 +68,9 @@ func _process(delta):
 	if reach_end_x and reach_end_y:
 		animated_sprite.play("attack")
 		if attack_timer.is_stopped():
-			deal_damage() # Attack immediately before starting cooldown
+			# If melee, deal damage immediately
+			if not RANGE:
+				deal_damage() # Attack immediately before starting cooldown
 			attack_timer.start()
 	
 #	parent.progress = parent.progress + speed*delta

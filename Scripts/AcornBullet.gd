@@ -18,7 +18,12 @@ func shoot():
 	else: # Shoot left if facing left
 		shoot_projectile(Vector2.LEFT, parent.SHOOT_FORCE)
 
-func _on_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if body.is_in_group("Wall"):
 		print("I'm free!")
+		queue_free()
+	
+	# If hit tree, make tree take damage
+	if body.is_in_group("Tree"):
+		body.get_parent().take_damage(damage)
 		queue_free()

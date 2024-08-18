@@ -33,6 +33,7 @@ animations = [{
 [node name="pelican_r" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-1, 1)
 script = ExtResource("1_2epmp")
+RANGE = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_68ad1")

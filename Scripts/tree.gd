@@ -122,3 +122,7 @@ func next_stage(current_stage_num):
 			set_stage_6()
 		7:
 			set_stage_7()
+
+# Function to make tree take damage
+func take_damage(amount):
+	get_parent().get_node("GameUI").decrease_health(amount)
