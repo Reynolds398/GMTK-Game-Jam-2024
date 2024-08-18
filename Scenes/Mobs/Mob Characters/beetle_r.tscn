@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dv00j5spsrotj"]
 
 [ext_resource type="Script" path="res://Scripts/beetle_r.gd" id="1_qp758"]
-[ext_resource type="Texture2D" uid="uid://dc8ot75i7hebr" path="res://Assets/beetle_BOW.png" id="2_b6ent"]
+[ext_resource type="Texture2D" uid="uid://dc8ot75i7hebr" path="res://assets/beetle_BOW.png" id="2_b6ent"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8j7c"]
 atlas = ExtResource("2_b6ent")

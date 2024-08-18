@@ -25,7 +25,7 @@ var wood_pecker_r = 0
 func _ready():
 	parent = get_parent()
 	enemy_spawner = parent.get_node("EnemySpawner")
-	start_wave_1()
+	start_wave_2()
 
 # Function to start wave 1
 func start_wave_1():
@@ -48,8 +48,224 @@ func start_wave_1():
 	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
 	
 	# Set how many enemies spawn in this wave
+	beetle_m = 100
+	beetle_r = 0
+	boar = 0
+	fox = 0
+	pelican_m = 0
+	pelican_r = 0
+	wolf = 0
+	wood_pecker_m = 0
+	wood_pecker_r = 0
+	
+	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.left_only()
+	#enemy_spawner.left_and_right()
+	spawn_enemies()
+	
+func start_wave_2():
+	# Initializing right side
+	spawn = Vector2(877,610)
+	end_m = Vector2(572,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(520,610)
+	fly_r = Vector2(520,610)
+	
+	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Initializing left side
+	spawn = Vector2(350,610)
+	end_m = Vector2(557,610)
+	end_r = Vector2(609,610)
+	fly_m = Vector2(460,610)
+	fly_r = Vector2(460,610)
+	
+	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Set how many enemies spawn in this wave
+	beetle_m = 100
+	beetle_r = 100
+	boar = 0
+	fox = 0
+	pelican_m = 0
+	pelican_r = 0
+	wolf = 0
+	wood_pecker_m = 0
+	wood_pecker_r = 0
+	
+	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	#enemy_spawner.left_only()
+	enemy_spawner.left_and_right()
+	spawn_enemies()
+
+func start_wave_3():
+	# Initializing right side
+	spawn = Vector2(600,610)
+	end_m = Vector2(520,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(520,610)
+	fly_r = Vector2(520,610)
+	
+	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Initializing left side
+	spawn = Vector2(350,610)
+	end_m = Vector2(557,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(460,610)
+	fly_r = Vector2(460,610)
+	
+	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Set how many enemies spawn in this wave
 	beetle_m = 0
-	beetle_r = 1
+	beetle_r = 0
+	boar = 0
+	fox = 0
+	pelican_m = 0
+	pelican_r = 0
+	wolf = 0
+	wood_pecker_m = 0
+	wood_pecker_r = 0
+	
+	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.left_only()
+	#enemy_spawner.left_and_right()
+	spawn_enemies()
+	
+func start_wave_4():
+	# Initializing right side
+	spawn = Vector2(600,610)
+	end_m = Vector2(520,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(520,610)
+	fly_r = Vector2(520,610)
+	
+	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Initializing left side
+	spawn = Vector2(350,610)
+	end_m = Vector2(557,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(460,610)
+	fly_r = Vector2(460,610)
+	
+	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Set how many enemies spawn in this wave
+	beetle_m = 0
+	beetle_r = 0
+	boar = 0
+	fox = 0
+	pelican_m = 0
+	pelican_r = 0
+	wolf = 0
+	wood_pecker_m = 0
+	wood_pecker_r = 0
+	
+	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.left_only()
+	#enemy_spawner.left_and_right()
+	spawn_enemies()
+	
+func start_wave_5():
+	# Initializing right side
+	spawn = Vector2(600,610)
+	end_m = Vector2(520,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(520,610)
+	fly_r = Vector2(520,610)
+	
+	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Initializing left side
+	spawn = Vector2(350,610)
+	end_m = Vector2(557,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(460,610)
+	fly_r = Vector2(460,610)
+	
+	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Set how many enemies spawn in this wave
+	beetle_m = 0
+	beetle_r = 0
+	boar = 0
+	fox = 0
+	pelican_m = 0
+	pelican_r = 0
+	wolf = 0
+	wood_pecker_m = 0
+	wood_pecker_r = 0
+	
+	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.left_only()
+	#enemy_spawner.left_and_right()
+	spawn_enemies()
+	
+func start_wave_6():
+	# Initializing right side
+	spawn = Vector2(600,610)
+	end_m = Vector2(520,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(520,610)
+	fly_r = Vector2(520,610)
+	
+	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Initializing left side
+	spawn = Vector2(350,610)
+	end_m = Vector2(557,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(460,610)
+	fly_r = Vector2(460,610)
+	
+	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Set how many enemies spawn in this wave
+	beetle_m = 0
+	beetle_r = 0
+	boar = 0
+	fox = 0
+	pelican_m = 0
+	pelican_r = 0
+	wolf = 0
+	wood_pecker_m = 0
+	wood_pecker_r = 0
+	
+	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.left_only()
+	#enemy_spawner.left_and_right()
+	spawn_enemies()
+	
+func start_wave_7():
+	# Initializing right side
+	spawn = Vector2(600,610)
+	end_m = Vector2(520,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(520,610)
+	fly_r = Vector2(520,610)
+	
+	enemy_spawner.init_variables_right(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Initializing left side
+	spawn = Vector2(350,610)
+	end_m = Vector2(557,610)
+	end_r = Vector2(520,610)
+	fly_m = Vector2(460,610)
+	fly_r = Vector2(460,610)
+	
+	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
+	
+	# Set how many enemies spawn in this wave
+	beetle_m = 0
+	beetle_r = 0
 	boar = 0
 	fox = 0
 	pelican_m = 0
