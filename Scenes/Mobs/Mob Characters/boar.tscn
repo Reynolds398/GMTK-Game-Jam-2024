@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dhlmfb4brfyis"]
 
 [ext_resource type="Script" path="res://Scripts/boar.gd" id="1_pbeov"]
-[ext_resource type="Texture2D" uid="uid://dalmmc501u45b" path="res://Assets/boar_RUSH.png" id="2_8l7am"]
+[ext_resource type="Texture2D" uid="uid://dalmmc501u45b" path="res://assets/boar_RUSH.png" id="2_8l7am"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fahk1"]
 atlas = ExtResource("2_8l7am")
@@ -61,23 +61,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88wdl"]
 size = Vector2(1016, 690)
 
-[node name="boar" type="CharacterBody2D" groups=["enemy"]]
-scale = Vector2(0.2, 0.2)
+[node name="boar" type="CharacterBody2D"]
+scale = Vector2(-0.2, 0.2)
 script = ExtResource("1_pbeov")
+SPEED = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -250)
 sprite_frames = SubResource("SpriteFrames_mvae5")
 animation = &"walk"
-flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-116, -17)
+position = Vector2(110, -265)
 shape = SubResource("RectangleShape2D_88wdl")
-
-[node name="AttackTimer" type="Timer" parent="."]
-wait_time = 3.0
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

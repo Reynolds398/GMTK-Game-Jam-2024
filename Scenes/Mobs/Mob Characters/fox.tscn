@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qg8gd"]
-size = Vector2(346.667, 346.667)
+size = Vector2(346.667, 340)
 
 [node name="fox" type="CharacterBody2D"]
 position = Vector2(0, -15)
@@ -54,7 +54,7 @@ script = ExtResource("1_d5yu8")
 SPEED = 25
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-26.6667, 0)
+position = Vector2(-26.667, 0)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_7evrp")
 animation = &"attack"
