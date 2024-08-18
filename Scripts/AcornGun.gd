@@ -1,5 +1,7 @@
 extends "res://Scripts/weapons.gd"
 
+@export var GUN_DAMAGE = 20  # How much damage the bullet should deal
+
 @onready var gun_timer = $ShootTimer  # Shoot Timer object
 
 var acorn_bullet = null  # Acorn bullet object (with preload)

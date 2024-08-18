@@ -1,13 +1,10 @@
 extends "res://Scripts/Projectiles.gd"
 
-var parent = null  # Parent object reference
-var start_pos = null  # Variable to keep track of starting pos
 var vel = Vector2.ZERO  # Variable to set the speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	parent = get_parent()
-	start_pos = parent.position
+	super()
 	gravity_scale = 1
 	
 	#shoot()

@@ -1,12 +1,9 @@
 extends "res://Scripts/Projectiles.gd"
 
-var parent = null  # Parent object reference
-var start_pos = null  # Variable to keep track of starting pos
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	parent = get_parent()
-	start_pos = parent.position
+	super() # Call parent _ready function
+	
 	gravity_scale = 1
 	
 	#shoot()

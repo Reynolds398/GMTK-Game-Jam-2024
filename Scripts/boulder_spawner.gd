@@ -1,9 +1,10 @@
 extends "res://Scripts/weapons.gd"
 
+@export var GUN_DAMAGE = 20  # How much damage the bullet should deal
 @onready var gun_timer = $ShootTimer  # Shoot Timer object
 
-var boulder_object = null  # Catapult bullet object (with preload)
-var boulder = null  # Instatiated acorn bullet
+var boulder_object = null  # Boulder bullet object (with preload)
+var boulder = null  # Instatiated boulder
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

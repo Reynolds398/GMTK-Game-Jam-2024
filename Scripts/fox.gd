@@ -12,3 +12,7 @@ extends "res://Scripts/enemies.gd"
 #	if get_parent().get_progress_ratio() == 1:
 #		speed = 0
 #		get_node("AnimatedSprite2D").play("attack")
+
+# Once timer runs out, deal damage
+func _on_attack_timer_timeout():
+	deal_damage()

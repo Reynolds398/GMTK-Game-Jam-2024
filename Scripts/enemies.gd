@@ -5,17 +5,23 @@ extends CharacterBody2D
 @export var DAMAGE = 20  # Damage the enemy deals to tree
 @export var RIGHT = true  # Boolean to know if the enemy is facing right or not
 @export var BELOW = true  # Boolean to know if the enemy is below the end point or not
+@export var GOLD_VALUE = 0  # How much gold it should give on death
 
 @onready var animated_sprite = $AnimatedSprite2D  # Animated sprite object
+@onready var attack_timer = $AttackTimer  # Timer object
 var parent = null  # Parent object
+var main_scene = null  # Main scene object
 
 var start_pos = Vector2.ZERO  # Starting position of enemy
 var end_pos = Vector2.ZERO  # End position of enemy
 var reach_end_x = false  # To know if enemy reached the end point at the x-axis
 var reach_end_y = false  # To know if enemy reached the end point at the y-axis
 
+var current_health = HEALTH  # The current health the enemy have
+
 func _ready():
 	parent = get_parent()
+	main_scene = parent.get_parent()
 	animated_sprite.play("walk")
 	
 	# Flip it by x-axis if facing left
@@ -24,7 +30,7 @@ func _ready():
 
 func _process(delta):
 #	print(reach_end_x)
-#	print(reach_end_y)∂
+#	print(reach_end_y)
 	
 	# Move towards end position in the x-axis if not reached
 	if RIGHT:
@@ -57,6 +63,9 @@ func _process(delta):
 	# Will only pass if both y and x position is reached
 	if reach_end_x and reach_end_y:
 		animated_sprite.play("attack")
+		if attack_timer.is_stopped():
+			deal_damage() # Attack immediately before starting cooldown
+			attack_timer.start()
 	
 #	parent.progress = parent.progress + speed*delta
 #
@@ -75,13 +84,28 @@ func init_start_end_pos(start, end):
 	position = start_pos
 
 # Function to take damage from attacks
-func take_damage():
-	pass
+func take_damage(amount):
+	current_health -= amount
+	
+	# Destroy enemy if it has no more health
+	if current_health <= 0:
+		delete()
 
 # Function to deal damage to tree
 func deal_damage():
-	pass
+	main_scene.get_node("GameUI").decrease_health(DAMAGE)
 
 # Function to delete the enemy
 func delete():
+	main_scene.get_node("GameUI").add_currency(GOLD_VALUE)
 	queue_free()
+
+# Function to shoot projectile
+func shoot_projectile():
+	pass
+
+# Function to deal with getting hit by projectile
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Projectile"):
+		body.queue_free()  # Destroy the projectile
+		take_damage(body.damage)  # Deal damage to the enemy

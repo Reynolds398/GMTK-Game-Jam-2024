@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4vuaeoxt7asd"]
+[gd_scene load_steps=8 format=3 uid="uid://b4vuaeoxt7asd"]
 
 [ext_resource type="PackedScene" uid="uid://bnkq1okywclyv" path="res://Scenes/world.tscn" id="1_sc842"]
 [ext_resource type="PackedScene" uid="uid://bedd71ipunv7m" path="res://Scenes/tree.tscn" id="2_r5o6g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvat7e2jdul0n" path="res://Scenes/cheat_tools.tscn" id="4_u88xf"]
 [ext_resource type="PackedScene" uid="uid://dynf7qi7jv6mb" path="res://Scenes/wave_spawner.tscn" id="5_rxbba"]
 [ext_resource type="PackedScene" uid="uid://cbvpqvtd3o1bx" path="res://Scenes/enemy_spawner.tscn" id="6_1gvk1"]
+[ext_resource type="PackedScene" uid="uid://bctdduxymt37m" path="res://Scenes/Weapons/Spawner/acorn_gun.tscn" id="7_awgjp"]
 
 [node name="MainScene" type="Node"]
 
@@ -18,8 +19,12 @@ position = Vector2(572, 613)
 
 [node name="CheatTools" parent="." instance=ExtResource("4_u88xf")]
 
+[node name="EnemySpawner" parent="." instance=ExtResource("6_1gvk1")]
+position = Vector2(0, 1)
+
 [node name="WaveSpawner" parent="." instance=ExtResource("5_rxbba")]
 position = Vector2(0, -1)
 
-[node name="EnemySpawner" parent="." instance=ExtResource("6_1gvk1")]
-position = Vector2(0, 1)
+[node name="AcornGun" parent="." instance=ExtResource("7_awgjp")]
+position = Vector2(558, 608)
+RIGHT = false
