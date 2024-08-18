@@ -59,7 +59,9 @@ func start_wave_1():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only()
+	#enemy_spawner.left_and_right()
 	spawn_enemies()
 
 # Function to spawn enemies based on the settings

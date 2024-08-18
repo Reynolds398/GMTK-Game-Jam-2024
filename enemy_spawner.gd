@@ -158,6 +158,10 @@ func left_and_right():
 func left_only():
 	enable_both_side = false
 
+# Set how long it takes to spawn enemies
+func set_spawn_timer(time):
+	spawn_timer.wait_time = time
+
 # Spawns enemy when time out
 func _on_spawn_timer_timeout():
 	# Get random enemy from enemy queue using RNG
