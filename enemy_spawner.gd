@@ -28,6 +28,8 @@ var end_fly_r_left = Vector2.ZERO  # Variable to hold the end point of range fly
 var enemy_queue = []  # Array to queue enemy for spawning
 var rng = RandomNumberGenerator.new()  # Random Number Generator
 var enable_both_side = false  # Boolean to let spawner know whether to spawn on both left and right side
+var max_right = 0  # Number of how many units can spawn on the right side 
+var max_left = 0  # Number of how many units can spawn on the left side 
 @onready var spawn_timer = $SpawnTimer  # Timer object that spawns enemy when time out
 
 # Dictionary for enemies
@@ -151,11 +153,14 @@ func spawn_wood_pecker_r(amount):
 		enemy_queue.append(9)
 
 # Allow spawner to spawn on both sides
-func left_and_right():
+func left_and_right(left, right):
+	max_left = left
+	max_right = right
 	enable_both_side = true
 
 # Only allow spawner to spawn on left side
-func left_only():
+func left_only(left):
+	max_left = left
 	enable_both_side = false
 
 # Set how long it takes to spawn enemies
@@ -176,7 +181,23 @@ func _on_spawn_timer_timeout():
 	
 	# Get random direction (0 is left, 1 is right) if both side enabled
 	if enable_both_side:
-		direction = rng.randi_range(0, 1)
+		# If left and right still can spawn
+		if max_left > 0 and max_right > 0:
+			direction = rng.randi_range(0, 1)
+			
+			# Keep track of how many units spawned on each side
+			if direction == 0:
+				max_left -= 1
+			else:
+				max_right -= 1
+		
+		# If only left can spawn
+		if max_left > 0 and max_right == 0:
+			direction = 0
+		
+		# If only right can spawn
+		if max_left == 0 and max_right > 0:
+			direction = 1
 	
 	# Spawn accordingly based on the enemy types
 	match enemy_type_dict[enemy_id]:
