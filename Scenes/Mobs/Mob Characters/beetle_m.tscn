@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://rabn0p4mb2tf"]
 
 [ext_resource type="Script" path="res://Scripts/beetle.gd" id="1_v7xvc"]
-[ext_resource type="Texture2D" uid="uid://cwbnrh2sn1ghw" path="res://Assets/beetle_HEADBUTT.png" id="2_ftiv2"]
+[ext_resource type="Texture2D" uid="uid://cwbnrh2sn1ghw" path="res://assets/beetle_HEADBUTT.png" id="2_ftiv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrym8"]
 atlas = ExtResource("2_ftiv2")
@@ -53,7 +53,7 @@ script = ExtResource("1_v7xvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_03to1")
 animation = &"attack"
 
@@ -61,4 +61,5 @@ animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -12)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_fhkyo")
