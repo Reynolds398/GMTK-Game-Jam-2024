@@ -3,8 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/pelican_r.gd" id="1_2epmp"]
 [ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_h5155"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx6ns"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_68ad1"]
 animations = [{
 "frames": [{
@@ -30,14 +28,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx6ns"]
+
 [node name="pelican_r" type="CharacterBody2D"]
 script = ExtResource("1_2epmp")
-health = 30
-damage = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_nx6ns")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_68ad1")
 animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nx6ns")

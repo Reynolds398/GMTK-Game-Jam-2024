@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/wood_pecker.gd" id="1_utwvb"]
 [ext_resource type="Texture2D" uid="uid://dxtguvrd3s836" path="res://Assets/woodpecker_DRILL.png" id="2_y2fd0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1omy0"]
-size = Vector2(1076, 618)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvwo4"]
 atlas = ExtResource("2_y2fd0")
 region = Rect2(2450, 0, 1225, 1177)
@@ -47,17 +44,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1omy0"]
+size = Vector2(1076, 618)
+
 [node name="wood_pecker_m" type="CharacterBody2D"]
 scale = Vector2(0.035, 0.035)
 script = ExtResource("1_utwvb")
-health = 30
-damage = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-22, -65)
-shape = SubResource("RectangleShape2D_1omy0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_auho3")
 animation = &"walk"
 flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-22, -65)
+shape = SubResource("RectangleShape2D_1omy0")

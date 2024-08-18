@@ -17,11 +17,16 @@ var end_point_r = Vector2.ZERO  # Variable to hold the end point of range enemie
 var end_point_fly_m = Vector2.ZERO  # Variable to hold the end point of melee flying enemies
 var end_point_fly_r = Vector2.ZERO  # Variable to hold the end point of range flying enemies
 
+
 ## Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
-#
-#
+func _ready():
+	pass
+#	var test = beetle_m.instantiate()
+#	test.init_start_end_pos(Vector2(27, 610), Vector2(502, 610))
+#	test.RIGHT = true
+#	add_child(test)
+
+
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
