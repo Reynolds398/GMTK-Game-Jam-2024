@@ -11,7 +11,7 @@ var bullet = null  # Instatiated acorn bullet
 func _ready():
 	gun_timer.wait_time = SHOOT_TIMER
 	gun_timer.start()
-	catapult_bullet = preload("res://Scenes/catapult_bullet.tscn")
+	catapult_bullet = preload("res://Scenes/Weapons/Projectile/catapult_bullet.tscn")
 
 
 func _on_shoot_timer_timeout():

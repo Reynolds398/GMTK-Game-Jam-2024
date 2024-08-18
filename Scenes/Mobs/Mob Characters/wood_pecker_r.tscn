@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvep7ttaw6kha"]
 
 [ext_resource type="Script" path="res://Scripts/wood_pecker_r.gd" id="1_jt64m"]
-[ext_resource type="Texture2D" uid="uid://bh0684npxswex" path="res://assets/woodpecker_SPIT.png" id="2_g08kw"]
+[ext_resource type="Texture2D" uid="uid://bh0684npxswex" path="res://Assets/woodpecker_SPIT.png" id="2_g08kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg6wl"]
 size = Vector2(1100, 570)
@@ -43,6 +43,8 @@ animations = [{
 [node name="wood_pecker_r" type="CharacterBody2D"]
 scale = Vector2(0.035, 0.035)
 script = ExtResource("1_jt64m")
+health = 30
+damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, -65)

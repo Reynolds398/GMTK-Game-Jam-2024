@@ -9,7 +9,7 @@ var boulder = null  # Instatiated acorn bullet
 func _ready():
 	gun_timer.wait_time = SHOOT_TIMER
 	gun_timer.start()
-	boulder_object = preload("res://Scenes/boulder.tscn")
+	boulder_object = preload("res://Scenes/Weapons/Projectile/boulder.tscn")
 
 func _on_shoot_timer_timeout():
 	#print("timer time out")

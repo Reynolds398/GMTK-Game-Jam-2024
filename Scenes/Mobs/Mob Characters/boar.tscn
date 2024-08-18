@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dhlmfb4brfyis"]
 
 [ext_resource type="Script" path="res://Scripts/boar.gd" id="1_pbeov"]
-[ext_resource type="Texture2D" uid="uid://dalmmc501u45b" path="res://assets/boar_RUSH.png" id="2_8l7am"]
+[ext_resource type="Texture2D" uid="uid://dalmmc501u45b" path="res://Assets/boar_RUSH.png" id="2_8l7am"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88wdl"]
 size = Vector2(1016, 690)
@@ -64,6 +64,8 @@ animations = [{
 [node name="boar" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_pbeov")
+health = 30
+damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-116, -17)

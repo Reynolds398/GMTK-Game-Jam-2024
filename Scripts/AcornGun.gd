@@ -9,7 +9,7 @@ var bullet = null  # Instatiated acorn bullet
 func _ready():
 	gun_timer.wait_time = SHOOT_TIMER
 	gun_timer.start()
-	acorn_bullet = preload("res://Scenes/acorn_bullet.tscn")
+	acorn_bullet = preload("res://Scenes/Weapons/Projectile/acorn_bullet.tscn")
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

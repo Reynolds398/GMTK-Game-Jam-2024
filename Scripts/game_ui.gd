@@ -15,12 +15,12 @@ var currency = 0  # Value of total currency
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# For debugging purposes
-	if Input.is_key_pressed(KEY_EQUAL):
-		add_currency(1000)
-		add_health(5)
-	if Input.is_key_pressed(KEY_MINUS):
-		decrease_health(5)
-		spend_currency(1000)
+#	if Input.is_key_pressed(KEY_EQUAL):
+#		add_currency(1000)
+#		add_health(5)
+#	if Input.is_key_pressed(KEY_MINUS):
+#		decrease_health(5)
+#		spend_currency(1000)
 	
 	currency_text.text = str(currency)
 

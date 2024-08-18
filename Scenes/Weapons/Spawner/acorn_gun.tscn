@@ -5,9 +5,6 @@
 
 [node name="AcornGun" type="Node2D"]
 script = ExtResource("1_vna4s")
-RIGHT = null
-SHOOT_FORCE = null
-SHOOT_TIMER = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0625, 0.0625)
