@@ -59,6 +59,7 @@ func start_wave_1():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only()
 	#enemy_spawner.left_and_right()
@@ -95,6 +96,7 @@ func start_wave_2():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
 	enemy_spawner.left_and_right(5,5)
@@ -131,6 +133,7 @@ func start_wave_3():
 	wood_pecker_r = 10
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
 	enemy_spawner.left_and_right(15,15)
@@ -167,6 +170,7 @@ func start_wave_4():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only()
 	#enemy_spawner.left_and_right()
@@ -203,6 +207,7 @@ func start_wave_5():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only()
 	#enemy_spawner.left_and_right()
@@ -239,6 +244,7 @@ func start_wave_6():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only()
 	#enemy_spawner.left_and_right()
@@ -275,6 +281,7 @@ func start_wave_7():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only()
 	#enemy_spawner.left_and_right()
@@ -291,3 +298,4 @@ func spawn_enemies():
 	enemy_spawner.spawn_wolf(wolf)
 	enemy_spawner.spawn_wood_pecker_m(wood_pecker_m)
 	enemy_spawner.spawn_wood_pecker_r(wood_pecker_r)
+	enemy_spawner.start_initial_spawn_timer() # Start the initial spawn timer
