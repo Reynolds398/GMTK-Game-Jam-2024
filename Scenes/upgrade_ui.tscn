@@ -1,3 +1,262 @@
-[gd_scene format=3 uid="uid://cfsusoc4globt"]
+[gd_scene load_steps=6 format=3 uid="uid://cfsusoc4globt"]
+
+[ext_resource type="Texture2D" uid="uid://tkxru4sra3nm" path="res://Assets/PSHOOTER.png" id="1_kem1r"]
+[ext_resource type="Script" path="res://Scripts/upgrade_ui.gd" id="1_nfkef"]
+[ext_resource type="Texture2D" uid="uid://dpikotp4r7r6m" path="res://Assets/PCATA_STEM.png" id="2_1o2d6"]
+[ext_resource type="Texture2D" uid="uid://cl0anc6ptxjdd" path="res://Assets/PCATA_BASE.png" id="3_5mvih"]
+[ext_resource type="Texture2D" uid="uid://c0oo14hj37wiw" path="res://Assets/P1.png" id="4_kbwhn"]
 
 [node name="UpgradeUI" type="CanvasLayer"]
+script = ExtResource("1_nfkef")
+
+[node name="ShopText" type="Label" parent="."]
+z_index = 1
+offset_left = 521.0
+offset_top = 77.0
+offset_right = 629.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 40
+text = "SHOP"
+
+[node name="UniversalText" type="Label" parent="."]
+z_index = 1
+offset_left = 461.0
+offset_top = 137.0
+offset_right = 699.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 25
+text = "Universal Upgrades"
+
+[node name="DamageText" type="Label" parent="."]
+z_index = 1
+offset_left = 59.0
+offset_top = 251.75
+offset_right = 186.0
+offset_bottom = 282.75
+theme_override_font_sizes/font_size = 20
+text = "Damage Up"
+
+[node name="ReloadText" type="Label" parent="."]
+z_index = 1
+offset_left = 58.0
+offset_top = 296.75
+offset_right = 221.0
+offset_bottom = 327.75
+theme_override_font_sizes/font_size = 20
+text = "Reload Speed Up"
+
+[node name="ProjectileText" type="Label" parent="."]
+z_index = 1
+offset_left = 57.0
+offset_top = 343.75
+offset_right = 244.0
+offset_bottom = 374.75
+theme_override_font_sizes/font_size = 20
+text = "Projectile Count Up"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 25.0
+offset_top = 71.0
+offset_right = 1125.0
+offset_bottom = 622.0
+mouse_filter = 2
+color = Color(0.337255, 0.337255, 0.337255, 0.588235)
+
+[node name="PeaDamageButton" type="Button" parent="."]
+z_index = 1
+offset_left = 313.0
+offset_top = 248.75
+offset_right = 422.0
+offset_bottom = 279.75
+text = "1000 Gold"
+
+[node name="PeaReloadButton" type="Button" parent="."]
+z_index = 1
+offset_left = 313.0
+offset_top = 294.75
+offset_right = 422.0
+offset_bottom = 325.75
+text = "2000 Gold"
+
+[node name="CataDamageButton" type="Button" parent="."]
+z_index = 1
+offset_left = 524.0
+offset_top = 248.75
+offset_right = 633.0
+offset_bottom = 279.75
+text = "1000 Gold"
+
+[node name="CataReloadButton" type="Button" parent="."]
+z_index = 1
+offset_left = 524.0
+offset_top = 294.75
+offset_right = 633.0
+offset_bottom = 325.75
+text = "2000 Gold"
+
+[node name="CataProjectButton" type="Button" parent="."]
+z_index = 1
+offset_left = 524.0
+offset_top = 338.75
+offset_right = 633.0
+offset_bottom = 369.75
+text = "3000 Gold"
+
+[node name="BouldReloadButton" type="Button" parent="."]
+z_index = 1
+offset_left = 731.0
+offset_top = 293.75
+offset_right = 840.0
+offset_bottom = 324.75
+text = "2000 Gold"
+
+[node name="Pshooter" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(366, 221.75)
+scale = Vector2(0.361842, 0.337079)
+texture = ExtResource("1_kem1r")
+
+[node name="Catapult" type="Node2D" parent="."]
+
+[node name="PcataStem" type="Sprite2D" parent="Catapult"]
+position = Vector2(570.75, 201)
+scale = Vector2(0.217153, 0.179907)
+texture = ExtResource("2_1o2d6")
+
+[node name="PcataBase" type="Sprite2D" parent="Catapult"]
+position = Vector2(578, 226.75)
+scale = Vector2(0.243613, 0.23014)
+texture = ExtResource("3_5mvih")
+
+[node name="Boulder" type="Sprite2D" parent="."]
+position = Vector2(788, 215.75)
+scale = Vector2(0.0949571, 0.0911836)
+texture = ExtResource("4_kbwhn")
+
+[node name="Divider1" type="Panel" parent="."]
+z_index = 1
+offset_left = 30.0
+offset_top = 384.0
+offset_right = 1121.0
+offset_bottom = 391.0
+
+[node name="LeftText" type="Label" parent="."]
+z_index = 1
+offset_left = 230.0
+offset_top = 400.0
+offset_right = 340.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 25
+text = "Left Side"
+
+[node name="Pshooter2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(142, 480)
+scale = Vector2(0.361842, 0.337079)
+texture = ExtResource("1_kem1r")
+
+[node name="Catapult2" type="Node2D" parent="."]
+position = Vector2(-266, 249)
+
+[node name="PcataStem" type="Sprite2D" parent="Catapult2"]
+position = Vector2(546.75, 210.25)
+scale = Vector2(0.217153, 0.179907)
+texture = ExtResource("2_1o2d6")
+
+[node name="PcataBase" type="Sprite2D" parent="Catapult2"]
+position = Vector2(554, 236)
+scale = Vector2(0.243613, 0.23014)
+texture = ExtResource("3_5mvih")
+
+[node name="PeaLeftButton" type="Button" parent="."]
+z_index = 1
+offset_left = 92.0
+offset_top = 511.0
+offset_right = 201.0
+offset_bottom = 542.0
+text = "1000 Gold"
+
+[node name="CataLeftButton" type="Button" parent="."]
+z_index = 1
+offset_left = 230.0
+offset_top = 512.0
+offset_right = 339.0
+offset_bottom = 543.0
+text = "1000 Gold"
+
+[node name="BouldLeftButton" type="Button" parent="."]
+z_index = 1
+offset_left = 367.0
+offset_top = 511.0
+offset_right = 476.0
+offset_bottom = 542.0
+text = "1000 Gold"
+
+[node name="Boulder2" type="Sprite2D" parent="."]
+position = Vector2(420, 480)
+scale = Vector2(0.0949571, 0.0911836)
+texture = ExtResource("4_kbwhn")
+
+[node name="Divider2" type="Panel" parent="."]
+z_index = 1
+offset_left = 570.0
+offset_top = 387.0
+offset_right = 578.0
+offset_bottom = 617.0
+
+[node name="RightText" type="Label" parent="."]
+z_index = 1
+offset_left = 801.0
+offset_top = 399.0
+offset_right = 920.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 25
+text = "Right side"
+
+[node name="Pshooter3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(726, 480)
+scale = Vector2(0.361842, 0.337079)
+texture = ExtResource("1_kem1r")
+
+[node name="Catapult3" type="Node2D" parent="."]
+position = Vector2(313, 254)
+
+[node name="PcataStem" type="Sprite2D" parent="Catapult3"]
+position = Vector2(551.75, 205.25)
+scale = Vector2(0.217153, 0.179907)
+texture = ExtResource("2_1o2d6")
+
+[node name="PcataBase" type="Sprite2D" parent="Catapult3"]
+position = Vector2(559, 231)
+scale = Vector2(0.243613, 0.23014)
+texture = ExtResource("3_5mvih")
+
+[node name="PeaLeftButton2" type="Button" parent="."]
+z_index = 1
+offset_left = 676.0
+offset_top = 511.0
+offset_right = 785.0
+offset_bottom = 542.0
+text = "1000 Gold"
+
+[node name="CataLeftButton2" type="Button" parent="."]
+z_index = 1
+offset_left = 814.0
+offset_top = 512.0
+offset_right = 923.0
+offset_bottom = 543.0
+text = "1000 Gold"
+
+[node name="BouldLeftButton2" type="Button" parent="."]
+z_index = 1
+offset_left = 951.0
+offset_top = 511.0
+offset_right = 1060.0
+offset_bottom = 542.0
+text = "1000 Gold"
+
+[node name="Boulder3" type="Sprite2D" parent="."]
+position = Vector2(1004, 480)
+scale = Vector2(0.0949571, 0.0911836)
+texture = ExtResource("4_kbwhn")

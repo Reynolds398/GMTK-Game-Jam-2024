@@ -46,4 +46,13 @@ offset_bottom = 54.0
 focus_mode = 0
 text = "Cheats"
 
+[node name="ShopButton" type="Button" parent="."]
+offset_left = 733.0
+offset_top = 23.0
+offset_right = 811.0
+offset_bottom = 54.0
+focus_mode = 0
+text = "[I] Shop"
+
 [connection signal="pressed" from="CheatButton" to="." method="_on_cheat_button_pressed"]
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]

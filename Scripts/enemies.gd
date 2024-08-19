@@ -34,7 +34,7 @@ func _ready():
 		scale.x = -scale.x
 
 func _process(delta):
-	print(name,  current_health)
+	# print(name,  current_health)
 #	print(reach_end_x)
 #	print(reach_end_y)
 	

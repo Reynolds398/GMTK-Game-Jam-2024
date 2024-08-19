@@ -58,3 +58,8 @@ func game_over():
 func _on_cheat_button_pressed():
 	var cheat_tool = get_parent().get_node("CheatTools")
 	cheat_tool.visible = not cheat_tool.visible
+
+# Toggle visibility
+func _on_shop_button_pressed():
+	var upgrade_ui = get_parent().get_node("UpgradeUI")
+	upgrade_ui.visible = not upgrade_ui.visible
