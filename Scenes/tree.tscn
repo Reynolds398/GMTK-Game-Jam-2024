@@ -1,14 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=20 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
-[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_f1udo"]
 [ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
 [ext_resource type="Texture2D" uid="uid://bqqdsdr0oh0re" path="res://Assets/TREE_S2.png" id="3_ylbn5"]
 [ext_resource type="Texture2D" uid="uid://cgwise2f2fp5o" path="res://Assets/TREE_S3.png" id="4_ioird"]
 [ext_resource type="Texture2D" uid="uid://c23e1diu58r1b" path="res://Assets/TREE_S4.png" id="5_qdf3v"]
 [ext_resource type="Texture2D" uid="uid://dm7b4un8f3j7m" path="res://Assets/TREE_S5.png" id="6_r66jg"]
 [ext_resource type="Texture2D" uid="uid://chfgg3mrry34a" path="res://Assets/TREE_S6.png" id="7_l2d0b"]
+[ext_resource type="Texture2D" uid="uid://d005mu6emabvj" path="res://Assets/BP_LARGE.png" id="8_51cbq"]
 [ext_resource type="Texture2D" uid="uid://bflx00kbw4jgp" path="res://Assets/TREE_S7_S.png" id="8_k640t"]
+[ext_resource type="Texture2D" uid="uid://diigfb2xydt84" path="res://Assets/Spiky_PLAT.png" id="9_2d7fq"]
+[ext_resource type="Texture2D" uid="uid://b0bsnjwyvkka4" path="res://Assets/BP_SMALL.png" id="10_5o3t4"]
+[ext_resource type="Texture2D" uid="uid://c6fnylcyw1k65" path="res://Assets/P_in_WALL.png" id="11_pmdt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdktt"]
 size = Vector2(6, 26)
@@ -131,6 +134,64 @@ visible = false
 collision_layer = 2
 collision_mask = 2
 
+[node name="LargePlatform1" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(-177, -307)
+scale = Vector2(0.38381, 0.353516)
+texture = ExtResource("8_51cbq")
+
+[node name="LargePlatform2" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(187, -277)
+rotation = 3.14159
+scale = Vector2(0.38381, 0.353516)
+texture = ExtResource("8_51cbq")
+
+[node name="SpikyPlatform" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(6.12499, -181.75)
+scale = Vector2(0.333598, 0.336397)
+texture = ExtResource("9_2d7fq")
+
+[node name="SmallPlatform1" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(-30, -246)
+scale = Vector2(0.305955, 0.299528)
+texture = ExtResource("10_5o3t4")
+
+[node name="SmallPlatform2" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(37, -328)
+rotation = 3.14159
+scale = Vector2(0.305955, 0.299528)
+texture = ExtResource("10_5o3t4")
+
+[node name="LeftPea1" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(-46, -127)
+scale = Vector2(0.307842, 0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="LeftPea2" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(-46, -102)
+scale = Vector2(0.307842, 0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea1" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(49.794, -126.156)
+rotation = 3.14159
+scale = Vector2(0.308, -0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea2" type="Sprite2D" parent="Stage 7"]
+z_index = 1
+position = Vector2(49.794, -101.156)
+rotation = 3.14159
+scale = Vector2(0.308, -0.242772)
+texture = ExtResource("11_pmdt3")
+
 [node name="Sprite2D" type="Sprite2D" parent="Stage 7"]
 position = Vector2(-7, -375)
 scale = Vector2(0.349697, 0.334714)
@@ -145,9 +206,3 @@ disabled = true
 visible = false
 zoom = Vector2(8, 8)
 limit_bottom = 600
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(307.5, -13)
-scale = Vector2(3.71094, 0.203125)
-texture = ExtResource("2_f1udo")

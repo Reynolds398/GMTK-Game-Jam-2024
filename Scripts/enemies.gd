@@ -21,18 +21,20 @@ var end_pos = Vector2.ZERO  # End position of enemy
 var reach_end_x = false  # To know if enemy reached the end point at the x-axis
 var reach_end_y = false  # To know if enemy reached the end point at the y-axis
 
-var current_health = HEALTH  # The current health the enemy have
+var current_health = 0  # The current health the enemy have
 
 func _ready():
 	parent = get_parent()
 	main_scene = parent.get_parent()
 	animated_sprite.play("walk")
+	current_health = HEALTH
 	
 	# Flip it by x-axis if facing left
 	if not RIGHT:
 		scale.x = -scale.x
 
 func _process(delta):
+	print(name,  current_health)
 #	print(reach_end_x)
 #	print(reach_end_y)
 	

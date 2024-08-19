@@ -61,7 +61,7 @@ func start_wave_1():
 	# Spawn the enemies
 	enemy_spawner.set_initial_spawn_timer(10)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only()
+	enemy_spawner.left_only(100)
 	#enemy_spawner.left_and_right()
 	spawn_enemies()
 	
