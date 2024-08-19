@@ -7,8 +7,8 @@
 script = ExtResource("1_vna4s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, 2.38419e-07)
-scale = Vector2(0.198191, 0.1954)
+position = Vector2(12, 0)
+scale = Vector2(0.122122, 0.12579)
 texture = ExtResource("2_ijbnb")
 
 [node name="ShootTimer" type="Timer" parent="."]

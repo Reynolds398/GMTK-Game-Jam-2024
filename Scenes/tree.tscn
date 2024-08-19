@@ -190,6 +190,7 @@ size = Vector2(108, 350)
 script = ExtResource("1_3vueh")
 
 [node name="Stage 1" type="StaticBody2D" parent="." groups=["Tree"]]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -205,7 +206,9 @@ disabled = true
 debug_color = Color(0, 0.592157, 0.737255, 0.419608)
 
 [node name="AcornGun" parent="Stage 1" instance=ExtResource("3_3jeu4")]
-position = Vector2(-49, -7)
+visible = false
+position = Vector2(-29, -5)
+RIGHT = false
 
 [node name="Stage 2" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
