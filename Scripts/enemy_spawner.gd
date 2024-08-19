@@ -30,10 +30,12 @@ var rng = RandomNumberGenerator.new()  # Random Number Generator
 var enable_both_side = false  # Boolean to let spawner know whether to spawn on both left and right side
 var max_right = 0  # Number of how many units can spawn on the right side 
 var max_left = 0  # Number of how many units can spawn on the left side 
-
+var spawning = false  # Whether the enemy is spawning or not
 
 @onready var spawn_timer = $SpawnTimer  # Timer object that spawns enemy when time out
 @onready var init_spawn_timer = $InitialSpawnTimer  # Initial timer object that starts spawn timer
+
+signal wave_complete
 
 # Dictionary for enemies
 var enemy_dict = {
@@ -78,6 +80,9 @@ func _process(delta):
 	# Stop spawn timer if array is empty
 	if enemy_queue.size() == 0:
 		spawn_timer.stop()
+		if spawning:
+			emit_signal("wave_complete")
+			spawning = false
 #	else:
 #		# Start timer if not started
 #		if spawn_timer.is_stopped():
@@ -176,6 +181,7 @@ func set_initial_spawn_timer(time):
 # Start the initial spawn timer
 func start_initial_spawn_timer():
 	init_spawn_timer.start()
+	spawning = true
 
 # Spawns enemy when time out
 func _on_spawn_timer_timeout():

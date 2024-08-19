@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/upgrade_ui.gd" id="1_nfkef"]
 [ext_resource type="Texture2D" uid="uid://dpikotp4r7r6m" path="res://Assets/PCATA_STEM.png" id="2_1o2d6"]
 [ext_resource type="Texture2D" uid="uid://cl0anc6ptxjdd" path="res://Assets/PCATA_BASE.png" id="3_5mvih"]
-[ext_resource type="Texture2D" uid="uid://c0oo14hj37wiw" path="res://Assets/P1.png" id="4_kbwhn"]
+[ext_resource type="Texture2D" uid="uid://ba36xcpo50iwq" path="res://Assets/boulder_projectile_outlined.png" id="5_1ronb"]
 
 [node name="UpgradeUI" type="CanvasLayer"]
 script = ExtResource("1_nfkef")
@@ -131,7 +131,7 @@ texture = ExtResource("3_5mvih")
 [node name="Boulder" type="Sprite2D" parent="."]
 position = Vector2(788, 215.75)
 scale = Vector2(0.0949571, 0.0911836)
-texture = ExtResource("4_kbwhn")
+texture = ExtResource("5_1ronb")
 
 [node name="Divider1" type="Panel" parent="."]
 z_index = 1
@@ -195,7 +195,7 @@ text = "1000 Gold"
 [node name="Boulder2" type="Sprite2D" parent="."]
 position = Vector2(420, 480)
 scale = Vector2(0.0949571, 0.0911836)
-texture = ExtResource("4_kbwhn")
+texture = ExtResource("5_1ronb")
 
 [node name="Divider2" type="Panel" parent="."]
 z_index = 1
@@ -259,7 +259,7 @@ text = "1000 Gold"
 [node name="Boulder3" type="Sprite2D" parent="."]
 position = Vector2(1004, 480)
 scale = Vector2(0.0949571, 0.0911836)
-texture = ExtResource("4_kbwhn")
+texture = ExtResource("5_1ronb")
 
 [connection signal="pressed" from="PeaDamageButton" to="." method="_on_pea_damage_button_pressed"]
 [connection signal="pressed" from="PeaReloadButton" to="." method="_on_pea_reload_button_pressed"]

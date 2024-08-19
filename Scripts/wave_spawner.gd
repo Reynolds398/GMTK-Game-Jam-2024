@@ -25,7 +25,7 @@ var wood_pecker_r = 0
 func _ready():
 	parent = get_parent()
 	enemy_spawner = parent.get_node("EnemySpawner")
-	start_wave_4()
+	#start_wave_4()
 
 # Function to start wave 1
 func start_wave_1():

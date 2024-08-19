@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cw4yl1sxmmdpn"]
 
 [ext_resource type="Script" path="res://Scripts/AcornBullet.gd" id="1_8qwcm"]
-[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_slwtj"]
+[ext_resource type="Texture2D" uid="uid://b5spht2tbvw8d" path="res://Assets/P2.png" id="2_fpt7p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rnw4"]
 radius = 4.0
@@ -22,7 +22,9 @@ position = Vector2(-0.03125, -0.0624995)
 shape = SubResource("CircleShape2D_5rnw4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_slwtj")
+position = Vector2(0, 1)
+scale = Vector2(0.0129426, 0.0184179)
+texture = ExtResource("2_fpt7p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

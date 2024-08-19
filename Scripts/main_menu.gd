@@ -28,15 +28,14 @@ func _ready():
 func _on_start_button_pressed():
 	# Visibility trickery
 	world.visible = true
-	cheat_tools.visible = true
+	#cheat_tools.visible = true
 	game_ui.visible = true
 	visible = false
 	pause_menu.enable_toggle_pause()
 	upgrade_ui.enable_shop()
 	
 	# Start wave 1
-	wave_spawner.start_wave_1()
-	tree.set_stage_1()
+	game_ui.start_next_wave()
 
 # Quit game
 func _on_quit_button_pressed():

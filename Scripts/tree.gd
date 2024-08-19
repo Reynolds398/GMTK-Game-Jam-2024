@@ -38,18 +38,20 @@ func set_stage(stage):
 	# Turn off the previous stage (if it exists)
 	if current_stage != null:
 		current_stage.visible = false
+		current_stage.send_disable_signal()
 		current_stage.get_node("CollisionShape2D").disabled = true
 	
 	# Turn on the next stage
 	stage.visible = true
 	current_stage = stage
+	current_stage.send_enable_signal()
 	current_stage.get_node("CollisionShape2D").disabled = false
 
 # Function to set variables for stage 1
 func set_stage_1():
 	print("stage 1")
 	# Camera update here
-	camera.zoom = Vector2(5,5)
+	camera.zoom = Vector2(4,4)
 	camera.limit_bottom = 620
 	
 	set_stage(stage_1)
@@ -58,7 +60,7 @@ func set_stage_1():
 func set_stage_2():
 	print("stage 2")
 	# Camera update here
-	camera.zoom = Vector2(4.5,4.5)
+	camera.zoom = Vector2(3.75,3.75)
 	camera.limit_bottom = 625
 	
 	set_stage(stage_2)
@@ -110,7 +112,9 @@ func set_stage_7():
 	set_stage(stage_7)
 
 # Function to deal with stage transitions
-func next_stage(current_stage_num):
+func next_stage():
+	CUR_TREE_STAGE += 1
+	
 	match CUR_TREE_STAGE:
 		1:
 			set_stage_1()
