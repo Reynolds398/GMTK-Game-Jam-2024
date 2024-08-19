@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=25 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
 [ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://diigfb2xydt84" path="res://Assets/Spiky_PLAT.png" id="9_2d7fq"]
 [ext_resource type="Texture2D" uid="uid://b0bsnjwyvkka4" path="res://Assets/BP_SMALL.png" id="10_5o3t4"]
 [ext_resource type="Texture2D" uid="uid://c6fnylcyw1k65" path="res://Assets/P_in_WALL.png" id="11_pmdt3"]
+[ext_resource type="Texture2D" uid="uid://bu0fvm0tslk6n" path="res://Assets/SQUIRREL_in_WALL.png" id="12_afxe8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdktt"]
 size = Vector2(6, 26)
@@ -27,6 +28,156 @@ size = Vector2(37.5, 143)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0o5x0"]
 size = Vector2(52, 205.5)
+
+[sub_resource type="Animation" id="Animation_fnso8"]
+resource_name = "show"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SquirrelInWall1:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SquirrelInWall1:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SquirrelInWall1:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SquirrelInWall1:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_k4iia"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SquirrelInWall1:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SquirrelInWall1:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SquirrelInWall1:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SquirrelInWall1:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_1cqeg"]
+resource_name = "hide"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SquirrelInWall1:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SquirrelInWall1:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SquirrelInWall1:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SquirrelInWall1:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3e8il"]
+_data = {
+"RESET": SubResource("Animation_k4iia"),
+"hide": SubResource("Animation_1cqeg"),
+"show": SubResource("Animation_fnso8")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0tff"]
 size = Vector2(87, 262.5)
@@ -83,6 +234,32 @@ position = Vector2(0, -46.25)
 shape = SubResource("RectangleShape2D_msvlm")
 disabled = true
 
+[node name="LeftPea1" type="Sprite2D" parent="Stage 3"]
+z_index = 1
+position = Vector2(-11, -28)
+scale = Vector2(0.168242, 0.11944)
+texture = ExtResource("11_pmdt3")
+
+[node name="LeftPea2" type="Sprite2D" parent="Stage 3"]
+z_index = 1
+position = Vector2(-12, -14)
+scale = Vector2(0.172512, 0.126259)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea1" type="Sprite2D" parent="Stage 3"]
+z_index = 1
+position = Vector2(11, -28)
+rotation = 3.14159
+scale = Vector2(0.169802, -0.120455)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea2" type="Sprite2D" parent="Stage 3"]
+z_index = 1
+position = Vector2(11, -14)
+rotation = 3.14159
+scale = Vector2(0.161503, -0.12722)
+texture = ExtResource("11_pmdt3")
+
 [node name="Stage 4" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
@@ -97,6 +274,38 @@ texture = ExtResource("5_qdf3v")
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_yem3x")
 disabled = true
+
+[node name="SpikyPlatform" type="Sprite2D" parent="Stage 4"]
+z_index = 1
+position = Vector2(2, -73)
+scale = Vector2(0.105193, 0.131057)
+texture = ExtResource("9_2d7fq")
+
+[node name="LeftPea1" type="Sprite2D" parent="Stage 4"]
+z_index = 1
+position = Vector2(-16, -41)
+scale = Vector2(0.224682, 0.157246)
+texture = ExtResource("11_pmdt3")
+
+[node name="LeftPea2" type="Sprite2D" parent="Stage 4"]
+z_index = 1
+position = Vector2(-18, -23)
+scale = Vector2(0.2208, 0.15728)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea1" type="Sprite2D" parent="Stage 4"]
+z_index = 1
+position = Vector2(16, -40)
+rotation = 3.14159
+scale = Vector2(0.19516, -0.152191)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea2" type="Sprite2D" parent="Stage 4"]
+z_index = 1
+position = Vector2(16, -22)
+rotation = 3.14159
+scale = Vector2(0.20503, -0.152191)
+texture = ExtResource("11_pmdt3")
 
 [node name="Stage 5" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -113,6 +322,88 @@ position = Vector2(0, -103.25)
 shape = SubResource("RectangleShape2D_0o5x0")
 disabled = true
 
+[node name="LargePlatform1" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(-112, -163)
+scale = Vector2(0.244762, 0.1875)
+texture = ExtResource("8_51cbq")
+
+[node name="LargePlatform2" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(100, -139)
+rotation = 3.14159
+scale = Vector2(0.222793, 0.202561)
+texture = ExtResource("8_51cbq")
+
+[node name="SpikyPlatform" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(2, -92)
+scale = Vector2(0.179631, 0.201172)
+texture = ExtResource("9_2d7fq")
+
+[node name="SmallPlatform1" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(-19, -133)
+scale = Vector2(0.177618, 0.187303)
+texture = ExtResource("10_5o3t4")
+
+[node name="SmallPlatform2" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(16, -175)
+rotation = 3.14159
+scale = Vector2(0.172929, 0.167766)
+texture = ExtResource("10_5o3t4")
+
+[node name="LeftPea1" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(-28, -58)
+scale = Vector2(0.277611, 0.207217)
+texture = ExtResource("11_pmdt3")
+
+[node name="LeftPea2" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(-28, -39)
+scale = Vector2(0.275718, 0.197013)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea1" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(25, -58)
+rotation = 3.14159
+scale = Vector2(0.242195, -0.206736)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea2" type="Sprite2D" parent="Stage 5"]
+z_index = 1
+position = Vector2(23.8811, -37.2054)
+rotation = 3.14159
+scale = Vector2(0.252065, -0.206736)
+texture = ExtResource("11_pmdt3")
+
+[node name="SquirrelInWall" type="Node2D" parent="Stage 5"]
+position = Vector2(-3.5, 58.5)
+
+[node name="SquirrelInWall1" type="Sprite2D" parent="Stage 5/SquirrelInWall"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(6.20387, -108.453)
+scale = Vector2(0.185884, 0.170387)
+texture = ExtResource("12_afxe8")
+hframes = 2
+frame = 1
+
+[node name="SquirrelInWall2" type="Sprite2D" parent="Stage 5/SquirrelInWall"]
+z_index = 1
+position = Vector2(3.20385, -108.453)
+scale = Vector2(0.189816, 0.166241)
+texture = ExtResource("12_afxe8")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stage 5/SquirrelInWall"]
+libraries = {
+"": SubResource("AnimationLibrary_3e8il")
+}
+
 [node name="Stage 6" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 position = Vector2(-1, 0)
@@ -128,6 +419,88 @@ texture = ExtResource("7_l2d0b")
 position = Vector2(0, -132)
 shape = SubResource("RectangleShape2D_w0tff")
 disabled = true
+
+[node name="LargePlatform1" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(-139, -222)
+scale = Vector2(0.300952, 0.261719)
+texture = ExtResource("8_51cbq")
+
+[node name="LargePlatform2" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(139, -195)
+rotation = 3.14159
+scale = Vector2(0.289615, 0.271079)
+texture = ExtResource("8_51cbq")
+
+[node name="SpikyPlatform" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(5, -125)
+scale = Vector2(0.255572, 0.285846)
+texture = ExtResource("9_2d7fq")
+
+[node name="SmallPlatform1" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(-23, -178)
+scale = Vector2(0.256673, 0.267689)
+texture = ExtResource("10_5o3t4")
+
+[node name="SmallPlatform2" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(28, -239)
+rotation = 3.14159
+scale = Vector2(0.254733, 0.246298)
+texture = ExtResource("10_5o3t4")
+
+[node name="LeftPea1" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(-35.2187, -86.1562)
+scale = Vector2(0.307842, 0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="LeftPea2" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(-35.2187, -61.1562)
+scale = Vector2(0.307842, 0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea1" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(37.794, -86.1562)
+rotation = 3.14159
+scale = Vector2(0.308, -0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="RightPea2" type="Sprite2D" parent="Stage 6"]
+z_index = 1
+position = Vector2(37.794, -61.1562)
+rotation = 3.14159
+scale = Vector2(0.308, -0.242772)
+texture = ExtResource("11_pmdt3")
+
+[node name="SquirrelInWall" type="Node2D" parent="Stage 6"]
+position = Vector2(-3.5, 58.5)
+
+[node name="SquirrelInWall1" type="Sprite2D" parent="Stage 6/SquirrelInWall"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(7.7617, -133.125)
+scale = Vector2(0.29389, 0.254252)
+texture = ExtResource("12_afxe8")
+hframes = 2
+frame = 1
+
+[node name="SquirrelInWall2" type="Sprite2D" parent="Stage 6/SquirrelInWall"]
+z_index = 1
+position = Vector2(3.13085, -132.625)
+scale = Vector2(0.29126, 0.255102)
+texture = ExtResource("12_afxe8")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stage 6/SquirrelInWall"]
+libraries = {
+"": SubResource("AnimationLibrary_3e8il")
+}
 
 [node name="Stage 7" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -191,6 +564,29 @@ position = Vector2(49.794, -101.156)
 rotation = 3.14159
 scale = Vector2(0.308, -0.242772)
 texture = ExtResource("11_pmdt3")
+
+[node name="SquirrelInWall" type="Node2D" parent="Stage 7"]
+
+[node name="SquirrelInWall1" type="Sprite2D" parent="Stage 7/SquirrelInWall"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(6.55078, -110.5)
+scale = Vector2(0.346014, 0.309524)
+texture = ExtResource("12_afxe8")
+hframes = 2
+frame = 1
+
+[node name="SquirrelInWall2" type="Sprite2D" parent="Stage 7/SquirrelInWall"]
+z_index = 1
+position = Vector2(1.2617, -110)
+scale = Vector2(0.343883, 0.306122)
+texture = ExtResource("12_afxe8")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stage 7/SquirrelInWall"]
+libraries = {
+"": SubResource("AnimationLibrary_3e8il")
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 7"]
 position = Vector2(-7, -375)
