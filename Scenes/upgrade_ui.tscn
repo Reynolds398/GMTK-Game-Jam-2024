@@ -232,7 +232,7 @@ position = Vector2(559, 231)
 scale = Vector2(0.243613, 0.23014)
 texture = ExtResource("3_5mvih")
 
-[node name="PeaLeftButton2" type="Button" parent="."]
+[node name="PeaRightButton" type="Button" parent="."]
 z_index = 1
 offset_left = 676.0
 offset_top = 511.0
@@ -240,7 +240,7 @@ offset_right = 785.0
 offset_bottom = 542.0
 text = "1000 Gold"
 
-[node name="CataLeftButton2" type="Button" parent="."]
+[node name="CataRightButton" type="Button" parent="."]
 z_index = 1
 offset_left = 814.0
 offset_top = 512.0
@@ -248,7 +248,7 @@ offset_right = 923.0
 offset_bottom = 543.0
 text = "1000 Gold"
 
-[node name="BouldLeftButton2" type="Button" parent="."]
+[node name="BouldRightButton" type="Button" parent="."]
 z_index = 1
 offset_left = 951.0
 offset_top = 511.0
@@ -260,3 +260,16 @@ text = "1000 Gold"
 position = Vector2(1004, 480)
 scale = Vector2(0.0949571, 0.0911836)
 texture = ExtResource("4_kbwhn")
+
+[connection signal="pressed" from="PeaDamageButton" to="." method="_on_pea_damage_button_pressed"]
+[connection signal="pressed" from="PeaReloadButton" to="." method="_on_pea_reload_button_pressed"]
+[connection signal="pressed" from="CataDamageButton" to="." method="_on_cata_damage_button_pressed"]
+[connection signal="pressed" from="CataReloadButton" to="." method="_on_cata_reload_button_pressed"]
+[connection signal="pressed" from="CataProjectButton" to="." method="_on_cata_project_button_pressed"]
+[connection signal="pressed" from="BouldReloadButton" to="." method="_on_bould_reload_button_pressed"]
+[connection signal="pressed" from="PeaLeftButton" to="." method="_on_pea_left_button_pressed"]
+[connection signal="pressed" from="CataLeftButton" to="." method="_on_cata_left_button_pressed"]
+[connection signal="pressed" from="BouldLeftButton" to="." method="_on_bould_left_button_pressed"]
+[connection signal="pressed" from="PeaRightButton" to="." method="_on_pea_right_button_pressed"]
+[connection signal="pressed" from="CataRightButton" to="." method="_on_cata_right_button_pressed"]
+[connection signal="pressed" from="BouldRightButton" to="." method="_on_bould_right_button_pressed"]

@@ -18,7 +18,7 @@ offset_top = 102.0
 offset_right = 174.0
 offset_bottom = 133.0
 focus_mode = 0
-text = "+ 1000 Gold"
+text = "+ 10000 Gold"
 
 [node name="SpendGoldButton" type="Button" parent="."]
 offset_left = 76.0
@@ -26,7 +26,7 @@ offset_top = 144.0
 offset_right = 174.0
 offset_bottom = 175.0
 focus_mode = 0
-text = "- 1000 Gold"
+text = "- 10000 Gold"
 
 [node name="AddHealthButton" type="Button" parent="."]
 offset_left = 196.0

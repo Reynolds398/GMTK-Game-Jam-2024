@@ -7,10 +7,13 @@ extends CanvasLayer
 
 var currency = 0  # Value of total currency
 
-## Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass # Replace with function body.
-#
+var parent = null  # Parent object
+var upgrade_ui = null  # Upgrade UI object
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	parent = get_parent()
+	upgrade_ui = parent.get_node("UpgradeUI")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,9 +32,13 @@ func add_currency(amount):
 	currency = clampi(currency + amount, 0, MAX_GOLD)
 
 # Function to reduce the total currency by the amount
+# Returns true if successful and false if unsuccessful
 func spend_currency(amount):
 	if (currency - amount) >= 0:
 		currency -= amount
+		return true
+	else:
+		return false
 
 # Function to add health to the health bar
 func add_health(amount):
@@ -56,10 +63,9 @@ func game_over():
 
 # Toggle cheat tools on and off
 func _on_cheat_button_pressed():
-	var cheat_tool = get_parent().get_node("CheatTools")
+	var cheat_tool = parent.get_node("CheatTools")
 	cheat_tool.visible = not cheat_tool.visible
 
 # Toggle visibility
 func _on_shop_button_pressed():
-	var upgrade_ui = get_parent().get_node("UpgradeUI")
 	upgrade_ui.visible = not upgrade_ui.visible

@@ -16,11 +16,11 @@ func _ready():
 
 # Function for adding gold
 func _on_add_gold_button_pressed():
-	game_ui.add_currency(1000)
+	game_ui.add_currency(10000)
 
 # Function for spending gold
 func _on_spend_gold_button_pressed():
-	game_ui.spend_currency(1000)
+	game_ui.spend_currency(10000)
 
 # Function for adding health
 func _on_add_health_button_pressed():

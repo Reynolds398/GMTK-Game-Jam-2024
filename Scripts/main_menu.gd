@@ -4,6 +4,7 @@ var parent = null  # Parent object
 var pause_menu = null  # Pause menu object
 var game_ui = null  # Game UI object 
 var cheat_tools = null  # Cheat tools object
+var upgrade_ui = null  # Upgrade UI object
 var world = null  # World object
 var wave_spawner = null  # Wave spawner object
 var tree = null  # Tree object
@@ -14,6 +15,7 @@ func _ready():
 	pause_menu = parent.get_node("PauseMenu")
 	game_ui = parent.get_node("GameUI")
 	cheat_tools = parent.get_node("CheatTools")
+	upgrade_ui = parent.get_node("UpgradeUI")
 	world = parent.get_node("World")
 	wave_spawner = parent.get_node("WaveSpawner")
 	tree = parent.get_node("Tree")
@@ -30,6 +32,7 @@ func _on_start_button_pressed():
 	game_ui.visible = true
 	visible = false
 	pause_menu.enable_toggle_pause()
+	upgrade_ui.enable_shop()
 	
 	# Start wave 1
 	wave_spawner.start_wave_1()
