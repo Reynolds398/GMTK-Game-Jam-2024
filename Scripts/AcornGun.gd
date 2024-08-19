@@ -6,7 +6,6 @@ var bullet = null  # Instatiated acorn bullet
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
-	enable_shooting()
 	acorn_bullet = preload("res://Scenes/Weapons/Projectile/acorn_bullet.tscn")
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.

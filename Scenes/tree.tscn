@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=27 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
 [ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
+[ext_resource type="Script" path="res://Scripts/stages.gd" id="2_p5gw0"]
 [ext_resource type="PackedScene" uid="uid://bctdduxymt37m" path="res://Scenes/Weapons/Spawner/acorn_gun.tscn" id="3_3jeu4"]
 [ext_resource type="Texture2D" uid="uid://bqqdsdr0oh0re" path="res://Assets/TREE_S2.png" id="3_ylbn5"]
 [ext_resource type="Texture2D" uid="uid://cgwise2f2fp5o" path="res://Assets/TREE_S3.png" id="4_ioird"]
@@ -190,9 +191,9 @@ size = Vector2(108, 350)
 script = ExtResource("1_3vueh")
 
 [node name="Stage 1" type="StaticBody2D" parent="." groups=["Tree"]]
-visible = false
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 1"]
 position = Vector2(2, -11)
@@ -206,7 +207,6 @@ disabled = true
 debug_color = Color(0, 0.592157, 0.737255, 0.419608)
 
 [node name="AcornGun" parent="Stage 1" instance=ExtResource("3_3jeu4")]
-visible = false
 position = Vector2(-29, -5)
 RIGHT = false
 
@@ -214,6 +214,7 @@ RIGHT = false
 visible = false
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 2"]
 position = Vector2(2, -43)
@@ -229,6 +230,7 @@ disabled = true
 visible = false
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 3"]
 position = Vector2(-4.76837e-07, -88)
@@ -270,6 +272,7 @@ texture = ExtResource("11_pmdt3")
 visible = false
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 4"]
 position = Vector2(3, -150)
@@ -317,6 +320,7 @@ texture = ExtResource("11_pmdt3")
 visible = false
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 5"]
 position = Vector2(2.29188, -255.139)
@@ -415,6 +419,7 @@ visible = false
 position = Vector2(-1, 0)
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stage 6"]
 position = Vector2(-5.41406, -287.18)
@@ -512,6 +517,7 @@ libraries = {
 visible = false
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("2_p5gw0")
 
 [node name="LargePlatform1" type="Sprite2D" parent="Stage 7"]
 z_index = 1

@@ -14,6 +14,7 @@ extends Node2D
 @onready var stage_7 = $"Stage 7"
 
 var current_stage = null  # Variable to keep track of the current stage object
+var i = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,13 +22,16 @@ func _ready():
 	camera.zoom = Vector2(0.5,0.5)
 	camera.limit_bottom = 625
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	# For debugging purposes (press space to go to next stage)
-#	if Input.is_action_just_pressed("ui_accept"):
-#		if CUR_TREE_STAGE < MAX_TREE_STAGE:
-#			CUR_TREE_STAGE += 1
-#			next_stage(CUR_TREE_STAGE)
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	# For debugging purposes (press space to go to next stage)
+	if Input.is_action_just_pressed("ui_accept"):
+		if i == 0:
+			stage_1.send_enable_signal()
+		if i == 1:
+			stage_1.send_disable_signal()
+		
+		i = (i + 1) % 2
 
 # Given the stage, transition to the next stage
 func set_stage(stage):
