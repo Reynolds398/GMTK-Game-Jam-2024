@@ -50,6 +50,7 @@ size = Vector2(64, 36)
 [node name="beetle_m" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.5, 0.5)
 script = ExtResource("1_v7xvc")
+HEALTH = 40
 GOLD_VALUE = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
