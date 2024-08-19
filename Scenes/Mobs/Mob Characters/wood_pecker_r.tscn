@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvep7ttaw6kha"]
 
 [ext_resource type="Script" path="res://Scripts/wood_pecker_r.gd" id="1_jt64m"]
-[ext_resource type="Texture2D" uid="uid://bh0684npxswex" path="res://assets/woodpecker_SPIT.png" id="2_g08kw"]
+[ext_resource type="Texture2D" uid="uid://bh0684npxswex" path="res://Assets/woodpecker_SPIT.png" id="2_g08kw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4dwe"]
 atlas = ExtResource("2_g08kw")
@@ -58,5 +58,5 @@ shape = SubResource("RectangleShape2D_kg6wl")
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

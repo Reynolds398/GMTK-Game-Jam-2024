@@ -113,7 +113,9 @@ func delete():
 #	projectile.shoot(ANGLE)
 
 # Function to deal with getting hit by projectile
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("Projectile"):
-		body.queue_free()  # Destroy the projectile
-		take_damage(body.damage)  # Deal damage to the enemy
+func _on_area_2d_area_entered(area):
+	var area_parent = area.get_parent()
+	# Replace with function body.
+	if area_parent.is_in_group("Projectile"):
+		area_parent.queue_free()  # Destroy the projectile
+		take_damage(area_parent.damage)  # Deal damage to the enemy

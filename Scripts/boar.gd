@@ -16,3 +16,6 @@ extends "res://Scripts/enemies.gd"
 # Once timer runs out, deal damage
 func _on_attack_timer_timeout():
 	deal_damage()
+
+
+

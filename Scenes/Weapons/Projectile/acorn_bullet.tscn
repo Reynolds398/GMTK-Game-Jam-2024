@@ -23,4 +23,5 @@ scale = Vector2(0.0620117, 0.0615234)
 texture = ExtResource("2_1wkw2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

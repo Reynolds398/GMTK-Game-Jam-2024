@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5rihabpj7uos"]
 
 [ext_resource type="Script" path="res://Scripts/fox.gd" id="1_d5yu8"]
-[ext_resource type="Texture2D" uid="uid://dlqei8ks644hq" path="res://assets/wolf_SCRATCH.png" id="2_jjakf"]
+[ext_resource type="Texture2D" uid="uid://dlqei8ks644hq" path="res://Assets/wolf_SCRATCH.png" id="2_jjakf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r003b"]
 atlas = ExtResource("2_jjakf")
@@ -68,5 +68,5 @@ shape = SubResource("RectangleShape2D_qg8gd")
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
