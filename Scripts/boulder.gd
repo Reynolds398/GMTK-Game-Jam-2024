@@ -5,7 +5,7 @@ var vel = Vector2.ZERO  # Variable to set the speed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
-	gravity_scale = 1
+	gravity_scale = 0
 	
 	#shoot()
 	

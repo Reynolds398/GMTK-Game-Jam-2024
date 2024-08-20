@@ -7,6 +7,7 @@ var bullet = null  # Instatiated acorn bullet
 func _ready():
 	super()
 	acorn_bullet = preload("res://Scenes/Weapons/Projectile/acorn_bullet.tscn")
+	parent.connect("increase_p_dmg", _on_increase_p_dmg)
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -21,3 +22,6 @@ func _on_shoot_timer_timeout():
 	bullet.set_face_right(RIGHT)
 	bullet.set_shoot_force(SHOOT_FORCE)
 	bullet.shoot()
+
+func _on_increase_p_dmg(dmg):
+	GUN_DAMAGE = dmg

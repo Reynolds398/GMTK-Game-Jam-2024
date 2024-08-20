@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rnw4"]
 radius = 4.0
 
-[node name="AcornBullet" type="RigidBody2D" groups=["Projectile"]]
+[node name="AcornBullet" type="RigidBody2D" groups=["NotPierce"]]
 max_contacts_reported = 2
 contact_monitor = true
 script = ExtResource("1_rqv11")

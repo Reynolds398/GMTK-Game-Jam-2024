@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=29 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
 [ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b0bsnjwyvkka4" path="res://Assets/BP_SMALL.png" id="10_5o3t4"]
 [ext_resource type="Texture2D" uid="uid://c6fnylcyw1k65" path="res://Assets/P_in_WALL.png" id="11_pmdt3"]
 [ext_resource type="Texture2D" uid="uid://bu0fvm0tslk6n" path="res://Assets/SQUIRREL_in_WALL.png" id="12_afxe8"]
+[ext_resource type="PackedScene" uid="uid://dgkdfqx21rp7g" path="res://Scenes/Weapons/Spawner/boulder_spawner.tscn" id="15_iv4eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdktt"]
 size = Vector2(6, 26)
@@ -209,6 +210,7 @@ disabled = true
 debug_color = Color(0, 0.592157, 0.737255, 0.419608)
 
 [node name="GunLeft1" parent="Stage 1" instance=ExtResource("3_3jeu4")]
+visible = false
 position = Vector2(-29, -5)
 RIGHT = false
 
@@ -581,7 +583,15 @@ z_index = 1
 position = Vector2(5, -47)
 scale = Vector2(1.5, 1.5)
 
+[node name="BouldRight" parent="Stage 5" instance=ExtResource("15_iv4eq")]
+position = Vector2(20, -27)
+RIGHT = true
+
+[node name="BouldLeft" parent="Stage 5" instance=ExtResource("15_iv4eq")]
+position = Vector2(-30, -25)
+
 [node name="Stage 6" type="StaticBody2D" parent="." groups=["Tree"]]
+visible = false
 position = Vector2(-1, 0)
 collision_layer = 2
 collision_mask = 2
@@ -780,6 +790,13 @@ z_index = 1
 position = Vector2(6, -78)
 scale = Vector2(1.5, 1.5)
 
+[node name="BouldRight" parent="Stage 6" instance=ExtResource("15_iv4eq")]
+position = Vector2(40, -21)
+RIGHT = true
+
+[node name="BouldLeft" parent="Stage 6" instance=ExtResource("15_iv4eq")]
+position = Vector2(-60, -18)
+
 [node name="Stage 7" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
@@ -977,6 +994,13 @@ visible = false
 z_index = 1
 position = Vector2(8, -108)
 scale = Vector2(1.5, 1.5)
+
+[node name="BouldRight" parent="Stage 7" instance=ExtResource("15_iv4eq")]
+position = Vector2(57, -22)
+RIGHT = true
+
+[node name="BouldLeft" parent="Stage 7" instance=ExtResource("15_iv4eq")]
+position = Vector2(-76, -22)
 
 [node name="TreeCamera" type="Camera2D" parent="."]
 visible = false
