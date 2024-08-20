@@ -4,6 +4,7 @@
 
 [node name="BoulderSpawner" type="Node2D"]
 script = ExtResource("1_241ah")
+GUN_DAMAGE = 40
 RIGHT = false
 SHOOT_FORCE = 200.0
 SHOOT_TIMER = 4.0

@@ -37,7 +37,6 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-35, -50)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bw1v2")
 
 [node name="AttackTimer" type="Timer" parent="."]

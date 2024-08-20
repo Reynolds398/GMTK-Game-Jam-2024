@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dvat7e2jdul0n" path="res://Scenes/cheat_tools.tscn" id="4_u88xf"]
 [ext_resource type="PackedScene" uid="uid://dynf7qi7jv6mb" path="res://Scenes/wave_spawner.tscn" id="5_rxbba"]
 [ext_resource type="PackedScene" uid="uid://cbvpqvtd3o1bx" path="res://Scenes/enemy_spawner.tscn" id="6_1gvk1"]
-[ext_resource type="PackedScene" uid="uid://d183k8fdy5lmd" path="res://Scenes/game_over_menu.tscn" id="6_ce7ij"]
+[ext_resource type="PackedScene" path="res://Scenes/game_over_menu.tscn" id="6_ce7ij"]
 [ext_resource type="PackedScene" uid="uid://d0cparab6xjmn" path="res://Scenes/pause_menu.tscn" id="7_lq0nb"]
 [ext_resource type="PackedScene" uid="uid://cfsusoc4globt" path="res://Scenes/upgrade_ui.tscn" id="9_ttcaf"]
 
