@@ -1,42 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://w76nef8r722t"]
+[gd_scene load_steps=6 format=3 uid="uid://w76nef8r722t"]
 
 [ext_resource type="Script" path="res://Scripts/pelican_m.gd" id="1_v3tnq"]
-[ext_resource type="Texture2D" uid="uid://bohohavaob4mn" path="res://Assets/pelican_PLACEHOLDER.png" id="2_8fhen"]
+[ext_resource type="Texture2D" uid="uid://3q51tjix2ntb" path="res://Assets/pelican_SLAM1.png" id="2_hg8ng"]
+[ext_resource type="Texture2D" uid="uid://iapis85g6qnp" path="res://Assets/pelican_SLAM2.png" id="3_o4ugb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f6anl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8fhen")
+"texture": ExtResource("2_hg8ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o4ugb")
 }],
 "loop": true,
 "name": &"attack",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_8fhen")
-}],
+"frames": [],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bw1v2"]
-size = Vector2(650, 640)
+size = Vector2(652.5, 680)
 
 [node name="pelican_m" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.1, 0.1)
 script = ExtResource("1_v3tnq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-20, -50)
+scale = Vector2(0.45, 0.45)
 sprite_frames = SubResource("SpriteFrames_f6anl")
-animation = &"walk"
+animation = &"attack"
+frame_progress = 0.517486
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-35, -50)
+position = Vector2(-43.75, -50)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bw1v2")
 
 [node name="AttackTimer" type="Timer" parent="."]
