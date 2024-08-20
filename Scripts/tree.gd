@@ -153,6 +153,16 @@ func next_stage():
 func take_damage(amount):
 	get_parent().get_node("GameUI").decrease_health(amount)
 
+# General upgrade function that takes in the function name
+func upgrade(upgrade_name):
+	match upgrade_name:
+		"p_dmg":
+			upgrade_p_dmg()
+		"p_size":
+			upgrade_p_size()
+		"p_reload":
+			upgrade_p_reload()
+
 # Function to deal with upgrading pea guns damage
 func upgrade_p_dmg(reset = false):
 	if not reset:
@@ -166,10 +176,31 @@ func upgrade_p_dmg(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_p_dmg(40)
 
-func upgrade(upgrade_name):
-	match upgrade_name:
-		"p_dmg":
-			upgrade_p_dmg()
+# Function to deal with upgrading pea guns size
+func upgrade_p_size(reset = false):
+	if not reset:
+		p_size += 1
+	
+	# Null check
+	if current_stage != null:
+		match p_size:
+			0: # Default size
+				current_stage.upgrade_p_size(Vector2(1,1))
+			1: # First level of upgrade
+				current_stage.upgrade_p_size(Vector2(2,2))
+
+# Function to deal with upgrading pea guns damage
+func upgrade_p_reload(reset = false):
+	if not reset:
+		p_reload += 1
+	
+	# Null check
+	if current_stage != null:
+		match p_reload:
+			0: # Default speed
+				current_stage.upgrade_p_reload(1.0)
+			1: # First level of upgrade
+				current_stage.upgrade_p_reload(0.75)
 
 # Function to reset variables to default
 func reset_stage():
@@ -180,6 +211,8 @@ func reset_stage():
 # Reset all upgrade progress
 func reset_upgrade_progress():
 	upgrade_p_dmg(true)
+	upgrade_p_size(true)
+	upgrade_p_reload(true)
 
 # Reset upgrade variable to default position
 func reset_upgrade_var():

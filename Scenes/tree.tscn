@@ -438,7 +438,7 @@ position = Vector2(-28, -58)
 scale = Vector2(0.277611, 0.207217)
 texture = ExtResource("11_pmdt3")
 
-[node name="LeftGun2" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+[node name="GunLeft2" parent="Stage 5" instance=ExtResource("3_3jeu4")]
 visible = false
 position = Vector2(-43, -58)
 RIGHT = false
@@ -449,7 +449,7 @@ position = Vector2(-28, -39)
 scale = Vector2(0.275718, 0.197013)
 texture = ExtResource("11_pmdt3")
 
-[node name="LeftGun1" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+[node name="GunLeft1" parent="Stage 5" instance=ExtResource("3_3jeu4")]
 visible = false
 position = Vector2(-43, -39)
 RIGHT = false
@@ -461,7 +461,7 @@ rotation = 3.14159
 scale = Vector2(0.242195, -0.206736)
 texture = ExtResource("11_pmdt3")
 
-[node name="RightGun2" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+[node name="GunRight2" parent="Stage 5" instance=ExtResource("3_3jeu4")]
 visible = false
 position = Vector2(38, -58)
 
@@ -472,7 +472,7 @@ rotation = 3.14159
 scale = Vector2(0.252065, -0.206736)
 texture = ExtResource("11_pmdt3")
 
-[node name="RightGun1" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+[node name="GunRight1" parent="Stage 5" instance=ExtResource("3_3jeu4")]
 visible = false
 position = Vector2(37, -38)
 

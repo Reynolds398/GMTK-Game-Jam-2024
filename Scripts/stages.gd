@@ -3,6 +3,8 @@ extends StaticBody2D
 signal enable_all_guns
 signal disable_all_guns
 signal increase_p_dmg(dmg)
+signal increase_p_size(size)
+signal increase_p_reload(cooldown)
 
 # All weapons objects
 # Left side
@@ -69,3 +71,11 @@ func send_disable_signal():
 # Function to send signal to increase damage output of all p guns
 func upgrade_p_dmg(dmg):
 	emit_signal("increase_p_dmg", dmg)
+
+# Function to send signal to increase damage output of all p guns
+func upgrade_p_size(size):
+	emit_signal("increase_p_size", size)
+
+# Function to send signal to increase damage output of all p guns
+func upgrade_p_reload(cooldown):
+	emit_signal("increase_p_reload", cooldown)

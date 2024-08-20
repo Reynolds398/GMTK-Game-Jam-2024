@@ -6,7 +6,7 @@ func _ready():
 	gravity_scale = 0
 	
 	#shoot()
-	
+
 ## To safely modify position or velocity of rigidbody (to not break physics calculation)
 #func _integrate_forces(state):
 

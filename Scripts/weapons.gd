@@ -8,6 +8,8 @@ extends Node2D
 @onready var gun_timer = $ShootTimer  # Shoot Timer object
 @onready var parent = get_parent()
 
+var size = Vector2(1,1)  # Variable for size
+
 func _ready():
 	gun_timer.wait_time = SHOOT_TIMER
 	parent.connect("enable_all_guns", _on_enable_signal)
