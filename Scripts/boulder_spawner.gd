@@ -6,7 +6,7 @@ var boulder = null  # Instatiated boulder
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
-	enable_shooting()
+	#enable_shooting()
 	boulder_object = preload("res://Scenes/Weapons/Projectile/boulder.tscn")
 
 func _on_shoot_timer_timeout():
