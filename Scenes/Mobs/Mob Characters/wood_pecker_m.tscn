@@ -45,12 +45,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1omy0"]
-size = Vector2(1076, 618)
+size = Vector2(2342.86, 3786.86)
 
 [node name="wood_pecker_m" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.035, 0.035)
 script = ExtResource("1_utwvb")
-HEALTH = 180
+HEALTH = 400
+SPEED = 40
+DAMAGE = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_auho3")
@@ -59,7 +61,7 @@ animation = &"walk"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-22, -65)
+position = Vector2(2.04359e-05, -1649.43)
 shape = SubResource("RectangleShape2D_1omy0")
 
 [node name="AttackTimer" type="Timer" parent="."]

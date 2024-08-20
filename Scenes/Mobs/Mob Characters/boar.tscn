@@ -64,9 +64,9 @@ size = Vector2(1016, 690)
 [node name="boar" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.2, 0.2)
 script = ExtResource("1_pbeov")
-HEALTH = 2000
-SPEED = 60
-DAMAGE = 30
+HEALTH = 4000
+SPEED = 100
+DAMAGE = 25
 GOLD_VALUE = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

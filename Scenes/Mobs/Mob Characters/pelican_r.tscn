@@ -38,13 +38,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nx6ns"]
-size = Vector2(650, 640)
+size = Vector2(1440, 1500)
 
 [node name="pelican_r" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.1, 0.1)
 script = ExtResource("1_2epmp")
-HEALTH = 960
-SPEED = 45
+HEALTH = 1920
+SPEED = 50
 RANGE = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -54,7 +54,8 @@ animation = &"attack"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-35, -50)
+position = Vector2(20, -450)
+scale = Vector2(0.999998, 0.999998)
 shape = SubResource("RectangleShape2D_nx6ns")
 
 [node name="AttackTimer" type="Timer" parent="."]

@@ -64,9 +64,8 @@ size = Vector2(620, 606)
 [node name="wolf" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.15, 0.15)
 script = ExtResource("1_psupw")
-HEALTH = 400
-SPEED = 55
-DAMAGE = 25
+HEALTH = 800
+SPEED = 75
 GOLD_VALUE = 75
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
