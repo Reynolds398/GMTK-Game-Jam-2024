@@ -1,6 +1,7 @@
 extends "res://Scripts/Projectiles.gd"
 
 var vel = Vector2.ZERO  # Variable to set the speed
+@onready var anim_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,10 +20,10 @@ func shoot(velocity):
 	# Shoot right if facing right
 	if face_right:
 		vel = velocity
-		$AnimationPlayer.play("roll_right")
+		#anim_player.play("roll_right")
 	else: # Shoot left if facing left
 		vel = velocity * Vector2(-1, 1)
-		$ANimationPlayer.play("roll_left")
+		#anim_player.play("roll_left")
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Wall"):

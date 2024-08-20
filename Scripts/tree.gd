@@ -122,6 +122,8 @@ func set_stage_4():
 	# Adding weapon slot upgrades to upgrades from stage 3
 	upgrade_ui.append_upgrade("c_right", [1000, 2000])
 	upgrade_ui.append_upgrade("c_left", [1000, 2000])
+	
+	stage_4.update_stage_4()
 	set_stage(stage_4)
 
 # Function to set variables for stage 5
@@ -138,6 +140,7 @@ func set_stage_5():
 	upgrade_ui.append_upgrade("b_right", [3000])
 	upgrade_ui.append_upgrade("b_left", [3000])
 	
+	stage_5.update_stage_5()
 	set_stage(stage_5)
 
 # Function to set variables for stage 6
@@ -149,6 +152,7 @@ func set_stage_6():
 	camera.zoom = Vector2(1.3,1.3)
 	camera.limit_bottom = 640
 	
+	stage_6.update_stage_6()
 	set_stage(stage_6)
 
 # Function to set variables for stage 7
@@ -160,6 +164,7 @@ func set_stage_7():
 	camera.zoom = Vector2(1,1)
 	camera.limit_bottom = 640
 	
+	stage_7.update_stage_7()
 	set_stage(stage_7)
 
 # Function to deal with stage transitions
@@ -211,6 +216,14 @@ func upgrade(upgrade_name):
 			upgrade_p_left()
 		"p_right":
 			upgrade_p_right()
+		"c_left":
+			upgrade_c_left()
+		"c_right":
+			upgrade_c_right()
+		"b_left":
+			upgrade_b_left()
+		"b_right":
+			upgrade_b_right()
 	
 	refresh_stage()
 
@@ -338,17 +351,42 @@ func upgrade_b_size(reset = false):
 
 # Add p_left count by 1
 func upgrade_p_left():
-	print("p_left")
 	p_left += 1
 
 # Add p_right count by 1
 func upgrade_p_right():
-	print("p_right")
 	p_right += 1
+
+# Add c_left count by 1
+func upgrade_c_left():
+	print("c_left")
+	c_left += 1
+
+# Add c_right count by 1
+func upgrade_c_right():
+	print("c_right")
+	c_right += 1
+
+# Add b_left count by 1
+func upgrade_b_left():
+	print("b_left")
+	b_left += 1
+
+# Add b_right count by 1
+func upgrade_b_right():
+	print("b_right")
+	b_right += 1
 
 # Function to reset variables to default
 func reset_stage():
 	CUR_TREE_STAGE = 0
+	stage_1.hide_all()
+	stage_2.hide_all()
+	stage_3.hide_all()
+	stage_4.hide_all()
+	stage_5.hide_all()
+	stage_6.hide_all()
+	stage_7.hide_all()
 	reset_upgrade_var()
 	refresh_upgrade_progress()
 
