@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnkq1okywclyv"]
+[gd_scene load_steps=8 format=3 uid="uid://bnkq1okywclyv"]
 
 [ext_resource type="Script" path="res://Scripts/Obstacle.gd" id="1_odipt"]
 [ext_resource type="Texture2D" uid="uid://lbhwrshdb2nm" path="res://Assets/ground DIRT.png" id="2_hct4s"]
+[ext_resource type="Texture2D" uid="uid://dg5vceiuexd4c" path="res://Assets/bg_gradient.png" id="3_5n5k4"]
+[ext_resource type="Texture2D" uid="uid://hh7m50dob7c3" path="res://Assets/C1.png" id="4_irqui"]
+[ext_resource type="Texture2D" uid="uid://dmtmwxr763c7n" path="res://Assets/C2.png" id="5_kfvsa"]
+[ext_resource type="Texture2D" uid="uid://mt77wlse66wb" path="res://Assets/C3.png" id="6_nugt0"]
+[ext_resource type="Texture2D" uid="uid://kxag4an32fne" path="res://Assets/C4.png" id="7_mnq65"]
 
 [node name="World" type="Node2D"]
 
@@ -67,3 +72,29 @@ color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(0, 613, 1149, 613, 1149, 647, 0, 647)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBound"]
+
+[node name="BgGradient" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(559, 303.75)
+scale = Vector2(0.397281, 0.411865)
+texture = ExtResource("3_5n5k4")
+
+[node name="C1" type="Sprite2D" parent="."]
+position = Vector2(989, 283)
+scale = Vector2(0.187014, 0.262531)
+texture = ExtResource("4_irqui")
+
+[node name="C2" type="Sprite2D" parent="."]
+position = Vector2(859, 130)
+scale = Vector2(0.221293, 0.260652)
+texture = ExtResource("5_kfvsa")
+
+[node name="C3" type="Sprite2D" parent="."]
+position = Vector2(115, 309)
+scale = Vector2(0.269181, 0.302632)
+texture = ExtResource("6_nugt0")
+
+[node name="C4" type="Sprite2D" parent="."]
+position = Vector2(304, 139)
+scale = Vector2(0.254925, 0.301378)
+texture = ExtResource("7_mnq65")
