@@ -43,6 +43,8 @@ size = Vector2(650, 640)
 [node name="pelican_r" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.1, 0.1)
 script = ExtResource("1_2epmp")
+HEALTH = 960
+SPEED = 45
 RANGE = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

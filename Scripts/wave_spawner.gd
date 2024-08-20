@@ -59,7 +59,7 @@ func start_wave_1():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_initial_spawn_timer(3)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only(20)
 	#enemy_spawner.left_and_right()
@@ -69,7 +69,7 @@ func start_wave_2():
 	# Initializing right side
 	spawn = Vector2(847,610)
 	end_m = Vector2(587,610)
-	end_r = Vector2(635,610)
+	end_r = Vector2(615,610)
 	fly_m = Vector2(520,610)
 	fly_r = Vector2(520,610)
 	
@@ -78,7 +78,7 @@ func start_wave_2():
 	# Initializing left side
 	spawn = Vector2(390,610)
 	end_m = Vector2(557,610)
-	end_r = Vector2(494,610)
+	end_r = Vector2(514,610)
 	fly_m = Vector2(460,610)
 	fly_r = Vector2(460,610)
 	
@@ -96,8 +96,8 @@ func start_wave_2():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
-	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
 	enemy_spawner.left_and_right(20,20)
 	spawn_enemies()
@@ -106,7 +106,7 @@ func start_wave_3():
 	# Initializing right side
 	spawn = Vector2(897,610)
 	end_m = Vector2(602,610)
-	end_r = Vector2(665,610)
+	end_r = Vector2(645,610)
 	fly_m = Vector2(602,510)
 	fly_r = Vector2(665,510)
 	
@@ -115,7 +115,7 @@ func start_wave_3():
 	# Initializing left side
 	spawn = Vector2(330,610)
 	end_m = Vector2(542,610)
-	end_r = Vector2(464,610)
+	end_r = Vector2(484,610)
 	fly_m = Vector2(542,510)
 	fly_r = Vector2(464,510)
 	
@@ -133,8 +133,8 @@ func start_wave_3():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
-	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
 	enemy_spawner.left_and_right(25,25)
 	spawn_enemies()
@@ -143,7 +143,7 @@ func start_wave_4():
 	# Initializing right side
 	spawn = Vector2(1027,610)
 	end_m = Vector2(622,610)
-	end_r = Vector2(685,610)
+	end_r = Vector2(665,610)
 	fly_m = Vector2(697,460)
 	fly_r = Vector2(725,460)
 	
@@ -152,7 +152,7 @@ func start_wave_4():
 	# Initializing left side
 	spawn = Vector2(100,610)
 	end_m = Vector2(522,610)
-	end_r = Vector2(444,610)
+	end_r = Vector2(464,610)
 	fly_m = Vector2(512,460)
 	fly_r = Vector2(404,460)
 	
@@ -170,8 +170,8 @@ func start_wave_4():
 	wood_pecker_r = 50
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
-	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only(0)
 	#enemy_spawner.left_and_right()
 	spawn_enemies()
@@ -180,7 +180,7 @@ func start_wave_5():
 	# Initializing right side
 	spawn = Vector2(1027,610)
 	end_m = Vector2(622,610)
-	end_r = Vector2(685,610)
+	end_r = Vector2(665,610)
 	fly_m = Vector2(697,460)
 	fly_r = Vector2(725,460)
 	
@@ -189,7 +189,7 @@ func start_wave_5():
 	# Initializing left side
 	spawn = Vector2(100,610)
 	end_m = Vector2(522,610)
-	end_r = Vector2(444,610)
+	end_r = Vector2(464,610)
 	fly_m = Vector2(512,460)
 	fly_r = Vector2(404,460)
 	
@@ -207,8 +207,8 @@ func start_wave_5():
 	wood_pecker_r = 100
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
-	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only(0)
 	#enemy_spawner.left_and_right()
 	spawn_enemies()
@@ -217,7 +217,7 @@ func start_wave_6():
 	# Initializing right side
 	spawn = Vector2(1227,610)
 	end_m = Vector2(687,610)
-	end_r = Vector2(685,610)
+	end_r = Vector2(665,610)
 	fly_m = Vector2(697,460)
 	fly_r = Vector2(725,460)
 	
@@ -226,7 +226,7 @@ func start_wave_6():
 	# Initializing left side
 	spawn = Vector2(-100,610)
 	end_m = Vector2(437,610)
-	end_r = Vector2(444,610)
+	end_r = Vector2(464,610)
 	fly_m = Vector2(512,460)
 	fly_r = Vector2(404,460)
 	
@@ -244,8 +244,8 @@ func start_wave_6():
 	wood_pecker_r = 50
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
-	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only(0)
 	#enemy_spawner.left_and_right()
 	spawn_enemies()
@@ -254,7 +254,7 @@ func start_wave_7():
 	# Initializing right side
 	spawn = Vector2(1227,610)
 	end_m = Vector2(727,610)
-	end_r = Vector2(685,610)
+	end_r = Vector2(665,610)
 	fly_m = Vector2(697,460)
 	fly_r = Vector2(725,460)
 	
@@ -263,7 +263,7 @@ func start_wave_7():
 	# Initializing left side
 	spawn = Vector2(-100,610)
 	end_m = Vector2(397,610)
-	end_r = Vector2(444,610)
+	end_r = Vector2(464,610)
 	fly_m = Vector2(512,460)
 	fly_r = Vector2(404,460)
 	
@@ -281,8 +281,8 @@ func start_wave_7():
 	wood_pecker_r = 0
 	
 	# Spawn the enemies
-	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
-	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
+	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
+	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	enemy_spawner.left_only(0)
 	#enemy_spawner.left_and_right()
 	spawn_enemies()

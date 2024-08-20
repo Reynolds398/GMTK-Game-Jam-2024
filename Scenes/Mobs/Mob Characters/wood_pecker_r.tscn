@@ -43,6 +43,7 @@ size = Vector2(1100, 599.286)
 [node name="wood_pecker_r" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.035, 0.035)
 script = ExtResource("1_jt64m")
+HEALTH = 180
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_67h6s")

@@ -50,6 +50,7 @@ size = Vector2(1076, 618)
 [node name="wood_pecker_m" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.035, 0.035)
 script = ExtResource("1_utwvb")
+HEALTH = 180
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_auho3")

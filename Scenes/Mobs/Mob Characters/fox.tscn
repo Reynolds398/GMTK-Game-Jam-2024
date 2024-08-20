@@ -50,8 +50,8 @@ size = Vector2(346.667, 346.667)
 [node name="fox" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.15, 0.15)
 script = ExtResource("1_d5yu8")
-HEALTH = 80
-SPEED = 40
+HEALTH = 200
+SPEED = 60
 GOLD_VALUE = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
