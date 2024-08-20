@@ -235,6 +235,7 @@ position = Vector2(-35, -5)
 RIGHT = false
 
 [node name="GunRight1" parent="Stage 2" instance=ExtResource("3_3jeu4")]
+visible = false
 position = Vector2(33, -5)
 scale = Vector2(-1, 1)
 
