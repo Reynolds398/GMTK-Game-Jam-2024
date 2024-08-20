@@ -152,21 +152,21 @@ func show_pult_left():
 	
 	if parent.c_left > 3:
 		if pult_left_3 == null:
-			pult_left_3 = $PultLeft4
+			pult_left_3 = $PultLeft3
 		
 		pult_left_3.visible = true
 		pult_left_3.enable_shooting()
 	
 	if parent.c_left > 4:
 		if pult_left_4 == null:
-			pult_left_4 = $PultLeft2
+			pult_left_4 = $PultLeft4
 		
 		pult_left_4.visible = true
 		pult_left_4.enable_shooting()
 	
 	if parent.c_left > 5:
 		if pult_left_5 == null:
-			pult_left_5 = $PultLeft6
+			pult_left_5 = $PultLeft5
 		
 		pult_left_5.visible = true
 		pult_left_5.enable_shooting()
