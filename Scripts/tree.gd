@@ -14,6 +14,7 @@ extends Node2D
 @onready var stage_7 = $"Stage 7"
 
 var current_stage = null  # Variable to keep track of the current stage object
+var upgrade_ui = null  # Upgrade UI object
 #var i = 0
 
 # Upgrade tracker for each upgrades
@@ -38,6 +39,7 @@ func _ready():
 	camera.zoom = Vector2(0.5,0.5)
 	camera.limit_bottom = 625
 	
+	upgrade_ui = get_parent().get_node("UpgradeUI")
 	reset_stage()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,12 +65,14 @@ func set_stage(stage):
 	# Turn on the next stage
 	stage.visible = true
 	current_stage = stage
-	current_stage.send_enable_signal()
+	#current_stage.send_enable_signal()
 	current_stage.get_node("CollisionShape2D").disabled = false
 
 # Function to set variables for stage 1
 func set_stage_1():
 	print("stage 1")
+	CUR_TREE_STAGE = 1
+	
 	# Camera update here
 	camera.zoom = Vector2(4,4)
 	camera.limit_bottom = 620
@@ -79,24 +83,36 @@ func set_stage_1():
 # Function to set variables for stage 2
 func set_stage_2():
 	print("stage 2")
+	CUR_TREE_STAGE = 2
+	
 	# Camera update here
 	camera.zoom = Vector2(3.75,3.75)
 	camera.limit_bottom = 625
 	
+	# Adding weapon slot upgrades to upgrades from stage 1
+	upgrade_ui.append_upgrade("p_right", [1000])
+	stage_2.update_stage_2()
 	set_stage(stage_2)
 
 # Function to set variables for stage 3
 func set_stage_3():
 	print("stage 3")
+	CUR_TREE_STAGE = 3
+	
 	# Camera update here
 	camera.zoom = Vector2(3,3)
 	camera.limit_bottom = 630
 	
+	# Adding weapon slot upgrades to upgrades from stage 2
+	upgrade_ui.append_upgrade("p_right", [2000])
+	upgrade_ui.append_upgrade("p_left", [2000])
 	set_stage(stage_3)
 	
 # Function to set variables for stage 4
 func set_stage_4():
 	print("stage 4")
+	CUR_TREE_STAGE = 4
+	
 	# Camera update here
 	camera.zoom = Vector2(2.5,2.5)
 	camera.limit_bottom = 630
@@ -106,6 +122,8 @@ func set_stage_4():
 # Function to set variables for stage 5
 func set_stage_5():
 	print("stage 5")
+	CUR_TREE_STAGE = 5
+	
 	# Camera update here
 	camera.zoom = Vector2(1.8,1.8)
 	camera.limit_bottom = 635
@@ -115,6 +133,8 @@ func set_stage_5():
 # Function to set variables for stage 6
 func set_stage_6():
 	print("stage 6")
+	CUR_TREE_STAGE = 6
+	
 	# Camera update here
 	camera.zoom = Vector2(1.3,1.3)
 	camera.limit_bottom = 640
@@ -124,6 +144,7 @@ func set_stage_6():
 # Function to set variables for stage 7
 func set_stage_7():
 	print("stage 7")
+	CUR_TREE_STAGE = 7
 	
 	# Camera update here
 	camera.zoom = Vector2(1,1)
@@ -150,6 +171,8 @@ func next_stage():
 			set_stage_6()
 		7:
 			set_stage_7()
+	
+	refresh_upgrade_progress()
 
 # Function to make tree take damage
 func take_damage(amount):
@@ -174,6 +197,30 @@ func upgrade(upgrade_name):
 			upgrade_b_reload()
 		"b_size":
 			upgrade_b_size()
+		"p_left":
+			upgrade_p_left()
+		"p_right":
+			upgrade_p_right()
+	
+	refresh_stage()
+
+# Refresh stage (to check if any weapons are added)
+func refresh_stage():
+	match CUR_TREE_STAGE:
+		1:
+			current_stage.update_stage_1()
+		2:
+			current_stage.update_stage_2()
+		3:
+			current_stage.update_stage_3()
+		4:
+			current_stage.update_stage_4()
+		5:
+			current_stage.update_stage_5()
+		6:
+			current_stage.update_stage_6()
+		7:
+			current_stage.update_stage_7()
 
 # Function to deal with upgrading pea guns damage
 func upgrade_p_dmg(reset = false):
@@ -279,22 +326,32 @@ func upgrade_b_size(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_b_size(Vector2(10,10))
 
+# Add p_left count by 1
+func upgrade_p_left():
+	print("p_left")
+	p_left += 1
+
+# Add p_right count by 1
+func upgrade_p_right():
+	print("p_right")
+	p_right += 1
+
 # Function to reset variables to default
 func reset_stage():
 	CUR_TREE_STAGE = 0
 	reset_upgrade_var()
-	reset_upgrade_progress()
+	refresh_upgrade_progress()
 
-# Reset all upgrade progress
-func reset_upgrade_progress():
-	upgrade_p_dmg(true)
-	upgrade_p_size(true)
-	upgrade_p_reload(true)
-	upgrade_c_dmg(true)
-	upgrade_c_reload(true)
-	upgrade_c_size(true)
-	upgrade_b_reload(true)
-	upgrade_b_size(true)
+# Refresh all upgrade progress (does not increase the upgrade if reset is true)
+func refresh_upgrade_progress(reset = true):
+	upgrade_p_dmg(reset)
+	upgrade_p_size(reset)
+	upgrade_p_reload(reset)
+	upgrade_c_dmg(reset)
+	upgrade_c_reload(reset)
+	upgrade_c_size(reset)
+	upgrade_b_reload(reset)
+	upgrade_b_size(reset)
 
 # Reset upgrade variable to default position
 func reset_upgrade_var():

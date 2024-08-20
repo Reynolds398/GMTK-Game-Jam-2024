@@ -162,6 +162,7 @@ func upgrade_weapon(upgrade_array, upgrade_name):
 			upgrade_array.pop_front()
 			tree.upgrade(upgrade_name)
 
+
 # Reset upgrades progress to stage 1
 func reset_upgrades():
 	# Upgrade costs per level
@@ -178,13 +179,39 @@ func reset_upgrades():
 	c_size_upgrade = [1090, 2000, 3000, 4000]
 	b_size_upgrade = [1002, 2000, 3000, 4000]
 	# Left
-	p_left_upgrade = [1080]
-	c_left_upgrade = [1070, 2000, 3000, 4000, 5000, 6000, 7000]
-	b_left_upgrade = [1060]
+	p_left_upgrade = []
+	c_left_upgrade = []
+	b_left_upgrade = []
 	# Right
-	p_right_upgrade = [1050, 2000]
-	c_right_upgrade = [1040, 2000, 3000, 4000, 5000, 6000, 7000]
-	b_right_upgrade = [1030]
+	p_right_upgrade = []
+	c_right_upgrade = []
+	b_right_upgrade = []
+
+# Append specific upgrades with the costs
+func append_upgrade(upgrade_name, value):
+	match upgrade_name:
+		"p_dmg":
+			p_dmg_upgrade.append_array(value)
+		"p_size":
+			p_size_upgrade.append_array(value)
+		"p_reload":
+			p_reload_upgrade.append_array(value)
+		"c_dmg":
+			c_dmg_upgrade.append_array(value)
+		"c_size":
+			c_size_upgrade.append_array(value)
+		"c_reload":
+			c_reload_upgrade.append_array(value)
+		"b_reload":
+			b_reload_upgrade.append_array(value)
+		"b_size":
+			b_size_upgrade.append_array(value)
+		"p_left":
+			p_left_upgrade.append_array(value)
+		"p_right":
+			p_right_upgrade.append_array(value)
+			
+	reset_upgrade_costs()
 
 # Reset upgrade costs
 func reset_upgrade_costs():

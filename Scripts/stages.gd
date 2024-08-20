@@ -22,6 +22,8 @@ var pult_left_4 = null
 var pult_left_5 = null
 var pult_left_6 = null
 # Right side
+var gun_right_1 = null
+var gun_right_2 = null
 var pult_right_1 = null
 var pult_right_2 = null
 var pult_right_3 = null
@@ -42,7 +44,8 @@ func _ready():
 #func _process(delta):
 #	pass
 
-# Upgrade tracker for each upgrades
+# Upgrade tracker for each upgrades (For reference so should delete after)
+# DELETE THESE AFTER 
 var p_left = 1
 var c_left = 0
 var b_left = 0
@@ -53,13 +56,52 @@ var p_dmg = 0
 var c_dmg = 0
 var p_size = 0
 var c_size = 0
+var b_size = 0
 var p_reload = 0
 var c_reload = 0
+var b_reload = 0
 
+# Update showing the guns for stage 1
 func update_stage_1():
+	print("from STAGE 1")
+	show_p_gun_left()
+
+func update_stage_2():
+	print("Test")
+	show_p_gun_left()
+	show_p_gun_right()
+
+# Show the peashooter gun on the left side according to the upgrade
+func show_p_gun_left():
+	print("p_left", p_left)
 	if parent.p_left > 0:
 		gun_left_1.visible = true
 		gun_left_1.enable_shooting()
+		
+	if parent.p_left > 1:
+		if gun_left_2 == null:
+			gun_left_2 = $GunLeft2
+		
+		gun_left_2.visible = true
+		gun_left_2.enable_shooting()
+
+# Show the peashooter gun on the right side according to the upgrade
+func show_p_gun_right():
+	print("p_right", p_right)
+	if parent.p_right > 0:
+		if gun_right_1 == null:
+			gun_right_1 = $GunRight1
+		
+		gun_right_1.visible = true
+		gun_right_1.enable_shooting()
+		
+	if parent.p_right > 1:
+		if gun_right_2 == null:
+			gun_right_2 = $GunRight2
+			
+		gun_right_2.visible = true
+		gun_right_2.enable_shooting()
+	
 
 # Function to initialize all weapon object for stage 7
 func init_stage_7():
