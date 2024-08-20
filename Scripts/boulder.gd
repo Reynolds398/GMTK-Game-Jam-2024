@@ -20,10 +20,10 @@ func shoot(velocity):
 	# Shoot right if facing right
 	if face_right:
 		vel = velocity
-		#anim_player.play("roll_right")
+		anim_player.play("roll_right")
 	else: # Shoot left if facing left
 		vel = velocity * Vector2(-1, 1)
-		#anim_player.play("roll_left")
+		anim_player.play("roll_left")
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Wall"):
