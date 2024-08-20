@@ -91,6 +91,7 @@ func set_stage_2():
 	
 	# Adding weapon slot upgrades to upgrades from stage 1
 	upgrade_ui.append_upgrade("p_right", [1000])
+	
 	stage_2.update_stage_2()
 	set_stage(stage_2)
 
@@ -106,6 +107,8 @@ func set_stage_3():
 	# Adding weapon slot upgrades to upgrades from stage 2
 	upgrade_ui.append_upgrade("p_right", [2000])
 	upgrade_ui.append_upgrade("p_left", [2000])
+	
+	stage_3.update_stage_3()
 	set_stage(stage_3)
 	
 # Function to set variables for stage 4
@@ -116,7 +119,9 @@ func set_stage_4():
 	# Camera update here
 	camera.zoom = Vector2(2.5,2.5)
 	camera.limit_bottom = 630
-	
+	# Adding weapon slot upgrades to upgrades from stage 3
+	upgrade_ui.append_upgrade("c_right", [1000, 2000])
+	upgrade_ui.append_upgrade("c_left", [1000, 2000])
 	set_stage(stage_4)
 
 # Function to set variables for stage 5
@@ -127,6 +132,11 @@ func set_stage_5():
 	# Camera update here
 	camera.zoom = Vector2(1.8,1.8)
 	camera.limit_bottom = 635
+	# Adding weapon slot upgrades to upgrades from stage 4
+	upgrade_ui.append_upgrade("c_right", [3000, 4000, 5000, 6000, 7000])
+	upgrade_ui.append_upgrade("c_left", [3000, 4000, 5000, 6000, 7000])
+	upgrade_ui.append_upgrade("b_right", [3000])
+	upgrade_ui.append_upgrade("b_left", [3000])
 	
 	set_stage(stage_5)
 

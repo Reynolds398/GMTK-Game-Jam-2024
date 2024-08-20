@@ -210,6 +210,14 @@ func append_upgrade(upgrade_name, value):
 			p_left_upgrade.append_array(value)
 		"p_right":
 			p_right_upgrade.append_array(value)
+		"c_left":
+			c_left_upgrade.append_array(value)
+		"c_right":
+			c_right_upgrade.append_array(value)
+		"b_left":
+			b_left_upgrade.append_array(value)
+		"b_right":
+			b_right_upgrade.append_array(value)
 			
 	reset_upgrade_costs()
 
