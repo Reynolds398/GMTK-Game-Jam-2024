@@ -11,8 +11,8 @@ mass = 0.1
 max_contacts_reported = 2
 contact_monitor = true
 script = ExtResource("1_sm4ql")
-right_offset = Vector2(0, 20)
-left_offset = Vector2(0, 20)
+right_offset = Vector2(0, 0)
+left_offset = Vector2(0, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 

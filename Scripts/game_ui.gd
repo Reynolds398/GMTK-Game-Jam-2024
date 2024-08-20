@@ -140,3 +140,5 @@ func reset_game():
 	start_next_wave()
 	pause_menu.enable_toggle_pause()
 	upgrade_ui.enable_shop()
+	upgrade_ui.reset_upgrades()
+	upgrade_ui.reset_upgrade_costs()

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpikotp4r7r6m" path="res://Assets/PCATA_STEM.png" id="3_8nsqx"]
 
 [node name="Catapult" type="Node2D"]
+position = Vector2(0, -7)
 script = ExtResource("1_rko5m")
 angle = -80
 SHOOT_FORCE = 800.0
@@ -14,11 +15,12 @@ SHOOT_TIMER = 3.0
 
 [node name="PumpkinBase" type="Sprite2D" parent="."]
 z_index = 1
+position = Vector2(0, 7)
 scale = Vector2(0.0620117, 0.0615234)
 texture = ExtResource("2_7pu8y")
 
 [node name="Node2D" type="Node2D" parent="."]
-scale = Vector2(1, 1)
+position = Vector2(0, 7)
 
 [node name="PcataStem" type="Sprite2D" parent="Node2D"]
 position = Vector2(-3, -5)

@@ -30,50 +30,31 @@ var upgrade_cost = 0  # Variable to hold current upgrade cost for buttons
 
 # Upgrade costs per level
 # Damage Up
-var p_dmg_upgrade = [1500, 2000, 3000, 4000]
-var c_dmg_upgrade = [1400, 2000, 3000, 4000]
+var p_dmg_upgrade = []
+var c_dmg_upgrade = []
 var b_dmg_upgrade = []
 # Reload Up
-var p_reload_upgrade = [1300, 2000, 3000, 4000]
-var c_reload_upgrade = [1200, 2000, 3000, 4000]
-var b_reload_upgrade = [1100, 2000, 3000, 4000]
+var p_reload_upgrade = []
+var c_reload_upgrade = []
+var b_reload_upgrade = []
 # Projectile Up
-var p_size_upgrade = [1001, 2000, 3000, 4000]
-var c_size_upgrade = [1090, 2000, 3000, 4000]
-var b_size_upgrade = [1002, 2000, 3000, 4000]
+var p_size_upgrade = []
+var c_size_upgrade = []
+var b_size_upgrade = []
 # Left
-var p_left_upgrade = [1080, 2000, 3000, 4000]
-var c_left_upgrade = [1070, 2000, 3000, 4000]
-var b_left_upgrade = [1060, 2000, 3000, 4000]
+var p_left_upgrade = []
+var c_left_upgrade = []
+var b_left_upgrade = []
 # Right
-var p_right_upgrade = [1050, 2000, 3000, 4000]
-var c_right_upgrade = [1040, 2000, 3000, 4000]
-var b_right_upgrade = [1030, 2000, 3000, 4000]
+var p_right_upgrade = []
+var c_right_upgrade = []
+var b_right_upgrade = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	game_ui = get_parent().get_node("GameUI")
-	
-	# Update all the buttons with the first upgrade cost
-	# Damage Upgrades
-	update_cost(p_dmg_upgrade, p_dmg_button)
-	update_cost(c_dmg_upgrade, c_dmg_button)
-	# Reload Upgrades
-	update_cost(p_reload_upgrade, p_reload_button)
-	update_cost(c_reload_upgrade, c_reload_button)
-	update_cost(b_reload_upgrade, b_reload_button)
-	# Size Upgrades
-	update_cost(p_size_upgrade, p_size_button)
-	update_cost(c_size_upgrade, c_size_button)
-	update_cost(b_size_upgrade, b_size_button)
-	# Left Upgrades
-	update_cost(p_left_upgrade, p_left_button)
-	update_cost(c_left_upgrade, c_left_button)
-	update_cost(b_left_upgrade, b_left_button)
-	# Right Upgrades
-	update_cost(p_right_upgrade, p_right_button)
-	update_cost(c_right_upgrade, c_right_button)
-	update_cost(b_right_upgrade, b_right_button)
+	reset_upgrades()
+	reset_upgrade_costs()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -175,3 +156,50 @@ func upgrade_weapon(upgrade_array):
 		# Check if it is affordable
 		if game_ui.spend_currency(upgrade_array[0]):
 			upgrade_array.pop_front()
+
+# Reset upgrades progress to stage 1
+func reset_upgrades():
+	# Upgrade costs per level
+	# Damage Up
+	p_dmg_upgrade = [1500, 2000, 3000, 4000]
+	c_dmg_upgrade = [1400, 2000, 3000, 4000]
+	b_dmg_upgrade = []
+	# Reload Up
+	p_reload_upgrade = [1300, 2000, 3000, 4000]
+	c_reload_upgrade = [1200, 2000, 3000, 4000]
+	b_reload_upgrade = [1100, 2000, 3000, 4000]
+	# Projectile Up
+	p_size_upgrade = [1001, 2000, 3000, 4000]
+	c_size_upgrade = [1090, 2000, 3000, 4000]
+	b_size_upgrade = [1002, 2000, 3000, 4000]
+	# Left
+	p_left_upgrade = [1080, 2000, 3000, 4000]
+	c_left_upgrade = [1070, 2000, 3000, 4000]
+	b_left_upgrade = [1060, 2000, 3000, 4000]
+	# Right
+	p_right_upgrade = [1050, 2000, 3000, 4000]
+	c_right_upgrade = [1040, 2000, 3000, 4000]
+	b_right_upgrade = [1030, 2000, 3000, 4000]
+
+# Reset upgrade costs
+func reset_upgrade_costs():
+	# Update all the buttons with the first upgrade cost
+	# Damage Upgrades
+	update_cost(p_dmg_upgrade, p_dmg_button)
+	update_cost(c_dmg_upgrade, c_dmg_button)
+	# Reload Upgrades
+	update_cost(p_reload_upgrade, p_reload_button)
+	update_cost(c_reload_upgrade, c_reload_button)
+	update_cost(b_reload_upgrade, b_reload_button)
+	# Size Upgrades
+	update_cost(p_size_upgrade, p_size_button)
+	update_cost(c_size_upgrade, c_size_button)
+	update_cost(b_size_upgrade, b_size_button)
+	# Left Upgrades
+	update_cost(p_left_upgrade, p_left_button)
+	update_cost(c_left_upgrade, c_left_button)
+	update_cost(b_left_upgrade, b_left_button)
+	# Right Upgrades
+	update_cost(p_right_upgrade, p_right_button)
+	update_cost(c_right_upgrade, c_right_button)
+	update_cost(b_right_upgrade, b_right_button)
