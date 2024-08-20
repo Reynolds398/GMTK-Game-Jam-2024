@@ -42,17 +42,17 @@ func _ready():
 	upgrade_ui = get_parent().get_node("UpgradeUI")
 	reset_stage()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	# For debugging purposes (press space to go to next stage)
-#	if Input.is_action_just_pressed("ui_accept"):
-#		if i == 0:
-#			stage_1.send_enable_signal()
-#		if i == 1:
-#			stage_1.send_disable_signal()
-#
-#		i = (i + 1) % 2
-	pass
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	# For debugging purposes (press space to go to next stage)
+##	if Input.is_action_just_pressed("ui_accept"):
+##		if i == 0:
+##			stage_1.send_enable_signal()
+##		if i == 1:
+##			stage_1.send_disable_signal()
+##
+##		i = (i + 1) % 2
+#	pass
 
 # Given the stage, transition to the next stage
 func set_stage(stage):
@@ -90,7 +90,7 @@ func set_stage_2():
 	camera.limit_bottom = 625
 	
 	# Adding weapon slot upgrades to upgrades from stage 1
-	upgrade_ui.append_upgrade("p_right", [1000])
+	upgrade_ui.append_upgrade("p_right", [250])
 	
 	stage_2.update_stage_2()
 	set_stage(stage_2)
@@ -105,8 +105,8 @@ func set_stage_3():
 	camera.limit_bottom = 630
 	
 	# Adding weapon slot upgrades to upgrades from stage 2
-	upgrade_ui.append_upgrade("p_right", [2000])
-	upgrade_ui.append_upgrade("p_left", [2000])
+	upgrade_ui.append_upgrade("p_right", [250])
+	upgrade_ui.append_upgrade("p_left", [250])
 	
 	stage_3.update_stage_3()
 	set_stage(stage_3)
@@ -120,8 +120,8 @@ func set_stage_4():
 	camera.zoom = Vector2(2.5,2.5)
 	camera.limit_bottom = 630
 	# Adding weapon slot upgrades to upgrades from stage 3
-	upgrade_ui.append_upgrade("c_right", [1000, 2000])
-	upgrade_ui.append_upgrade("c_left", [1000, 2000])
+	upgrade_ui.append_upgrade("c_right", [500, 500])
+	upgrade_ui.append_upgrade("c_left", [500, 500])
 	
 	stage_4.update_stage_4()
 	set_stage(stage_4)
@@ -135,10 +135,10 @@ func set_stage_5():
 	camera.zoom = Vector2(1.8,1.8)
 	camera.limit_bottom = 635
 	# Adding weapon slot upgrades to upgrades from stage 4
-	upgrade_ui.append_upgrade("c_right", [3000, 4000, 5000, 6000, 7000])
-	upgrade_ui.append_upgrade("c_left", [3000, 4000, 5000, 6000, 7000])
-	upgrade_ui.append_upgrade("b_right", [3000])
-	upgrade_ui.append_upgrade("b_left", [3000])
+	upgrade_ui.append_upgrade("c_right", [500, 500, 500, 500, 500])
+	upgrade_ui.append_upgrade("c_left", [500, 500, 500, 500, 500])
+	upgrade_ui.append_upgrade("b_right", [1000])
+	upgrade_ui.append_upgrade("b_left", [1000])
 	
 	stage_5.update_stage_5()
 	set_stage(stage_5)
@@ -257,6 +257,14 @@ func upgrade_p_dmg(reset = false):
 				current_stage.upgrade_p_dmg(20)
 			1: # First level of upgrade
 				current_stage.upgrade_p_dmg(40)
+			2:
+				current_stage.upgrade_p_dmg(60)
+			3: 
+				current_stage.upgrade_p_dmg(80)
+			4:
+				current_stage.upgrade_p_dmg(100)
+			4:
+				current_stage.upgrade_p_dmg(120)
 
 # Function to deal with upgrading pea guns size
 func upgrade_p_size(reset = false):
@@ -269,6 +277,14 @@ func upgrade_p_size(reset = false):
 			0: # Default size
 				current_stage.upgrade_p_size(Vector2(1,1))
 			1: # First level of upgrade
+				current_stage.upgrade_p_size(Vector2(1.2,1.2))
+			2:
+				current_stage.upgrade_p_size(Vector2(1.4,1.4))
+			3:
+				current_stage.upgrade_p_size(Vector2(1.6,1.6))
+			4:
+				current_stage.upgrade_p_size(Vector2(1.8,1.8))
+			5:
 				current_stage.upgrade_p_size(Vector2(2,2))
 
 # Function to deal with upgrading pea guns fire rate
@@ -283,6 +299,14 @@ func upgrade_p_reload(reset = false):
 				current_stage.upgrade_p_reload(1.0)
 			1: # First level of upgrade
 				current_stage.upgrade_p_reload(0.75)
+			2:
+				current_stage.upgrade_p_reload(0.6)
+			3:
+				current_stage.upgrade_p_reload(0.5)
+			4:
+				current_stage.upgrade_p_reload(0.4)
+			5:
+				current_stage.upgrade_p_reload(0.25)
 
 # Function to deal with upgrading catapult damage
 func upgrade_c_dmg(reset = false):
@@ -296,6 +320,14 @@ func upgrade_c_dmg(reset = false):
 				current_stage.upgrade_c_dmg(20)
 			1: # First level of upgrade
 				current_stage.upgrade_c_dmg(40)
+			2:
+				current_stage.upgrade_c_dmg(60)
+			3:
+				current_stage.upgrade_c_dmg(80)
+			4:
+				current_stage.upgrade_c_dmg(100)
+			5:
+				current_stage.upgrade_c_dmg(120)
 
 # Function to deal with upgrading catapult fire rate
 func upgrade_c_reload(reset = false):
@@ -308,7 +340,15 @@ func upgrade_c_reload(reset = false):
 			0: # Default speed
 				current_stage.upgrade_c_reload(1.0)
 			1: # First level of upgrade
-				current_stage.upgrade_c_reload(0.75)
+				current_stage.upgrade_c_reload(0.8)
+			2:
+				current_stage.upgrade_c_reload(0.6)
+			3:
+				current_stage.upgrade_c_reload(0.5)
+			4:
+				current_stage.upgrade_c_reload(0.4)
+			5:
+				current_stage.upgrade_c_reload(0.2)
 
 # Function to deal with upgrading catapult size
 func upgrade_c_size(reset = false):
@@ -321,7 +361,15 @@ func upgrade_c_size(reset = false):
 			0: # Default speed
 				current_stage.upgrade_c_size(Vector2(1,1))
 			1: # First level of upgrade
-				current_stage.upgrade_c_size(Vector2(5,5))
+				current_stage.upgrade_c_size(Vector2(1.25,1.25))
+			2: 
+				current_stage.upgrade_c_size(Vector2(1.5,1.5))
+			3: 
+				current_stage.upgrade_c_size(Vector2(1.75,1.75))
+			4: 
+				current_stage.upgrade_c_size(Vector2(2,2))
+			5: 
+				current_stage.upgrade_c_size(Vector2(3,3))
 
 # Function to deal with upgrading boulder fire rate
 func upgrade_b_reload(reset = false):
@@ -335,6 +383,14 @@ func upgrade_b_reload(reset = false):
 				current_stage.upgrade_b_reload(1.0)
 			1: # First level of upgrade
 				current_stage.upgrade_b_reload(0.75)
+			2:
+				current_stage.upgrade_b_reload(0.6)
+			3:
+				current_stage.upgrade_b_reload(0.5)
+			4:
+				current_stage.upgrade_b_reload(0.4)
+			5:
+				current_stage.upgrade_b_reload(0.25)
 
 # Function to deal with upgrading catapult size
 func upgrade_b_size(reset = false):
@@ -347,7 +403,15 @@ func upgrade_b_size(reset = false):
 			0: # Default speed
 				current_stage.upgrade_b_size(Vector2(1,1))
 			1: # First level of upgrade
-				current_stage.upgrade_b_size(Vector2(10,10))
+				current_stage.upgrade_b_size(Vector2(1.25,1.25))
+			2:
+				current_stage.upgrade_b_size(Vector2(1.5,1.5))
+			3:
+				current_stage.upgrade_b_size(Vector2(1.75,1.75))
+			4:
+				current_stage.upgrade_b_size(Vector2(2,2))
+			5:
+				current_stage.upgrade_b_size(Vector2(3,3))
 
 # Add p_left count by 1
 func upgrade_p_left():
@@ -359,22 +423,18 @@ func upgrade_p_right():
 
 # Add c_left count by 1
 func upgrade_c_left():
-	print("c_left")
 	c_left += 1
 
 # Add c_right count by 1
 func upgrade_c_right():
-	print("c_right")
 	c_right += 1
 
 # Add b_left count by 1
 func upgrade_b_left():
-	print("b_left")
 	b_left += 1
 
 # Add b_right count by 1
 func upgrade_b_right():
-	print("b_right")
 	b_right += 1
 
 # Function to reset variables to default

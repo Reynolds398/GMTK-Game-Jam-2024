@@ -167,17 +167,17 @@ func upgrade_weapon(upgrade_array, upgrade_name):
 func reset_upgrades():
 	# Upgrade costs per level
 	# Damage Up
-	p_dmg_upgrade = [1500, 2000, 3000, 4000]
-	c_dmg_upgrade = [1400, 2000, 3000, 4000]
+	p_dmg_upgrade = [250, 500, 1000, 3000, 12000]
+	c_dmg_upgrade = [250, 500, 1000, 3000, 12000]
 	b_dmg_upgrade = []
 	# Reload Up
-	p_reload_upgrade = [1300, 2000, 3000, 4000]
-	c_reload_upgrade = [1200, 2000, 3000, 4000]
-	b_reload_upgrade = [1100, 2000, 3000, 4000]
+	p_reload_upgrade = [50, 300, 600, 1800, 6000]
+	c_reload_upgrade = [50, 100, 300, 1200, 6000]
+	b_reload_upgrade = [200, 400, 800, 2400, 12000]
 	# Projectile Up
-	p_size_upgrade = [1001, 2000, 3000, 4000]
-	c_size_upgrade = [1090, 2000, 3000, 4000]
-	b_size_upgrade = [1002, 2000, 3000, 4000]
+	p_size_upgrade = [50, 100, 300, 1200, 6000]
+	c_size_upgrade = [50, 300, 600, 1800, 6000]
+	b_size_upgrade = [200, 400, 800, 2400, 12000]
 	# Left
 	p_left_upgrade = []
 	c_left_upgrade = []
