@@ -57,3 +57,7 @@ func _on_stage_6_button_pressed():
 # Function for switching to stage 7
 func _on_stage_7_button_pressed():
 	tree.set_stage_7()
+
+# Function to start next wave
+func _on_next_wave_button_pressed():
+	game_ui.start_next_wave()

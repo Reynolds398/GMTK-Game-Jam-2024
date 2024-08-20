@@ -161,13 +161,13 @@ func spawn_wood_pecker_r(amount):
 
 # Allow spawner to spawn on both sides
 func left_and_right(left, right):
-	max_left = left
-	max_right = right
+	max_left += left
+	max_right += right
 	enable_both_side = true
 
 # Only allow spawner to spawn on left side
 func left_only(left):
-	max_left = left
+	max_left += left
 	enable_both_side = false
 
 # Set how long it takes to spawn enemies

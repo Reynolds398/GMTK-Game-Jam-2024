@@ -168,3 +168,4 @@ text = "Max Upgrade"
 [connection signal="pressed" from="Stage5Button" to="." method="_on_stage_5_button_pressed"]
 [connection signal="pressed" from="Stage6Button" to="." method="_on_stage_6_button_pressed"]
 [connection signal="pressed" from="Stage7Button" to="." method="_on_stage_7_button_pressed"]
+[connection signal="pressed" from="NextWaveButton" to="." method="_on_next_wave_button_pressed"]

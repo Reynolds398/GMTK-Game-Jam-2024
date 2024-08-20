@@ -1,17 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://c22t8qmbav1jq"]
+[gd_scene load_steps=4 format=3 uid="uid://c22t8qmbav1jq"]
 
 [ext_resource type="Script" path="res://Scripts/catapult.gd" id="1_rko5m"]
-[ext_resource type="Texture2D" uid="uid://bvgy2uo62c2p8" path="res://icon.svg" id="2_ia3mq"]
+[ext_resource type="Texture2D" uid="uid://cl0anc6ptxjdd" path="res://Assets/PCATA_BASE.png" id="2_7pu8y"]
+[ext_resource type="Texture2D" uid="uid://dpikotp4r7r6m" path="res://Assets/PCATA_STEM.png" id="3_8nsqx"]
 
 [node name="Catapult" type="Node2D"]
 script = ExtResource("1_rko5m")
+angle = -80
 SHOOT_FORCE = 800.0
 SHOOT_TIMER = 3.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0625, 0.0625)
-texture = ExtResource("2_ia3mq")
-
 [node name="ShootTimer" type="Timer" parent="."]
+
+[node name="PumpkinBase" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.0620117, 0.0615234)
+texture = ExtResource("2_7pu8y")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="PcataStem" type="Sprite2D" parent="Node2D"]
+position = Vector2(-3, -5)
+scale = Vector2(0.0634124, 0.0581192)
+texture = ExtResource("3_8nsqx")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

@@ -13,10 +13,10 @@ func _ready():
 # Function to trigger shooting flag
 func shoot():
 	# Shoot right if facing right
-	if get_parent().RIGHT:
-		shoot_projectile(Vector2.RIGHT, parent.SHOOT_FORCE)
+	if face_right:
+		shoot_projectile(Vector2.RIGHT, shoot_force)
 	else: # Shoot left if facing left
-		shoot_projectile(Vector2.LEFT, parent.SHOOT_FORCE)
+		shoot_projectile(Vector2.LEFT, shoot_force)
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Wall"):

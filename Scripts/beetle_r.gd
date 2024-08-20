@@ -21,4 +21,5 @@ var projectile = null  # Projectile object
 func _on_attack_timer_timeout():
 	projectile = bullet.instantiate()
 	add_child(projectile)
+	projectile.set_damage(DAMAGE)
 	projectile.shoot(ANGLE)

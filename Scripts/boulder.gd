@@ -16,7 +16,7 @@ func _integrate_forces(state):
 # Function to trigger shooting flag
 func shoot(velocity):
 	# Shoot right if facing right
-	if get_parent().RIGHT:
+	if face_right:
 		vel = velocity
 	else: # Shoot left if facing left
 		vel = velocity * Vector2(-1, 1)

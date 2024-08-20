@@ -12,5 +12,9 @@ func _ready():
 func _on_shoot_timer_timeout():
 	#print("timer time out")
 	boulder = boulder_object.instantiate()
-	add_child(boulder)
+	parent.add_child(boulder)
+	boulder.position = position
+	boulder.set_damage(GUN_DAMAGE)
+	boulder.set_face_right(RIGHT)
+	boulder.set_shoot_force(SHOOT_FORCE)
 	boulder.shoot(Vector2(SHOOT_FORCE, 0))

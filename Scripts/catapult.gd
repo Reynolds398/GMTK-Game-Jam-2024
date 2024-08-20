@@ -8,11 +8,14 @@ var bullet = null  # Instatiated catapult bullet
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
-	enable_shooting()
 	catapult_bullet = preload("res://Scenes/Weapons/Projectile/catapult_bullet.tscn")
 
 func _on_shoot_timer_timeout():
 	#print("timer time out")
 	bullet = catapult_bullet.instantiate()
-	add_child(bullet)
+	parent.add_child(bullet)
+	bullet.position = position
+	bullet.set_damage(GUN_DAMAGE)
+	bullet.set_face_right(RIGHT)
+	bullet.set_shoot_force(SHOOT_FORCE)
 	bullet.shoot(angle)

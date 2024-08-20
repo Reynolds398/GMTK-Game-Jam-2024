@@ -15,5 +15,9 @@ func _ready():
 func _on_shoot_timer_timeout():
 	#print("timer time out")
 	bullet = acorn_bullet.instantiate()
-	add_child(bullet)
+	parent.add_child(bullet)
+	bullet.position = position
+	bullet.set_damage(GUN_DAMAGE)
+	bullet.set_face_right(RIGHT)
+	bullet.set_shoot_force(SHOOT_FORCE)
 	bullet.shoot()

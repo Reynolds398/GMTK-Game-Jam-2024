@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=28 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
 [ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d005mu6emabvj" path="res://Assets/BP_LARGE.png" id="8_51cbq"]
 [ext_resource type="Texture2D" uid="uid://bflx00kbw4jgp" path="res://Assets/TREE_S7_S.png" id="8_k640t"]
 [ext_resource type="Texture2D" uid="uid://diigfb2xydt84" path="res://Assets/Spiky_PLAT.png" id="9_2d7fq"]
+[ext_resource type="PackedScene" uid="uid://c22t8qmbav1jq" path="res://Scenes/Weapons/Spawner/catapult.tscn" id="10_3lgf5"]
 [ext_resource type="Texture2D" uid="uid://b0bsnjwyvkka4" path="res://Assets/BP_SMALL.png" id="10_5o3t4"]
 [ext_resource type="Texture2D" uid="uid://c6fnylcyw1k65" path="res://Assets/P_in_WALL.png" id="11_pmdt3"]
 [ext_resource type="Texture2D" uid="uid://bu0fvm0tslk6n" path="res://Assets/SQUIRREL_in_WALL.png" id="12_afxe8"]
@@ -191,6 +192,7 @@ size = Vector2(108, 350)
 script = ExtResource("1_3vueh")
 
 [node name="Stage 1" type="StaticBody2D" parent="." groups=["Tree"]]
+visible = false
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_p5gw0")
@@ -225,6 +227,14 @@ texture = ExtResource("3_ylbn5")
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_4rif6")
 disabled = true
+
+[node name="AcornGun" parent="Stage 2" instance=ExtResource("3_3jeu4")]
+position = Vector2(-35, -5)
+RIGHT = false
+
+[node name="AcornGun2" parent="Stage 2" instance=ExtResource("3_3jeu4")]
+position = Vector2(33, -5)
+scale = Vector2(-1, 1)
 
 [node name="Stage 3" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -268,6 +278,24 @@ rotation = 3.14159
 scale = Vector2(0.161503, -0.12722)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopRightGun" parent="Stage 3" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(20, -28)
+
+[node name="TopLeftGun" parent="Stage 3" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-20, -28)
+RIGHT = false
+
+[node name="BottomLeftGun" parent="Stage 3" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-20, -14)
+RIGHT = false
+
+[node name="BottomRightGun" parent="Stage 3" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(20, -14)
+
 [node name="Stage 4" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
@@ -296,11 +324,21 @@ position = Vector2(-16, -41)
 scale = Vector2(0.224682, 0.157246)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopLeftGun" parent="Stage 4" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-29, -40)
+RIGHT = false
+
 [node name="LeftPea2" type="Sprite2D" parent="Stage 4"]
 z_index = 1
 position = Vector2(-18, -23)
 scale = Vector2(0.2208, 0.15728)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomLeftGun" parent="Stage 4" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-31, -23)
+RIGHT = false
 
 [node name="RightPea1" type="Sprite2D" parent="Stage 4"]
 z_index = 1
@@ -309,12 +347,40 @@ rotation = 3.14159
 scale = Vector2(0.19516, -0.152191)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopRightGun" parent="Stage 4" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(27, -40)
+
 [node name="RightPea2" type="Sprite2D" parent="Stage 4"]
 z_index = 1
 position = Vector2(16, -22)
 rotation = 3.14159
 scale = Vector2(0.20503, -0.152191)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomRightGun" parent="Stage 4" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(27, -23)
+
+[node name="Catapult" parent="Stage 4" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-57, -81)
+scale = Vector2(-1, 1)
+RIGHT = false
+
+[node name="Catapult2" parent="Stage 4" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-35, -81)
+scale = Vector2(-1, 1)
+RIGHT = false
+
+[node name="Catapult3" parent="Stage 4" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(36, -81)
+
+[node name="Catapult4" parent="Stage 4" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(58, -81)
 
 [node name="Stage 5" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
@@ -334,15 +400,15 @@ disabled = true
 
 [node name="LargePlatform1" type="Sprite2D" parent="Stage 5"]
 z_index = 1
-position = Vector2(-112, -163)
-scale = Vector2(0.244762, 0.1875)
+position = Vector2(-99, -166)
+scale = Vector2(0.210952, 0.15625)
 texture = ExtResource("8_51cbq")
 
 [node name="LargePlatform2" type="Sprite2D" parent="Stage 5"]
 z_index = 1
-position = Vector2(100, -139)
+position = Vector2(82, -148)
 rotation = 3.14159
-scale = Vector2(0.222793, 0.202561)
+scale = Vector2(0.176654, 0.155866)
 texture = ExtResource("8_51cbq")
 
 [node name="SpikyPlatform" type="Sprite2D" parent="Stage 5"]
@@ -353,15 +419,15 @@ texture = ExtResource("9_2d7fq")
 
 [node name="SmallPlatform1" type="Sprite2D" parent="Stage 5"]
 z_index = 1
-position = Vector2(-19, -133)
-scale = Vector2(0.177618, 0.187303)
+position = Vector2(-21, -134)
+scale = Vector2(0.158624, 0.156545)
 texture = ExtResource("10_5o3t4")
 
 [node name="SmallPlatform2" type="Sprite2D" parent="Stage 5"]
 z_index = 1
-position = Vector2(16, -175)
+position = Vector2(15, -171)
 rotation = 3.14159
-scale = Vector2(0.172929, 0.167766)
+scale = Vector2(0.1587, 0.151918)
 texture = ExtResource("10_5o3t4")
 
 [node name="LeftPea1" type="Sprite2D" parent="Stage 5"]
@@ -370,11 +436,21 @@ position = Vector2(-28, -58)
 scale = Vector2(0.277611, 0.207217)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopLeftGun" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-43, -58)
+RIGHT = false
+
 [node name="LeftPea2" type="Sprite2D" parent="Stage 5"]
 z_index = 1
 position = Vector2(-28, -39)
 scale = Vector2(0.275718, 0.197013)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomLeftGun" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-43, -39)
+RIGHT = false
 
 [node name="RightPea1" type="Sprite2D" parent="Stage 5"]
 z_index = 1
@@ -383,12 +459,20 @@ rotation = 3.14159
 scale = Vector2(0.242195, -0.206736)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopRightGun" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(38, -58)
+
 [node name="RightPea2" type="Sprite2D" parent="Stage 5"]
 z_index = 1
 position = Vector2(23.8811, -37.2054)
 rotation = 3.14159
 scale = Vector2(0.252065, -0.206736)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomRightGun" parent="Stage 5" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(37, -38)
 
 [node name="SquirrelInWall" type="Node2D" parent="Stage 5"]
 position = Vector2(-3.5, 58.5)
@@ -414,6 +498,85 @@ libraries = {
 "": SubResource("AnimationLibrary_3e8il")
 }
 
+[node name="Catapult" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-100, -104)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult2" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-61, -103)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult3" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(60, -103)
+scale = Vector2(1.5, 1.5)
+
+[node name="Catapult4" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(98, -103)
+scale = Vector2(1.5, 1.5)
+
+[node name="Catapult5" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-153, -167)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult6" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-28, -134)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult7" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(22, -185)
+scale = Vector2(1.5, 1.5)
+
+[node name="Catapult8" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(79, -135)
+scale = Vector2(1.5, 1.5)
+
+[node name="Catapult9" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-95, -192)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult11" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-104, -168)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult12" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(59, -163)
+scale = Vector2(1.5, 1.5)
+
+[node name="Catapult13" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(103, -162)
+scale = Vector2(1.5, 1.5)
+
+[node name="Catapult10" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+visible = false
+z_index = 1
+position = Vector2(-8, -47)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult14" parent="Stage 5" instance=ExtResource("10_3lgf5")]
+visible = false
+z_index = 1
+position = Vector2(5, -47)
+scale = Vector2(1.5, 1.5)
+
 [node name="Stage 6" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 position = Vector2(-1, 0)
@@ -433,15 +596,15 @@ disabled = true
 
 [node name="LargePlatform1" type="Sprite2D" parent="Stage 6"]
 z_index = 1
-position = Vector2(-139, -222)
-scale = Vector2(0.300952, 0.261719)
+position = Vector2(-126, -222)
+scale = Vector2(0.263809, 0.234375)
 texture = ExtResource("8_51cbq")
 
 [node name="LargePlatform2" type="Sprite2D" parent="Stage 6"]
 z_index = 1
-position = Vector2(139, -195)
+position = Vector2(120.762, -204.411)
 rotation = 3.14159
-scale = Vector2(0.289615, 0.271079)
+scale = Vector2(0.242191, 0.236936)
 texture = ExtResource("8_51cbq")
 
 [node name="SpikyPlatform" type="Sprite2D" parent="Stage 6"]
@@ -452,8 +615,8 @@ texture = ExtResource("9_2d7fq")
 
 [node name="SmallPlatform1" type="Sprite2D" parent="Stage 6"]
 z_index = 1
-position = Vector2(-23, -178)
-scale = Vector2(0.256673, 0.267689)
+position = Vector2(-25, -178)
+scale = Vector2(0.233059, 0.247052)
 texture = ExtResource("10_5o3t4")
 
 [node name="SmallPlatform2" type="Sprite2D" parent="Stage 6"]
@@ -469,11 +632,22 @@ position = Vector2(-35.2187, -86.1562)
 scale = Vector2(0.307842, 0.242772)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopLeftGun" parent="Stage 6" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-52, -86)
+RIGHT = false
+
 [node name="LeftPea2" type="Sprite2D" parent="Stage 6"]
 z_index = 1
 position = Vector2(-35.2187, -61.1562)
 scale = Vector2(0.307842, 0.242772)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomLeftGun" parent="Stage 6" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-51, -61)
+scale = Vector2(1, 1)
+RIGHT = false
 
 [node name="RightPea1" type="Sprite2D" parent="Stage 6"]
 z_index = 1
@@ -482,12 +656,20 @@ rotation = 3.14159
 scale = Vector2(0.308, -0.242772)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopRightGun" parent="Stage 6" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(52, -87)
+
 [node name="RightPea2" type="Sprite2D" parent="Stage 6"]
 z_index = 1
 position = Vector2(37.794, -61.1562)
 rotation = 3.14159
 scale = Vector2(0.308, -0.242772)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomRightGun" parent="Stage 6" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(52, -62)
 
 [node name="SquirrelInWall" type="Node2D" parent="Stage 6"]
 position = Vector2(-3.5, 58.5)
@@ -513,6 +695,85 @@ libraries = {
 "": SubResource("AnimationLibrary_3e8il")
 }
 
+[node name="Catapult" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-139, -141)
+scale = Vector2(-2.5, 2.5)
+RIGHT = false
+
+[node name="Catapult2" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-85, -141)
+scale = Vector2(-2.5, 2.5)
+RIGHT = false
+
+[node name="Catapult3" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(88, -144)
+scale = Vector2(2.5, 2.5)
+
+[node name="Catapult4" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(142, -144)
+scale = Vector2(2.5, 2.5)
+
+[node name="Catapult5" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-199, -224)
+scale = Vector2(-2.5, 2.5)
+RIGHT = false
+
+[node name="Catapult6" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-37, -179)
+scale = Vector2(-2.5, 2.5)
+RIGHT = false
+
+[node name="Catapult7" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(38, -264)
+scale = Vector2(2.5, 2.5)
+
+[node name="Catapult8" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(121, -185)
+scale = Vector2(2.5, 2.5)
+
+[node name="Catapult9" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-139, -224)
+scale = Vector2(-2.5, 2.5)
+RIGHT = false
+
+[node name="Catapult11" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-118, -264)
+scale = Vector2(-2.5, 2.5)
+RIGHT = false
+
+[node name="Catapult12" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(164, -226)
+scale = Vector2(2.5, 2.5)
+
+[node name="Catapult13" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(101, -225)
+scale = Vector2(2.5, 2.5)
+
+[node name="Catapult10" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+visible = false
+z_index = 1
+position = Vector2(-5, -71)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult14" parent="Stage 6" instance=ExtResource("10_3lgf5")]
+visible = false
+z_index = 1
+position = Vector2(6, -71)
+scale = Vector2(1.5, 1.5)
+
 [node name="Stage 7" type="StaticBody2D" parent="." groups=["Tree"]]
 visible = false
 collision_layer = 2
@@ -521,15 +782,15 @@ script = ExtResource("2_p5gw0")
 
 [node name="LargePlatform1" type="Sprite2D" parent="Stage 7"]
 z_index = 1
-position = Vector2(-177, -307)
-scale = Vector2(0.38381, 0.353516)
+position = Vector2(-172, -314)
+scale = Vector2(0.376667, 0.340821)
 texture = ExtResource("8_51cbq")
 
 [node name="LargePlatform2" type="Sprite2D" parent="Stage 7"]
 z_index = 1
-position = Vector2(187, -277)
+position = Vector2(168, -286)
 rotation = 3.14159
-scale = Vector2(0.38381, 0.353516)
+scale = Vector2(0.350174, 0.33545)
 texture = ExtResource("8_51cbq")
 
 [node name="SpikyPlatform" type="Sprite2D" parent="Stage 7"]
@@ -557,11 +818,21 @@ position = Vector2(-46, -127)
 scale = Vector2(0.307842, 0.242772)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopLeftGun" parent="Stage 7" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-64, -127)
+RIGHT = false
+
 [node name="LeftPea2" type="Sprite2D" parent="Stage 7"]
 z_index = 1
 position = Vector2(-46, -102)
 scale = Vector2(0.307842, 0.242772)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomLeftGun" parent="Stage 7" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(-62, -101)
+RIGHT = false
 
 [node name="RightPea1" type="Sprite2D" parent="Stage 7"]
 z_index = 1
@@ -570,12 +841,20 @@ rotation = 3.14159
 scale = Vector2(0.308, -0.242772)
 texture = ExtResource("11_pmdt3")
 
+[node name="TopRightGun" parent="Stage 7" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(67, -126)
+
 [node name="RightPea2" type="Sprite2D" parent="Stage 7"]
 z_index = 1
 position = Vector2(49.794, -101.156)
 rotation = 3.14159
 scale = Vector2(0.308, -0.242772)
 texture = ExtResource("11_pmdt3")
+
+[node name="BottomRightGun" parent="Stage 7" instance=ExtResource("3_3jeu4")]
+visible = false
+position = Vector2(68, -101)
 
 [node name="SquirrelInWall" type="Node2D" parent="Stage 7"]
 
@@ -609,6 +888,85 @@ texture = ExtResource("8_k640t")
 position = Vector2(0, -176)
 shape = SubResource("RectangleShape2D_h66y1")
 disabled = true
+
+[node name="Catapult" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-182, -204)
+scale = Vector2(-3.5, 3.5)
+RIGHT = false
+
+[node name="Catapult2" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-112, -204)
+scale = Vector2(-3.5, 3.5)
+RIGHT = false
+
+[node name="Catapult3" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(114, -203)
+scale = Vector2(3.5, 3.5)
+
+[node name="Catapult4" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(186, -201)
+scale = Vector2(3.5, 3.5)
+
+[node name="Catapult5" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-264, -317)
+scale = Vector2(-3.5, 3.5)
+RIGHT = false
+
+[node name="Catapult6" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-45, -248)
+scale = Vector2(-3.5, 3.5)
+RIGHT = false
+
+[node name="Catapult7" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(50, -358)
+scale = Vector2(3.5, 3.5)
+
+[node name="Catapult8" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(168, -259)
+scale = Vector2(3.5, 3.5)
+
+[node name="Catapult9" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-185, -314)
+scale = Vector2(-3.5, 3.5)
+RIGHT = false
+
+[node name="Catapult11" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(-159, -374)
+scale = Vector2(-3.5, 3.5)
+RIGHT = false
+
+[node name="Catapult12" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(214, -315)
+scale = Vector2(3.5, 3.5)
+
+[node name="Catapult13" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+z_index = 1
+position = Vector2(121, -317)
+scale = Vector2(3.5, 3.5)
+
+[node name="Catapult10" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+visible = false
+z_index = 1
+position = Vector2(-5, -71)
+scale = Vector2(-1.5, 1.5)
+RIGHT = false
+
+[node name="Catapult14" parent="Stage 7" instance=ExtResource("10_3lgf5")]
+visible = false
+z_index = 1
+position = Vector2(6, -71)
+scale = Vector2(1.5, 1.5)
 
 [node name="TreeCamera" type="Camera2D" parent="."]
 visible = false

@@ -94,6 +94,8 @@ func start_next_wave():
 			wave_spawner.start_wave_6()
 		7:
 			wave_spawner.start_wave_7()
+		_: # Repeat wave 7 for wave more than 7
+			wave_spawner.start_wave_7()
 		
 
 # Toggle cheat tools on and off
@@ -115,4 +117,10 @@ func _on_wave_complete():
 	next_wave_button.visible = true
 	print("Wave complete!")
 
-
+# Reset game value
+func reset_game():
+	health_bar.value = 100
+	currency = 0
+	current_wave = 0
+	tree.reset_stage()
+	start_next_wave()

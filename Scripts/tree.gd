@@ -134,3 +134,6 @@ func next_stage():
 # Function to make tree take damage
 func take_damage(amount):
 	get_parent().get_node("GameUI").decrease_health(amount)
+
+func reset_stage():
+	CUR_TREE_STAGE = 0

@@ -85,8 +85,8 @@ func start_wave_2():
 	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
 	
 	# Set how many enemies spawn in this wave
-	beetle_m = 20
-	beetle_r = 20
+	beetle_m = 10
+	beetle_r = 10
 	boar = 0
 	fox = 0
 	pelican_m = 0
