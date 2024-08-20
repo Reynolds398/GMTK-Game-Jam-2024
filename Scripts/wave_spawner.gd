@@ -99,7 +99,7 @@ func start_wave_2():
 	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
-	enemy_spawner.left_and_right(20,20)
+	enemy_spawner.left_and_right(43,44)
 	spawn_enemies()
 
 func start_wave_3():
@@ -136,7 +136,7 @@ func start_wave_3():
 	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
-	enemy_spawner.left_and_right(25,25)
+	enemy_spawner.left_and_right(75,75)
 	spawn_enemies()
 	
 func start_wave_4():
@@ -172,8 +172,8 @@ func start_wave_4():
 	# Spawn the enemies
 	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only(0)
-	#enemy_spawner.left_and_right()
+	#enemy_spawner.left_only(0)
+	enemy_spawner.left_and_right(100,100)
 	spawn_enemies()
 	
 func start_wave_5():
@@ -209,8 +209,8 @@ func start_wave_5():
 	# Spawn the enemies
 	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only(0)
-	#enemy_spawner.left_and_right()
+	#enemy_spawner.left_only(0)
+	enemy_spawner.left_and_right(150,150)
 	spawn_enemies()
 	
 func start_wave_6():
@@ -246,8 +246,8 @@ func start_wave_6():
 	# Spawn the enemies
 	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only(0)
-	#enemy_spawner.left_and_right()
+	#enemy_spawner.left_only(0)
+	enemy_spawner.left_and_right(200,200)
 	spawn_enemies()
 	
 func start_wave_7():
@@ -283,8 +283,8 @@ func start_wave_7():
 	# Spawn the enemies
 	enemy_spawner.set_initial_spawn_timer(1)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(0.5)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only(0)
-	#enemy_spawner.left_and_right()
+	#enemy_spawner.left_only(0)
+	enemy_spawner.left_and_right(325,325)
 	spawn_enemies()
 
 # Function to spawn enemies based on the settings
