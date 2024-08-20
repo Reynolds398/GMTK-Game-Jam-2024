@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv2k4w6ej5o8y"]
+[gd_scene load_steps=8 format=3 uid="uid://bv2k4w6ej5o8y"]
 
 [ext_resource type="Script" path="res://Scripts/pelican_r.gd" id="1_2epmp"]
-[ext_resource type="Texture2D" uid="uid://bohohavaob4mn" path="res://Assets/pelican_PLACEHOLDER.png" id="2_bf1q0"]
+[ext_resource type="Texture2D" uid="uid://jvd1ppkm7uov" path="res://Assets/PELIGUN.png" id="2_fdvut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3m6t"]
+atlas = ExtResource("2_fdvut")
+region = Rect2(0, 0, 778, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v37tt"]
+atlas = ExtResource("2_fdvut")
+region = Rect2(0, 0, 778, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cehxk"]
+atlas = ExtResource("2_fdvut")
+region = Rect2(778, 0, 778, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_68ad1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bf1q0")
+"texture": SubResource("AtlasTexture_x3m6t")
 }],
 "loop": true,
 "name": &"attack",
@@ -15,7 +27,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bf1q0")
+"texture": SubResource("AtlasTexture_v37tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cehxk")
 }],
 "loop": true,
 "name": &"walk",
@@ -38,7 +53,6 @@ animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-35, -50)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nx6ns")
 
 [node name="AttackTimer" type="Timer" parent="."]

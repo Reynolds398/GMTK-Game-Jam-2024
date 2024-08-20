@@ -61,7 +61,7 @@ func start_wave_1():
 	# Spawn the enemies
 	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
-	enemy_spawner.left_only(100)
+	enemy_spawner.left_only(20)
 	#enemy_spawner.left_and_right()
 	spawn_enemies()
 	
@@ -85,8 +85,8 @@ func start_wave_2():
 	enemy_spawner.init_variables_left(spawn, end_m, end_r, fly_m, fly_r)
 	
 	# Set how many enemies spawn in this wave
-	beetle_m = 10
-	beetle_r = 10
+	beetle_m = 20
+	beetle_r = 20
 	boar = 0
 	fox = 0
 	pelican_m = 0
@@ -99,7 +99,7 @@ func start_wave_2():
 	enemy_spawner.set_initial_spawn_timer(2)  # How long it takes to spawn the first enemy
 	enemy_spawner.set_spawn_timer(1.0)  # How long it takes to spawn the enemies
 	#enemy_spawner.left_only()
-	enemy_spawner.left_and_right(10,10)
+	enemy_spawner.left_and_right(20,20)
 	spawn_enemies()
 
 func start_wave_3():
