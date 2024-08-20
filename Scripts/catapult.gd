@@ -23,6 +23,7 @@ func _on_shoot_timer_timeout():
 	bullet.set_shoot_force(SHOOT_FORCE)
 	bullet.increase_size(size)
 	bullet.shoot(angle)
+	$AnimationPlayer.play("shoot")
 
 # Function to increase projectile damage
 func _on_increase_c_dmg(dmg):
