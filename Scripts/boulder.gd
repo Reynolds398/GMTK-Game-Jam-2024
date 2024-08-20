@@ -27,5 +27,4 @@ func shoot(velocity):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Wall"):
-		print("I'm free!")
 		queue_free()
