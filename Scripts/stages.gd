@@ -5,6 +5,9 @@ signal disable_all_guns
 signal increase_p_dmg(dmg)
 signal increase_p_size(size)
 signal increase_p_reload(cooldown)
+signal increase_c_dmg(dmg)
+signal increase_c_size(size)
+signal increase_c_reload(cooldown)
 
 # All weapons objects
 # Left side
@@ -79,3 +82,15 @@ func upgrade_p_size(size):
 # Function to send signal to increase damage output of all p guns
 func upgrade_p_reload(cooldown):
 	emit_signal("increase_p_reload", cooldown)
+
+# Function to send signal to increase damage output of all p guns
+func upgrade_c_dmg(dmg):
+	emit_signal("increase_c_dmg", dmg)
+
+# Function to send signal to increase damage output of all p guns
+func upgrade_c_size(size):
+	emit_signal("increase_c_size", size)
+
+# Function to send signal to increase damage output of all p guns
+func upgrade_c_reload(cooldown):
+	emit_signal("increase_c_reload", cooldown)

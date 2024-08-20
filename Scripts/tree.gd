@@ -162,6 +162,12 @@ func upgrade(upgrade_name):
 			upgrade_p_size()
 		"p_reload":
 			upgrade_p_reload()
+		"c_dmg":
+			upgrade_c_dmg()
+		"c_size":
+			upgrade_c_size()
+		"c_reload":
+			upgrade_c_reload()
 
 # Function to deal with upgrading pea guns damage
 func upgrade_p_dmg(reset = false):
@@ -189,7 +195,7 @@ func upgrade_p_size(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_p_size(Vector2(2,2))
 
-# Function to deal with upgrading pea guns damage
+# Function to deal with upgrading pea guns fire rate
 func upgrade_p_reload(reset = false):
 	if not reset:
 		p_reload += 1
@@ -202,6 +208,45 @@ func upgrade_p_reload(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_p_reload(0.75)
 
+# Function to deal with upgrading pea guns fire rate
+func upgrade_c_dmg(reset = false):
+	if not reset:
+		c_dmg += 1
+	
+	# Null check
+	if current_stage != null:
+		match c_dmg:
+			0: # Default speed
+				current_stage.upgrade_c_dmg(20)
+			1: # First level of upgrade
+				current_stage.upgrade_c_dmg(40)
+
+# Function to deal with upgrading pea guns fire rate
+func upgrade_c_reload(reset = false):
+	if not reset:
+		c_reload += 1
+	
+	# Null check
+	if current_stage != null:
+		match c_reload:
+			0: # Default speed
+				current_stage.upgrade_c_reload(1.0)
+			1: # First level of upgrade
+				current_stage.upgrade_c_reload(0.75)
+
+# Function to deal with upgrading pea guns fire rate
+func upgrade_c_size(reset = false):
+	if not reset:
+		c_size += 1
+	
+	# Null check
+	if current_stage != null:
+		match c_size:
+			0: # Default speed
+				current_stage.upgrade_c_size(Vector2(1,1))
+			1: # First level of upgrade
+				current_stage.upgrade_c_size(Vector2(5,5))
+
 # Function to reset variables to default
 func reset_stage():
 	CUR_TREE_STAGE = 0
@@ -213,6 +258,9 @@ func reset_upgrade_progress():
 	upgrade_p_dmg(true)
 	upgrade_p_size(true)
 	upgrade_p_reload(true)
+	upgrade_c_dmg(true)
+	upgrade_c_reload(true)
+	upgrade_c_size(true)
 
 # Reset upgrade variable to default position
 func reset_upgrade_var():

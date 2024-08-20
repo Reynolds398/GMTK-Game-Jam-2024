@@ -9,6 +9,9 @@ var bullet = null  # Instatiated catapult bullet
 func _ready():
 	super()
 	catapult_bullet = preload("res://Scenes/Weapons/Projectile/catapult_bullet.tscn")
+	parent.connect("increase_c_dmg", _on_increase_c_dmg)
+	parent.connect("increase_c_size", _on_increase_c_size)
+	parent.connect("increase_c_reload", _on_increase_c_reload)
 
 func _on_shoot_timer_timeout():
 	#print("timer time out")
@@ -18,4 +21,17 @@ func _on_shoot_timer_timeout():
 	bullet.set_damage(GUN_DAMAGE)
 	bullet.set_face_right(RIGHT)
 	bullet.set_shoot_force(SHOOT_FORCE)
+	bullet.increase_size(size)
 	bullet.shoot(angle)
+
+# Function to increase projectile damage
+func _on_increase_c_dmg(dmg):
+	GUN_DAMAGE = dmg
+
+# Function to increase projectile size
+func _on_increase_c_size(c_size):
+	size = c_size
+
+# Function to increase fire rate
+func _on_increase_c_reload(cooldown):
+	gun_timer.wait_time = cooldown

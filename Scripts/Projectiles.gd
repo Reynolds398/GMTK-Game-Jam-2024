@@ -5,7 +5,7 @@ var start_pos = null  # Variable to keep track of starting pos
 var damage = 0  # How much damage it should deal to enemies
 var face_right = false  # Is the weapon facing right or not
 var shoot_force = 0.0  # Shoot force
-var new_size = 0  # Variable to hold new size
+var new_size = Vector2(1,1)  # Variable to hold new size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
