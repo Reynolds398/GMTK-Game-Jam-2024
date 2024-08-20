@@ -63,44 +63,85 @@ var b_reload = 0
 
 # Update showing the guns for stage 1
 func update_stage_1():
-	print("from STAGE 1")
 	show_p_gun_left()
 
+# Update showing the guns for stage 2
 func update_stage_2():
-	print("Test")
 	show_p_gun_left()
 	show_p_gun_right()
 
+# Update showing the guns for stage 3
+func update_stage_3():
+	show_p_gun_left(false)
+	show_p_gun_right(false)
+
 # Show the peashooter gun on the left side according to the upgrade
-func show_p_gun_left():
-	print("p_left", p_left)
+func show_p_gun_left(show = true):
 	if parent.p_left > 0:
-		gun_left_1.visible = true
+		if show:
+			gun_left_1.visible = true
+		else:
+			gun_left_1.visible = false
 		gun_left_1.enable_shooting()
 		
 	if parent.p_left > 1:
 		if gun_left_2 == null:
 			gun_left_2 = $GunLeft2
 		
-		gun_left_2.visible = true
 		gun_left_2.enable_shooting()
 
 # Show the peashooter gun on the right side according to the upgrade
-func show_p_gun_right():
-	print("p_right", p_right)
+func show_p_gun_right(show = true):
 	if parent.p_right > 0:
 		if gun_right_1 == null:
 			gun_right_1 = $GunRight1
 		
-		gun_right_1.visible = true
+		if show:
+			gun_right_1.visible = true
+		else:
+			gun_right_1.visible = false
+		
 		gun_right_1.enable_shooting()
 		
 	if parent.p_right > 1:
 		if gun_right_2 == null:
 			gun_right_2 = $GunRight2
 			
-		gun_right_2.visible = true
 		gun_right_2.enable_shooting()
+
+# Show the catapult on the left side according to the upgrade
+func show_pult_left():
+	print("c_left", c_left)
+	if parent.c_left > 0:
+		if pult_left_1 == null:
+			pult_left_1 = $PultLeft1
+		
+		pult_left_1.visible = true
+		pult_left_1.enable_shooting()
+		
+	if parent.c_left > 1:
+		if pult_left_2 == null:
+			pult_left_2 = $PultLeft2
+		
+		pult_left_2.visible = true
+		pult_left_2.enable_shooting()
+
+# Show the catapult on the right side according to the upgrade
+func show_pult_right():
+	print("c_right", c_right)
+	if parent.c_right > 0:
+		if pult_right_1 == null:
+			pult_right_1 = $PultRight1
+		
+		pult_right_1.visible = true
+		pult_right_1.enable_shooting()
+		
+	if parent.c_right > 1:
+		if pult_right_2 == null:
+			pult_right_2 = $PultRight2
+			
+		pult_right_2.visible = true
+		pult_right_2.enable_shooting()
 	
 
 # Function to initialize all weapon object for stage 7
