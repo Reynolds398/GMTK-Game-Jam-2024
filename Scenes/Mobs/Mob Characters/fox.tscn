@@ -50,7 +50,7 @@ size = Vector2(346.667, 346.667)
 [node name="fox" type="CharacterBody2D" groups=["enemy"]]
 scale = Vector2(-0.15, 0.15)
 script = ExtResource("1_d5yu8")
-HEALTH = 320
+HEALTH = 500
 SPEED = 80
 DAMAGE = 10
 GOLD_VALUE = 50
