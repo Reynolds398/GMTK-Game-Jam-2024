@@ -47,12 +47,12 @@ text = "Reload Speed Up"
 
 [node name="ProjectileText" type="Label" parent="."]
 z_index = 1
-offset_left = 57.0
-offset_top = 343.75
-offset_right = 244.0
-offset_bottom = 374.75
+offset_left = 58.0
+offset_top = 339.0
+offset_right = 183.0
+offset_bottom = 370.0
 theme_override_font_sizes/font_size = 20
-text = "Projectile Count Up"
+text = "Size Up"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 25.0
@@ -78,6 +78,14 @@ offset_right = 422.0
 offset_bottom = 325.75
 text = "2000 Gold"
 
+[node name="PeaSizeButton" type="Button" parent="."]
+z_index = 1
+offset_left = 313.0
+offset_top = 339.0
+offset_right = 422.0
+offset_bottom = 370.0
+text = "2000 Gold"
+
 [node name="CataDamageButton" type="Button" parent="."]
 z_index = 1
 offset_left = 524.0
@@ -94,7 +102,7 @@ offset_right = 633.0
 offset_bottom = 325.75
 text = "2000 Gold"
 
-[node name="CataProjectButton" type="Button" parent="."]
+[node name="CataSizeButton" type="Button" parent="."]
 z_index = 1
 offset_left = 524.0
 offset_top = 338.75
@@ -108,6 +116,14 @@ offset_left = 731.0
 offset_top = 293.75
 offset_right = 840.0
 offset_bottom = 324.75
+text = "2000 Gold"
+
+[node name="BouldSizeButton" type="Button" parent="."]
+z_index = 1
+offset_left = 731.0
+offset_top = 339.0
+offset_right = 840.0
+offset_bottom = 370.0
 text = "2000 Gold"
 
 [node name="Pshooter" type="Sprite2D" parent="."]
@@ -263,10 +279,12 @@ texture = ExtResource("5_1ronb")
 
 [connection signal="pressed" from="PeaDamageButton" to="." method="_on_pea_damage_button_pressed"]
 [connection signal="pressed" from="PeaReloadButton" to="." method="_on_pea_reload_button_pressed"]
+[connection signal="pressed" from="PeaSizeButton" to="." method="_on_pea_size_up_pressed"]
 [connection signal="pressed" from="CataDamageButton" to="." method="_on_cata_damage_button_pressed"]
 [connection signal="pressed" from="CataReloadButton" to="." method="_on_cata_reload_button_pressed"]
-[connection signal="pressed" from="CataProjectButton" to="." method="_on_cata_project_button_pressed"]
+[connection signal="pressed" from="CataSizeButton" to="." method="_on_cata_size_button_pressed"]
 [connection signal="pressed" from="BouldReloadButton" to="." method="_on_bould_reload_button_pressed"]
+[connection signal="pressed" from="BouldSizeButton" to="." method="_on_bould_size_button_pressed"]
 [connection signal="pressed" from="PeaLeftButton" to="." method="_on_pea_left_button_pressed"]
 [connection signal="pressed" from="CataLeftButton" to="." method="_on_cata_left_button_pressed"]
 [connection signal="pressed" from="BouldLeftButton" to="." method="_on_bould_left_button_pressed"]

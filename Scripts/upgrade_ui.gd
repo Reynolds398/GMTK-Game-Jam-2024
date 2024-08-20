@@ -9,8 +9,10 @@ extends CanvasLayer
 @onready var c_reload_button = $CataReloadButton
 @onready var b_reload_button = $BouldReloadButton
 
-# Projectile Upgrade Buttons
-@onready var c_proj_button = $CataProjectButton
+# Size Upgrade Buttons
+@onready var p_size_button = $PeaSizeButton
+@onready var c_size_button = $CataSizeButton
+@onready var b_size_button = $BouldSizeButton
 
 # Left Upgrade Buttons
 @onready var p_left_button = $PeaLeftButton
@@ -36,9 +38,9 @@ var p_reload_upgrade = [1300, 2000, 3000, 4000]
 var c_reload_upgrade = [1200, 2000, 3000, 4000]
 var b_reload_upgrade = [1100, 2000, 3000, 4000]
 # Projectile Up
-var p_proj_upgrade = []
-var c_proj_upgrade = [1090, 2000, 3000, 4000]
-var b_proj_upgrade = []
+var p_size_upgrade = [1001, 2000, 3000, 4000]
+var c_size_upgrade = [1090, 2000, 3000, 4000]
+var b_size_upgrade = [1002, 2000, 3000, 4000]
 # Left
 var p_left_upgrade = [1080, 2000, 3000, 4000]
 var c_left_upgrade = [1070, 2000, 3000, 4000]
@@ -60,8 +62,10 @@ func _ready():
 	update_cost(p_reload_upgrade, p_reload_button)
 	update_cost(c_reload_upgrade, c_reload_button)
 	update_cost(b_reload_upgrade, b_reload_button)
-	# Projectile Upgrades
-	update_cost(c_proj_upgrade, c_proj_button)
+	# Size Upgrades
+	update_cost(p_size_upgrade, p_size_button)
+	update_cost(c_size_upgrade, c_size_button)
+	update_cost(b_size_upgrade, b_size_button)
 	# Left Upgrades
 	update_cost(p_left_upgrade, p_left_button)
 	update_cost(c_left_upgrade, c_left_button)
@@ -95,6 +99,11 @@ func _on_pea_reload_button_pressed():
 	upgrade_weapon(p_reload_upgrade)
 	update_cost(p_reload_upgrade, p_reload_button)
 
+# Upgrade Peashooter size if enough gold
+func _on_pea_size_up_pressed():
+	upgrade_weapon(p_size_upgrade)
+	update_cost(p_size_upgrade, p_size_button)
+
 # Upgrade Catapult damage if enough gold
 func _on_cata_damage_button_pressed():
 	upgrade_weapon(c_dmg_upgrade)
@@ -105,15 +114,20 @@ func _on_cata_reload_button_pressed():
 	upgrade_weapon(c_reload_upgrade)
 	update_cost(c_reload_upgrade, c_reload_button)
 
-# Upgrade Catapult projectile if enough gold
-func _on_cata_project_button_pressed():
-	upgrade_weapon(c_proj_upgrade)
-	update_cost(c_proj_upgrade, c_proj_button)
+# Upgrade Catapult size if enough gold
+func _on_cata_size_button_pressed():
+	upgrade_weapon(c_size_upgrade)
+	update_cost(c_size_upgrade, c_size_button)
 
 # Upgrade Boulder reload speed if enough gold
 func _on_bould_reload_button_pressed():
 	upgrade_weapon(b_reload_upgrade)
 	update_cost(b_reload_upgrade, b_reload_button)
+
+# Upgrade Boulder size if enough gold
+func _on_bould_size_button_pressed():
+	upgrade_weapon(b_size_upgrade)
+	update_cost(b_size_upgrade, b_size_button)
 
 # Add 1 Peashooter on the left side if enough gold
 func _on_pea_left_button_pressed():

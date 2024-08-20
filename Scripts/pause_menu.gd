@@ -5,12 +5,14 @@ var can_toggle_pause = false  # Whether you can pause the game or not
 var parent = null  # Parent object
 var main_menu = null  # Main menu object
 var game_ui = null  # Game UI object
+var upgrade_ui = null  # Upgrade UI object
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parent = get_parent()
 	main_menu = parent.get_node("MainMenu")
 	game_ui = parent.get_node("GameUI")
+	upgrade_ui = parent.get_node("UpgradeUI")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,6 +31,7 @@ func _on_resume_button_pressed():
 func pause():
 	if can_toggle_pause:
 		visible = true
+		upgrade_ui.visible = false
 		get_tree().set_deferred("paused", true)
 
 # Function to resume the game only when it is allowed
@@ -52,3 +55,4 @@ func _on_quit_button_pressed():
 # Reset game
 func _on_restart_button_pressed():
 	game_ui.reset_game()
+	resume()

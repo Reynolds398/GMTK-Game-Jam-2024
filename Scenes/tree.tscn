@@ -646,7 +646,6 @@ texture = ExtResource("11_pmdt3")
 [node name="BottomLeftGun" parent="Stage 6" instance=ExtResource("3_3jeu4")]
 visible = false
 position = Vector2(-51, -61)
-scale = Vector2(1, 1)
 RIGHT = false
 
 [node name="RightPea1" type="Sprite2D" parent="Stage 6"]
