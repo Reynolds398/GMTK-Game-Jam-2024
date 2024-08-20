@@ -18,6 +18,7 @@ var tree = null  # Tree object
 var game_over_menu = null  # Game over menu object
 var pause_menu = null  # Pause menu object
 var game_over_bool = false  # Game over status
+var hit_sfx = preload("res://Scenes/tree_damaged_sfx.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -63,6 +64,9 @@ func add_health(amount):
 
 # Function to decrease health to the health bar
 func decrease_health(amount):
+	var sfx = hit_sfx.instantiate()
+	add_child(sfx)
+	
 	health_bar.value -= amount
 	
 	# Game over if health bar is 0%

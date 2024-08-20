@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnnjtt8ba0xf"]
+
+[ext_resource type="AudioStream" uid="uid://dyh41ccv5b4xx" path="res://Assets/goblin-death-modified.mp3" id="1_rgt7f"]
+[ext_resource type="Script" path="res://Scripts/enemies_death_sfx.gd" id="2_o7k6h"]
+
+[node name="EnemiesDeathSfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rgt7f")
+script = ExtResource("2_o7k6h")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

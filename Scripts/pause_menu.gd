@@ -6,6 +6,7 @@ var parent = null  # Parent object
 var main_menu = null  # Main menu object
 var game_ui = null  # Game UI object
 var upgrade_ui = null  # Upgrade UI object
+var settings_menu = null  # Settings object
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 	main_menu = parent.get_node("MainMenu")
 	game_ui = parent.get_node("GameUI")
 	upgrade_ui = parent.get_node("UpgradeUI")
+	settings_menu = parent.get_node("SettingsMenu")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -56,3 +58,7 @@ func _on_quit_button_pressed():
 func _on_restart_button_pressed():
 	game_ui.reset_game()
 	resume()
+
+# Open Settings
+func _on_settings_button_pressed():
+	settings_menu.come_from_pause_menu()

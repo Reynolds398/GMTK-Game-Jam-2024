@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var attack_timer = $AttackTimer  # Timer object
 var parent = null  # Parent object
 var main_scene = null  # Main scene object
+var death_sfx = preload("res://Scenes/enemies_death_sfx.tscn")
 
 var start_pos = Vector2.ZERO  # Starting position of enemy
 var end_pos = Vector2.ZERO  # End position of enemy
@@ -108,6 +109,8 @@ func deal_damage():
 # Function to delete the enemy
 func delete():
 	main_scene.get_node("GameUI").add_currency(GOLD_VALUE)
+	var sfx = death_sfx.instantiate()
+	parent.add_child(sfx)
 	queue_free()
 
 ## Function to shoot projectile

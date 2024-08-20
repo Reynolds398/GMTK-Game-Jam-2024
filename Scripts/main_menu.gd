@@ -8,6 +8,7 @@ var upgrade_ui = null  # Upgrade UI object
 var world = null  # World object
 var wave_spawner = null  # Wave spawner object
 var tree = null  # Tree object
+var settings_menu = null  # Settings object
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 	world = parent.get_node("World")
 	wave_spawner = parent.get_node("WaveSpawner")
 	tree = parent.get_node("Tree")
+	settings_menu = parent.get_node("SettingsMenu")
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -40,3 +42,7 @@ func _on_start_button_pressed():
 # Quit game
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+# Open settings
+func _on_settings_button_pressed():
+	settings_menu.come_from_main_menu()

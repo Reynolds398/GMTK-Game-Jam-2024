@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bedd71ipunv7m"]
+[gd_scene load_steps=30 format=3 uid="uid://bedd71ipunv7m"]
 
 [ext_resource type="Script" path="res://Scripts/tree.gd" id="1_3vueh"]
 [ext_resource type="Texture2D" uid="uid://cfl54tcwlpskv" path="res://Assets/TREE_S1.png" id="2_fgodj"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b0bsnjwyvkka4" path="res://Assets/BP_SMALL.png" id="10_5o3t4"]
 [ext_resource type="Texture2D" uid="uid://c6fnylcyw1k65" path="res://Assets/P_in_WALL.png" id="11_pmdt3"]
 [ext_resource type="Texture2D" uid="uid://bu0fvm0tslk6n" path="res://Assets/SQUIRREL_in_WALL.png" id="12_afxe8"]
+[ext_resource type="Script" path="res://Scripts/SquirrelInWall.gd" id="14_hh3pd"]
 [ext_resource type="PackedScene" uid="uid://dgkdfqx21rp7g" path="res://Scenes/Weapons/Spawner/boulder_spawner.tscn" id="15_iv4eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdktt"]
@@ -483,6 +484,7 @@ position = Vector2(37, -38)
 
 [node name="SquirrelInWall" type="Node2D" parent="Stage 5"]
 position = Vector2(-3.5, 58.5)
+script = ExtResource("14_hh3pd")
 
 [node name="SquirrelInWall1" type="Sprite2D" parent="Stage 5/SquirrelInWall"]
 modulate = Color(1, 1, 1, 0)
@@ -702,6 +704,7 @@ position = Vector2(52, -62)
 
 [node name="SquirrelInWall" type="Node2D" parent="Stage 6"]
 position = Vector2(-3.5, 58.5)
+script = ExtResource("14_hh3pd")
 
 [node name="SquirrelInWall1" type="Sprite2D" parent="Stage 6/SquirrelInWall"]
 modulate = Color(1, 1, 1, 0)
@@ -909,6 +912,7 @@ visible = false
 position = Vector2(68, -101)
 
 [node name="SquirrelInWall" type="Node2D" parent="Stage 7"]
+script = ExtResource("14_hh3pd")
 
 [node name="SquirrelInWall1" type="Sprite2D" parent="Stage 7/SquirrelInWall"]
 modulate = Color(1, 1, 1, 0)
@@ -1047,3 +1051,7 @@ position = Vector2(-76, -22)
 visible = false
 zoom = Vector2(8, 8)
 limit_bottom = 600
+
+[connection signal="animation_finished" from="Stage 5/SquirrelInWall/AnimationPlayer" to="Stage 5/SquirrelInWall" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Stage 6/SquirrelInWall/AnimationPlayer" to="Stage 6/SquirrelInWall" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Stage 7/SquirrelInWall/AnimationPlayer" to="Stage 7/SquirrelInWall" method="_on_animation_player_animation_finished"]

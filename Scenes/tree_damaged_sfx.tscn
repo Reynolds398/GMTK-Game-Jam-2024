@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg6340ita4rbv"]
+
+[ext_resource type="Script" path="res://Scripts/tree_damaged_sfx.gd" id="1_24cm3"]
+[ext_resource type="AudioStream" uid="uid://c4dvkkeav13e1" path="res://Assets/tree-hit-modified-lower.mp3" id="1_ybnvr"]
+
+[node name="TreeDamagedSfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ybnvr")
+script = ExtResource("1_24cm3")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

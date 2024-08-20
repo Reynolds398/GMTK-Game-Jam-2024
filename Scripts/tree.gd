@@ -141,6 +141,7 @@ func set_stage_5():
 	upgrade_ui.append_upgrade("b_left", [1000])
 	
 	stage_5.update_stage_5()
+	stage_5.get_node("SquirrelInWall").play_anim()
 	set_stage(stage_5)
 
 # Function to set variables for stage 6
@@ -153,6 +154,7 @@ func set_stage_6():
 	camera.limit_bottom = 640
 	
 	stage_6.update_stage_6()
+	stage_6.get_node("SquirrelInWall").play_anim()
 	set_stage(stage_6)
 
 # Function to set variables for stage 7
@@ -165,6 +167,7 @@ func set_stage_7():
 	camera.limit_bottom = 640
 	
 	stage_7.update_stage_7()
+	stage_7.get_node("SquirrelInWall").play_anim()
 	set_stage(stage_7)
 
 # Function to deal with stage transitions
