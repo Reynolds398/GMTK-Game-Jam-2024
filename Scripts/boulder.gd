@@ -11,6 +11,7 @@ func _ready():
 	
 # To safely modify position or velocity of rigidbody (to not break physics calculation)
 func _integrate_forces(state):
+	super(state)
 	linear_velocity = vel
 
 # Function to trigger shooting flag

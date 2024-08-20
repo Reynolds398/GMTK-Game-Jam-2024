@@ -27,8 +27,10 @@ var p_dmg = 0
 var c_dmg = 0
 var p_size = 0
 var c_size = 0
+var b_size = 0
 var p_reload = 0
 var c_reload = 0
+var b_reload = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -168,6 +170,10 @@ func upgrade(upgrade_name):
 			upgrade_c_size()
 		"c_reload":
 			upgrade_c_reload()
+		"b_reload":
+			upgrade_b_reload()
+		"b_size":
+			upgrade_b_size()
 
 # Function to deal with upgrading pea guns damage
 func upgrade_p_dmg(reset = false):
@@ -208,7 +214,7 @@ func upgrade_p_reload(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_p_reload(0.75)
 
-# Function to deal with upgrading pea guns fire rate
+# Function to deal with upgrading catapult damage
 func upgrade_c_dmg(reset = false):
 	if not reset:
 		c_dmg += 1
@@ -221,7 +227,7 @@ func upgrade_c_dmg(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_c_dmg(40)
 
-# Function to deal with upgrading pea guns fire rate
+# Function to deal with upgrading catapult fire rate
 func upgrade_c_reload(reset = false):
 	if not reset:
 		c_reload += 1
@@ -234,7 +240,7 @@ func upgrade_c_reload(reset = false):
 			1: # First level of upgrade
 				current_stage.upgrade_c_reload(0.75)
 
-# Function to deal with upgrading pea guns fire rate
+# Function to deal with upgrading catapult size
 func upgrade_c_size(reset = false):
 	if not reset:
 		c_size += 1
@@ -246,6 +252,32 @@ func upgrade_c_size(reset = false):
 				current_stage.upgrade_c_size(Vector2(1,1))
 			1: # First level of upgrade
 				current_stage.upgrade_c_size(Vector2(5,5))
+
+# Function to deal with upgrading boulder fire rate
+func upgrade_b_reload(reset = false):
+	if not reset:
+		b_reload += 1
+	
+	# Null check
+	if current_stage != null:
+		match b_reload:
+			0: # Default speed
+				current_stage.upgrade_b_reload(1.0)
+			1: # First level of upgrade
+				current_stage.upgrade_b_reload(0.75)
+
+# Function to deal with upgrading catapult size
+func upgrade_b_size(reset = false):
+	if not reset:
+		b_size += 1
+	
+	# Null check
+	if current_stage != null:
+		match b_size:
+			0: # Default speed
+				current_stage.upgrade_b_size(Vector2(1,1))
+			1: # First level of upgrade
+				current_stage.upgrade_b_size(Vector2(10,10))
 
 # Function to reset variables to default
 func reset_stage():
@@ -261,6 +293,8 @@ func reset_upgrade_progress():
 	upgrade_c_dmg(true)
 	upgrade_c_reload(true)
 	upgrade_c_size(true)
+	upgrade_b_reload(true)
+	upgrade_b_size(true)
 
 # Reset upgrade variable to default position
 func reset_upgrade_var():
@@ -274,5 +308,7 @@ func reset_upgrade_var():
 	c_dmg = 0
 	p_size = 0
 	c_size = 0
+	b_size = 0
 	p_reload = 0
 	c_reload = 0
+	b_reload = 0
