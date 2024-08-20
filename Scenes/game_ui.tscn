@@ -41,6 +41,7 @@ theme_override_font_sizes/font_size = 30
 text = "Wave 1"
 
 [node name="CheatButton" type="Button" parent="."]
+visible = false
 offset_left = 360.0
 offset_top = 23.0
 offset_right = 438.0

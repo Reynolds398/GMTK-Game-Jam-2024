@@ -77,8 +77,8 @@ func set_stage_1():
 	camera.zoom = Vector2(4,4)
 	camera.limit_bottom = 620
 	
-	stage_1.update_stage_1()
 	set_stage(stage_1)
+	stage_1.update_stage_1()
 
 # Function to set variables for stage 2
 func set_stage_2():
@@ -92,8 +92,8 @@ func set_stage_2():
 	# Adding weapon slot upgrades to upgrades from stage 1
 	upgrade_ui.append_upgrade("p_right", [250])
 	
-	stage_2.update_stage_2()
 	set_stage(stage_2)
+	stage_2.update_stage_2()
 
 # Function to set variables for stage 3
 func set_stage_3():
@@ -108,8 +108,8 @@ func set_stage_3():
 	upgrade_ui.append_upgrade("p_right", [250])
 	upgrade_ui.append_upgrade("p_left", [250])
 	
-	stage_3.update_stage_3()
 	set_stage(stage_3)
+	stage_3.update_stage_3()
 	
 # Function to set variables for stage 4
 func set_stage_4():
@@ -123,8 +123,8 @@ func set_stage_4():
 	upgrade_ui.append_upgrade("c_right", [500, 500])
 	upgrade_ui.append_upgrade("c_left", [500, 500])
 	
-	stage_4.update_stage_4()
 	set_stage(stage_4)
+	stage_4.update_stage_4()
 
 # Function to set variables for stage 5
 func set_stage_5():
@@ -140,9 +140,9 @@ func set_stage_5():
 	upgrade_ui.append_upgrade("b_right", [1000])
 	upgrade_ui.append_upgrade("b_left", [1000])
 	
+	set_stage(stage_5)
 	stage_5.update_stage_5()
 	stage_5.get_node("SquirrelInWall").play_anim()
-	set_stage(stage_5)
 
 # Function to set variables for stage 6
 func set_stage_6():
@@ -153,9 +153,9 @@ func set_stage_6():
 	camera.zoom = Vector2(1.3,1.3)
 	camera.limit_bottom = 640
 	
+	set_stage(stage_6)
 	stage_6.update_stage_6()
 	stage_6.get_node("SquirrelInWall").play_anim()
-	set_stage(stage_6)
 
 # Function to set variables for stage 7
 func set_stage_7():
@@ -166,9 +166,9 @@ func set_stage_7():
 	camera.zoom = Vector2(1,1)
 	camera.limit_bottom = 640
 	
+	set_stage(stage_7)
 	stage_7.update_stage_7()
 	stage_7.get_node("SquirrelInWall").play_anim()
-	set_stage(stage_7)
 
 # Function to deal with stage transitions
 func next_stage():
