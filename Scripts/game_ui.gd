@@ -15,6 +15,9 @@ var upgrade_ui = null  # Upgrade UI object
 var enemy_spawner = null  # Enemy spawner object
 var wave_spawner = null  # Wave spawner object
 var tree = null  # Tree object
+var game_over_menu = null  # Game over menu object
+var pause_menu = null  # Pause menu object
+var game_over_bool = false  # Game over status
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +26,8 @@ func _ready():
 	enemy_spawner = parent.get_node("EnemySpawner")
 	wave_spawner = parent.get_node("WaveSpawner")
 	tree = parent.get_node("Tree")
+	game_over_menu = parent.get_node("GameOverMenu")
+	pause_menu = parent.get_node("PauseMenu")
 	
 	enemy_spawner.connect("wave_complete", _on_wave_complete)
 
@@ -71,7 +76,10 @@ func set_max_health(amount):
 
 # Function to handle game over
 func game_over():
-	pass
+	game_over_bool = true
+	game_over_menu.visible = true
+	pause_menu.disable_toggle_pause()
+	upgrade_ui.disable_shop()
 
 # Function to go the next wave
 func start_next_wave():
@@ -100,17 +108,20 @@ func start_next_wave():
 
 # Toggle cheat tools on and off
 func _on_cheat_button_pressed():
-	var cheat_tool = parent.get_node("CheatTools")
-	cheat_tool.visible = not cheat_tool.visible
+	if not game_over_bool:
+		var cheat_tool = parent.get_node("CheatTools")
+		cheat_tool.visible = not cheat_tool.visible
 
 # Toggle visibility
 func _on_shop_button_pressed():
-	upgrade_ui.visible = not upgrade_ui.visible
+	if not game_over_bool:
+		upgrade_ui.visible = not upgrade_ui.visible
 
 # Start next wave and hide button
 func _on_next_wave_button_pressed():
-	start_next_wave()
-	next_wave_button.visible = false
+	if not game_over_bool:
+		start_next_wave()
+		next_wave_button.visible = false
 	
 # Toggle visibility of next wave button
 func _on_wave_complete():
@@ -122,5 +133,10 @@ func reset_game():
 	health_bar.value = 100
 	currency = 0
 	current_wave = 0
+	game_over_bool = false
+	next_wave_button.visible = false
+	enemy_spawner.reset_spawner()
 	tree.reset_stage()
 	start_next_wave()
+	pause_menu.enable_toggle_pause()
+	upgrade_ui.enable_shop()

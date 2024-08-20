@@ -36,6 +36,7 @@ var spawning = false  # Whether the enemy is spawning or not
 @onready var init_spawn_timer = $InitialSpawnTimer  # Initial timer object that starts spawn timer
 
 signal wave_complete
+signal kill_all
 
 # Dictionary for enemies
 var enemy_dict = {
@@ -250,7 +251,13 @@ func _on_spawn_timer_timeout():
 	
 	add_child(enemy)
 	
-
 # After initial timer timeout start regular spawn timer
 func _on_initial_spawn_timer_timeout():
 	spawn_timer.start()
+
+# Reset the spawner status
+func reset_spawner():
+	emit_signal("kill_all")
+	enemy_queue = []
+	max_right = 0  # Number of how many units can spawn on the right side 
+	max_left = 0  # Number of how many units can spawn on the left side 

@@ -2,12 +2,14 @@ extends CanvasLayer
 
 var parent = null  # Parent object
 var game_ui = null  # Game UI object
+var enemy_spawner = null  # Enemy spawner object
 var tree = null  # Tree object
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parent = get_parent()
 	game_ui = parent.get_node("GameUI")
+	enemy_spawner = parent.get_node("EnemySpawner")
 	tree = parent.get_node("Tree")
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,3 +63,7 @@ func _on_stage_7_button_pressed():
 # Function to start next wave
 func _on_next_wave_button_pressed():
 	game_ui.start_next_wave()
+
+# Function to kill all enemies
+func _on_clear_wave_button_pressed():
+	enemy_spawner.reset_spawner()

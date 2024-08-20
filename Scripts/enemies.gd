@@ -29,6 +29,8 @@ func _ready():
 	animated_sprite.play("walk")
 	current_health = HEALTH
 	
+	parent.connect("kill_all", _on_kill_signal)
+	
 	# Flip it by x-axis if facing left
 	if not RIGHT:
 		scale.x = -scale.x
@@ -121,3 +123,7 @@ func _on_area_2d_area_entered(area):
 	if area_parent.is_in_group("Projectile"):
 		area_parent.queue_free()  # Destroy the projectile
 		take_damage(area_parent.damage)  # Deal damage to the enemy
+
+# When received kill signal
+func _on_kill_signal():
+	queue_free()
