@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5rnw4"]
 radius = 25.0
 
-[node name="Boulder" type="RigidBody2D" groups=["Projectile"]]
+[node name="Boulder" type="RigidBody2D" groups=["Pierce"]]
 max_contacts_reported = 2
 contact_monitor = true
 script = ExtResource("1_50yqk")

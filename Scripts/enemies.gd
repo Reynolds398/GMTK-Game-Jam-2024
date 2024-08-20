@@ -119,9 +119,14 @@ func delete():
 # Function to deal with getting hit by projectile
 func _on_area_2d_area_entered(area):
 	var area_parent = area.get_parent()
-	# Replace with function body.
-	if area_parent.is_in_group("Projectile"):
+	
+	# Not piercing
+	if area_parent.is_in_group("NotPierce"):
 		area_parent.queue_free()  # Destroy the projectile
+		take_damage(area_parent.damage)  # Deal damage to the enemy
+	
+	# Piercing
+	if area_parent.is_in_group("Pierce"):
 		take_damage(area_parent.damage)  # Deal damage to the enemy
 
 # When received kill signal
